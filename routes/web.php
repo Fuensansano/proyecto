@@ -17,7 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/firstform', function () {
     return view('livewire/first-form');
 });
