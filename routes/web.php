@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +21,4 @@ Route::get('/firstform', function () {
     return view('livewire/first-form');
 });
 
+Route::get('/pdf', [PDFController::class, 'generatePDF']);
