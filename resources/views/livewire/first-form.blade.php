@@ -111,10 +111,10 @@
                             <textarea type="time" class="form-control mb-4" id="observations" name="observations"></textarea>
                         </div>
                     </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-primary" type="button">Enviar</button>
+                    </div>
                 </div>
-
-                <button type="button" class="btn btn-primary">Primary</button>
-
             </div>
         </form>
     </div>
