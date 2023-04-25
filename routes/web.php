@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\ExtraescolarActivity;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 /*
@@ -17,8 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/firstform', function () {
-    return view('livewire/first-form');
+Route::get('/extraescolaractivity', function () {
+    return view('livewire/extraescolaractivity');
 });
+
+Route::post('/extraescolaractivity',[ExtraescolarActivity::class, 'store']);
 
 Route::get('/pdf', [PDFController::class, 'generatePDF']);
