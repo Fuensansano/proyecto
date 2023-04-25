@@ -12,7 +12,7 @@ class PDFController extends Controller
         $options = new Options();
         $options->set('isRemoteEnabled', true);
 
-        $html = view('livewire.first-form')->render();
+        $html = view('livewire.extraescolaractivity')->render();
 
         $dompdf = new Dompdf($options);
         $dompdf->loadHtml($html);
