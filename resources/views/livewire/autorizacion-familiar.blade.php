@@ -1,7 +1,7 @@
 <x-main>
     @livewire('navbar')
     <div class="container center">
-        <form action="save" method="POST">
+        <form action="autorizacionFamiliar" method="POST">
             @csrf
             <div class="card mt-5">
                 <h1 class="text-primary">AUTORIZACIÓN FAMILIAR</h1>
@@ -9,14 +9,26 @@
                     <div class="row row-cols-2">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="activity" placeholder="Actividad Programada">
+                                <input type="text" class="form-control @error('activity') is-invalid @enderror" id="activity" placeholder="Actividad Programada">
                                 <label for="activity">ACTIVIDAD PROGRAMADA</label>
+                                
+                                @if($errors->get('activity'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('activity')[0] }}
+                                    </div>
+                                @endif
                             </div>                              
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="organizer" placeholder="Organizada Por">
+                                <input type="text" class="form-control @error('organizer') is-invalid @enderror" id="organizer" placeholder="Organizada Por">
                                 <label for="organizer">ORGANIZADOR/A</label>
+                                
+                                @if($errors->get('organizer'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('organizer')[0] }}
+                                    </div>
+                                @endif
                             </div>                              
                         </div>
                     </div>
@@ -24,14 +36,26 @@
                     <div class="row row-cols-2">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="execution_date" placeholder="Fecha Realización">
+                                <input type="date" class="form-control @error('execution_date') is-invalid @enderror" id="execution_date" placeholder="Fecha Realización">
                                 <label for="execution_date">FECHA REALIZACIÓN</label>
+
+                                @if($errors->get('execution_date'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('execution_date')[0] }}
+                                    </div>
+                                @endif
                             </div>                              
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="time" class="form-control" id="departure_time" placeholder="Hora Salida">
+                                <input type="time" class="form-control @error('departure_time') is-invalid @enderror" id="departure_time" placeholder="Hora Salida">
                                 <label for="departure_time">HORA SALIDA</label>
+
+                                @if($errors->get('departure_time'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('departure_time')[0] }}
+                                    </div>
+                                @endif
                             </div>                              
                         </div>
                     </div>
@@ -39,14 +63,26 @@
                     <div class="row row-cols-2">
                         <div class="col">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Obejtivos y Contenidos" id="goals"></textarea>
+                                <textarea class="form-control @error('goals') is-invalid @enderror" placeholder="Obejtivos y Contenidos" id="goals"></textarea>
                                 <label for="goals">OBJETIVOS Y CONTENIDOS</label>
+
+                                @if($errors->get('goals'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('goals')[0] }}
+                                    </div>
+                                @endif
                             </div>                           
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="deadline" placeholder="Fecha de Entrega">
+                                <input type="date" class="form-control @error('deadline') is-invalid @enderror" id="deadline" placeholder="Fecha de Entrega">
                                 <label for="deadline">FECHA ENTREGA</label>
+
+                                @if($errors->get('deadline'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('deadline')[0] }}
+                                    </div>
+                                @endif
                             </div>                              
                         </div>
                     </div>
@@ -54,14 +90,26 @@
                     <div class="row row-cols-2" style="margin-top: 5px;">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="parents" placeholder="Padre/Madre/Tutor">
+                                <input type="text" class="form-control @error('parents') is-invalid @enderror" id="parents" placeholder="Padre/Madre/Tutor">
                                 <label for="parents">PADRE/MADRE/TUTOR</label>
+
+                                @if($errors->get('parents'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('parents')[0] }}
+                                    </div>
+                                @endif
                             </div>                              
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="student" placeholder="Alumno">
+                                <input type="text" class="form-control @error('student') is-invalid @enderror" id="student" placeholder="Alumno">
                                 <label for="student">ALUMNO</label>
+
+                                @if($errors->get('student'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('student')[0] }}
+                                    </div>
+                                @endif
                             </div>                              
                         </div>
                     </div>
@@ -69,23 +117,41 @@
                     <div class="row row-cols-1">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="course" placeholder="Curso alumno">
+                                <input type="text" class="form-control @error('course') is-invalid @enderror" id="course" placeholder="Curso alumno">
                                 <label for="course">CURSO DEL ALUMNO</label>
+
+                                @if($errors->get('course'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('course')[0] }}
+                                    </div>
+                                @endif
                             </div>                              
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="authorization" id="auth">
+                                <input class="form-check-input @error('auth') is-invalid @enderror" type="radio" name="authorization" id="auth">
                                 <label class="form-check-label" for="auth">
                                     Tiene mi autorización para participar en la actividad programada y autorizo a la toma y difusión de imágenes de este día en la página web y/o RRSS del centro.
                                 </label>
+
+                                @if($errors->get('auth'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('auth')[0] }}
+                                    </div>
+                                @endif
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="authorization" id="notAuth">
+                                <input class="form-check-input @error('notAuth') is-invalid @enderror" type="radio" name="authorization" id="notAuth">
                                 <label class="form-check-label" for="notAuth">
                                     No va a participar en la actividad programada.
                                 </label>
-                            </div>                                         
+
+                                @if($errors->get('notAuth'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('notAuth')[0] }}
+                                    </div>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,7 +160,7 @@
 
                 <div class="buttons-container">
                     <button type="submit" class="button-arounder">GENERAR PDF</button>
-                    <button type="submit" class="button-arounder-cancelar">CANCELAR</button>
+                    <button class="button-arounder-cancelar">CANCELAR</button>
                 </div>
             </div>
         </form>
