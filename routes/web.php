@@ -22,6 +22,10 @@ Route::get('/extraescolaractivity', function () {
     return view('livewire/extraescolaractivity');
 });
 
+Route::get('/autorizacionFamiliar', function () {
+    return view('livewire/autorizacion-familiar');
+});
+
 Route::post('/extraescolaractivity',[ExtraescolarActivity::class, 'store']);
 
 Route::get('/pdf', [PDFController::class, 'generatePDF']);
