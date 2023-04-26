@@ -93,7 +93,7 @@
                 <hr>
 
                 <div class="buttons-container">
-                    <button type="submit" class="button-arounder">ENVIAR</button>
+                    <button type="submit" class="button-arounder">GENERAR PDF</button>
                     <button type="submit" class="button-arounder-cancelar">CANCELAR</button>
                 </div>
             </div>

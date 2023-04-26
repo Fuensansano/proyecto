@@ -3,7 +3,10 @@
 namespace App\Http\Livewire;
 
 use App\Http\Requests\AutorizacionFamiliarRequest;
+
 use Livewire\Component;
+
+use Dompdf\{Dompdf, Options};
 
 class AutorizacionFamiliar extends Component
 {
@@ -12,21 +15,30 @@ class AutorizacionFamiliar extends Component
         return view('livewire.autorizacion-familiar');
     }
 
-    public function store(AutorizacionFamiliarRequest $request) {
+    public function generatePDF(AutorizacionFamiliarRequest $request) {
         $data = [
-            "activity_name" => $request->activity_name,
-            "activity_place" => $request->activity_place,
-            "activity_module" => $request->activity_module,
-            "activity_departament" => $request->activity_departament,
-            "teachers" => $request->teachers,
-            "student_groups" => $request->student_groups,
-            "date" => $request->date,
-            "departure_time" => $request->departure_time,
-            "arrive_time" => $request->arrive_time,
-            "activity_price" => $request->activity_price,
-            "transport" => $request->transport,
-            "activity_responsible_teacher" => $request->activity_responsible_teacher,
-            "observations" => $request->observations
+            'activity' => $request->activity,
+            'organizer' => $request->organizer,
+            'execution_date' => $request->execution_date,
+            'departure_time' => $request->departure_time,
+            'goals' => $request->goals,
+            'deadline' => $request->deadline,
+            'parents' => $request->parents,
+            'student' => $request->student,
+            'course' => $request->course,
+            'authorization' => $request->authorization
         ];
+
+        $options = new Options();
+        $options->set('isRemoteEnabled', true);
+
+        $html = view('pdfs.autorizacionFamiliarPDF', compact('data'))->render();
+
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+
+        return $dompdf->stream('autorizacionFamiliar.pdf');
     }
 }

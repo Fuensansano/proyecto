@@ -43,6 +43,7 @@ class AutorizacionFamiliarRequest extends FormRequest
             'activity.required' => $messDef,
             'organizer.required' => $messDef,
             'execution_date.required' => $messDef,
+            'execution_date.date' => 'La feche debe tener un formato válido',
             'departure_time.required' => $messDef,
             'goals.required' => $messDef,
             'deadline.required' => $messDef,
