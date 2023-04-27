@@ -225,7 +225,6 @@
                 <hr>
 
                 <div class="buttons-container">
-                    {{-- <button type="submit" class="button-arounder">GENERAR PDF</button> --}}
                     <x-button-form-send></x-button-form-send>
                     <button class="button-arounder-cancelar">CANCELAR</button>
                 </div>

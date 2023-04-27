@@ -1,3 +1,10 @@
 <p>{{ $data['activity'] }}</p>
 <p>{{ $data['organizer'] }}</p>
 <p>{{ $data['execution_date'] }}</p>
+<p>{{ $data['departure_time'] }}</p>
+<p>{{ $data['goals'] }}</p>
+<p>{{ $data['deadline'] }}</p>
+<p>{{ $data['parents'] }}</p>
+<p>{{ $data['student'] }}</p>
+<p>{{ $data['course'] }}</p>
+<p>{{ $data['authorization'] }}</p>
