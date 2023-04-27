@@ -27,7 +27,7 @@ Route::get('/extraescolaractivity', function () {
 
 Route::get('/autorizacionFamiliar', function () {
     return view('livewire/autorizacionFamiliar');
-});
+})->name('authFamForm');
 
 Route::post('/extraescolaractivity',[ExtraescolarActivity::class, 'store']);
 

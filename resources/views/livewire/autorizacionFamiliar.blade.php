@@ -193,7 +193,12 @@
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input @error('auth') is-invalid @enderror" type="radio" name="authorization" id="auth">
+                                <input
+                                    class="form-check-input
+                                    @error('auth') is-invalid @enderror"
+                                    type="radio"
+                                    name="authorization"
+                                    id="auth">
                                 
                                 <label class="form-check-label" for="auth">
                                     Tiene mi autorización para participar en la actividad programada y autorizo a la toma y difusión de imágenes de este día en la página web y/o RRSS del centro.
@@ -206,7 +211,12 @@
                                 @endif
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input @error('notAuth') is-invalid @enderror" type="radio" name="authorization" id="notAuth">
+                                <input
+                                    class="form-check-input
+                                    @error('notAuth') is-invalid @enderror"
+                                    type="radio"
+                                    name="authorization"
+                                    id="notAuth">
                                 
                                 <label class="form-check-label" for="notAuth">
                                     No va a participar en la actividad programada.
