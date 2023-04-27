@@ -2,17 +2,18 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Requests\AutorizacionFamiliarRequest;
-
 use Livewire\Component;
 
-use Dompdf\{Dompdf, Options};
+use App\Http\Requests\AutorizacionFamiliarRequest;
+
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class AutorizacionFamiliar extends Component
 {
     public function render()
     {
-        return view('livewire.autorizacion-familiar');
+        return view('livewire.autorizacionFamiliar');
     }
 
     public function generatePDF(AutorizacionFamiliarRequest $request) {

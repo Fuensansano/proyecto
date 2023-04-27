@@ -1,7 +1,7 @@
 <x-main>
     @livewire('navbar')
-    <div class="container center">
-        <form action="autorizacionFamiliar" method="POST">
+    <div class="container">
+        <form action="{{ route('generarPDF') }}" method="post">
             @csrf
             <div class="card mt-5">
                 <h1 class="text-primary">AUTORIZACIÓN FAMILIAR</h1>
@@ -9,7 +9,14 @@
                     <div class="row row-cols-2">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error('activity') is-invalid @enderror" id="activity" placeholder="Actividad Programada">
+                                <input
+                                    type="text"
+                                    class="form-control
+                                    @error('activity') is-invalid @enderror"
+                                    id="activity"
+                                    placeholder="Actividad Programada"
+                                    name="activity">
+
                                 <label for="activity">ACTIVIDAD PROGRAMADA</label>
                                 
                                 @if($errors->get('activity'))
@@ -21,7 +28,14 @@
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error('organizer') is-invalid @enderror" id="organizer" placeholder="Organizada Por">
+                                <input
+                                    type="text"
+                                    class="form-control
+                                    @error('organizer') is-invalid @enderror"
+                                    id="organizer"
+                                    placeholder="Organizada Por"
+                                    name="organizer">
+                                
                                 <label for="organizer">ORGANIZADOR/A</label>
                                 
                                 @if($errors->get('organizer'))
@@ -36,7 +50,14 @@
                     <div class="row row-cols-2">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control @error('execution_date') is-invalid @enderror" id="execution_date" placeholder="Fecha Realización">
+                                <input
+                                    type="date"
+                                    class="form-control
+                                    @error('execution_date') is-invalid @enderror"
+                                    id="execution_date"
+                                    placeholder="Fecha Realización"
+                                    name="execution_date">
+                                
                                 <label for="execution_date">FECHA REALIZACIÓN</label>
 
                                 @if($errors->get('execution_date'))
@@ -48,7 +69,14 @@
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="time" class="form-control @error('departure_time') is-invalid @enderror" id="departure_time" placeholder="Hora Salida">
+                                <input
+                                    type="time"
+                                    class="form-control
+                                    @error('departure_time') is-invalid @enderror"
+                                    id="departure_time"
+                                    placeholder="Hora Salida"
+                                    name="departure_time">
+
                                 <label for="departure_time">HORA SALIDA</label>
 
                                 @if($errors->get('departure_time'))
@@ -63,7 +91,14 @@
                     <div class="row row-cols-2">
                         <div class="col">
                             <div class="form-floating">
-                                <textarea class="form-control @error('goals') is-invalid @enderror" placeholder="Obejtivos y Contenidos" id="goals"></textarea>
+                                <textarea
+                                    class="form-control
+                                    @error('goals') is-invalid @enderror"
+                                    placeholder="Obejtivos y Contenidos"
+                                    id="goals"
+                                    name="goals">
+                                </textarea>
+
                                 <label for="goals">OBJETIVOS Y CONTENIDOS</label>
 
                                 @if($errors->get('goals'))
@@ -75,7 +110,15 @@
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control @error('deadline') is-invalid @enderror" id="deadline" placeholder="Fecha de Entrega">
+                                <input
+                                    type="date"
+                                    class="form-control
+                                    @error('deadline')
+                                    is-invalid @enderror"
+                                    id="deadline"
+                                    placeholder="Fecha de Entrega"
+                                    name="deadline">
+
                                 <label for="deadline">FECHA ENTREGA</label>
 
                                 @if($errors->get('deadline'))
@@ -90,7 +133,14 @@
                     <div class="row row-cols-2" style="margin-top: 5px;">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error('parents') is-invalid @enderror" id="parents" placeholder="Padre/Madre/Tutor">
+                                <input
+                                    type="text"
+                                    class="form-control
+                                    @error('parents') is-invalid @enderror"
+                                    id="parents"
+                                    placeholder="Padre/Madre/Tutor"
+                                    name="parents">
+                                
                                 <label for="parents">PADRE/MADRE/TUTOR</label>
 
                                 @if($errors->get('parents'))
@@ -102,7 +152,14 @@
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error('student') is-invalid @enderror" id="student" placeholder="Alumno">
+                                <input
+                                    type="text"
+                                    class="form-control
+                                    @error('student') is-invalid @enderror"
+                                    id="student"
+                                    placeholder="Alumno"
+                                    name="student">
+                                
                                 <label for="student">ALUMNO</label>
 
                                 @if($errors->get('student'))
@@ -117,7 +174,14 @@
                     <div class="row row-cols-1">
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control @error('course') is-invalid @enderror" id="course" placeholder="Curso alumno">
+                                <input
+                                    type="text"
+                                    class="form-control
+                                    @error('course') is-invalid @enderror"
+                                    id="course"
+                                    placeholder="Curso alumno"
+                                    name="course">
+                                
                                 <label for="course">CURSO DEL ALUMNO</label>
 
                                 @if($errors->get('course'))
@@ -130,6 +194,7 @@
                         <div class="col">
                             <div class="form-check">
                                 <input class="form-check-input @error('auth') is-invalid @enderror" type="radio" name="authorization" id="auth">
+                                
                                 <label class="form-check-label" for="auth">
                                     Tiene mi autorización para participar en la actividad programada y autorizo a la toma y difusión de imágenes de este día en la página web y/o RRSS del centro.
                                 </label>
@@ -142,6 +207,7 @@
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input @error('notAuth') is-invalid @enderror" type="radio" name="authorization" id="notAuth">
+                                
                                 <label class="form-check-label" for="notAuth">
                                     No va a participar en la actividad programada.
                                 </label>
@@ -182,13 +248,6 @@
         font-family: 'Raleway', sans-serif;
     }
 
-    .center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
     .buttons-container {
         display: flex;
         align-items: center;
@@ -201,6 +260,43 @@
         margin-bottom: 10px;
         margin-left: 15px;
     }
+
+    /* .button-arounder {
+        font-size: 17px;
+        background: hsl(152, 64%, 48%);
+        color: hsl(190deg, 10%, 95%);
+        
+        box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);
+        transfrom: translateY(0);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        
+        --dur: .1s;
+        --delay: .1s;
+        --radius: 25px;
+    
+        transition:
+            border-top-left-radius var(--dur) var(--delay) ease-out,
+            border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out,
+            border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out,
+            border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out,
+            box-shadow calc(var(--dur) * 4) ease-out,
+            transform calc(var(--dur) * 4) ease-out,
+            background calc(var(--dur) * 4) steps(4, jump-end);
+    }
+
+    .button-arounder:hover,
+    .button-arounder:focus {
+        box-shadow: 0 4px 8px hsla(190deg, 15%, 5%, .2);
+        transform: translateY(-4px);
+        background: hsl(152, 68%, 31%);
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+        border-bottom-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+    } */
 
     .button-arounder-cancelar {
         font-size: 17px;

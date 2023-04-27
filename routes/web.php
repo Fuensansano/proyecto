@@ -26,11 +26,13 @@ Route::get('/extraescolaractivity', function () {
 });
 
 Route::get('/autorizacionFamiliar', function () {
-    return view('livewire/autorizacion-familiar');
+    return view('livewire/autorizacionFamiliar');
 });
 
 Route::post('/extraescolaractivity',[ExtraescolarActivity::class, 'store']);
 
-Route::post('/autorizacionFamiliar',[AutorizacionFamiliar::class, 'generatePDF']);
+Route::post('/autorizacionFamiliar', [AutorizacionFamiliar::class, 'generatePDF'])
+    ->name('generarPDF');
 
-Route::get('/pdf', [PDFController::class, 'generatePDF']);
+/* Route::get('/pdf', [PDFController::class, 'generatePDF']);
+ */

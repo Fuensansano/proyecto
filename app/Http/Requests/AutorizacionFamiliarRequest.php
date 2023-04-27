@@ -24,7 +24,7 @@ class AutorizacionFamiliarRequest extends FormRequest
 
     public function messages()
     {
-        $messDef = 'Este campo es oligatorio';
+        $messDef = 'Este campo es obligatorio';
 
         return [
             'activity.required' => $messDef,

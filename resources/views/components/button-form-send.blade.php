@@ -1,7 +1,6 @@
 <button type="submit" class="button-arounder">
     GENERAR PDF
 </button>
-fdgdsfgsd
 
 <style>
     button {
