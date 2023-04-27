@@ -198,7 +198,8 @@
                                     @error('auth') is-invalid @enderror"
                                     type="radio"
                                     name="authorization"
-                                    id="auth">
+                                    id="auth"
+                                    value="auth">
                                 
                                 <label class="form-check-label" for="auth">
                                     Tiene mi autorización para participar en la actividad programada y autorizo a la toma y difusión de imágenes de este día en la página web y/o RRSS del centro.
@@ -216,7 +217,8 @@
                                     @error('notAuth') is-invalid @enderror"
                                     type="radio"
                                     name="authorization"
-                                    id="notAuth">
+                                    id="notAuth"
+                                    value="notAuth">
                                 
                                 <label class="form-check-label" for="notAuth">
                                     No va a participar en la actividad programada.
