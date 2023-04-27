@@ -40,6 +40,6 @@ class AutorizacionFamiliar extends Component
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
 
-        return $dompdf->stream('autorizacionFamiliar.pdf');
+        return $dompdf->stream('autorizacionFamiliar.pdf', array('Attachment' => 0));
     }
 }
