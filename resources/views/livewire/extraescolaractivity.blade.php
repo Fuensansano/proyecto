@@ -4,7 +4,7 @@
         <form action="extraescolaractivity" method="post">
         @csrf
             <div class="card mt-5">
-                <h1 class="card-header text-primary">INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h1>
+                <h1 class="card-header text-primary bg-white">INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h1>
                 <div class="card-body">
                     {{-- primera fila --}}
                     <div class="row row-cols-2 mb-4">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     {{-- segunda fila --}}
-                    <div class="row row-cols-2">
+                    <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="activity_module">Asignatura/modulo</label>
                         </div>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     {{-- tercera fila --}}
-                    <div class="row row-cols-2">
+                    <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="teachers">Profesores acompañantes</label>
                         </div>
@@ -84,7 +84,7 @@
                     </div>
 
                     {{-- cuarta fila --}}
-                    <div class="row row-cols-2">
+                    <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="date">Fecha</label>
                         </div>
@@ -111,7 +111,7 @@
                     </div>
 
                     {{-- quinta fila --}}
-                    <div class="row row-cols-2">
+                    <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="arrive_time">Hora prevista de llegada</label>
                         </div>
@@ -137,7 +137,7 @@
                     </div>
 
                     {{-- sexta fila --}}
-                    <div class="row row-cols-2">
+                    <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="transport">Medio de transporte</label>
                         </div>
@@ -164,7 +164,7 @@
                     </div>
 
                     {{-- séptima fila --}}
-                    <div class="row row-cols-1">
+                    <div class="row row-cols-1 mb-4">
                         <div class="col">
                             <label for="observations">Observaciones</label>
                         </div>
@@ -172,9 +172,12 @@
                             <textarea type="time" class="form-control mb-4" id="observations" name="observations"></textarea>
                         </div>
                     </div>
+
                     <div class="buttons-container">
-                        <x-button-form-send></x-button-form-send>
-                        <x-button-form-cancel></x-button-form-cancel>
+                        <button class="btn btn-success btn-lg" type="submit">Descargar PDF</button>
+                        <button class="btn btn-danger btn-lg">
+                            <a id="home" href="/">Volver al inicio</a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -190,12 +193,26 @@
 
     .container {
         max-width: 90%;
+        margin-bottom: 20px;
     }
 
     h1 {
         align-self: center;
         font-size: 30px;
         margin-top: 10px;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    #home {
+        text-decoration: none;
+        color: white;
+    }
+
+    .buttons-container {
+        text-align: center;
     }
 
 </style>
