@@ -24,20 +24,18 @@ class AutorizacionFamiliarRequest extends FormRequest
 
     public function messages()
     {
-        $messDef = 'Este campo es obligatorio';
-
         return [
-            'activity.required' => $messDef,
-            'organizer.required' => $messDef,
-            'execution_date.required' => $messDef,
+            'activity.required' => 'La actividad es obligatoria',
+            'organizer.required' => 'El nombre del organizador es obligatorio',
+            'execution_date.required' => 'La fecha de la actividad es obligatoria',
             'execution_date.date' => 'La feche debe tener un formato válido',
-            'departure_time.required' => $messDef,
-            'goals.required' => $messDef,
-            'deadline.required' => $messDef,
-            'parents.required' => $messDef,
-            'student.required' => $messDef,
-            'course.required' => $messDef,
-            'authorization.required' => $messDef,
+            'departure_time.required' => 'La hora de salida es obligatoria',
+            'goals.required' => 'Los objetivos son obligatorios',
+            'deadline.required' => 'La fecha de entrega de la hoja es obligatoria',
+            'parents.required' => 'El nombre del padre/madre/tutor es obligatorio',
+            'student.required' => 'El nombre del alumno es obligatorio',
+            'course.required' => 'El curso del alumno es obligatorio',
+            'authorization.required' => 'La autorización es obligatoria',
         ];
     }
 }
