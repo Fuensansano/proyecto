@@ -1,5 +1,5 @@
 <div>
     <header>
-        <img src="{{ storage_path('app/public/images/cabecerav6.png') }}" alt="cabecera.png">
+        <img src="{{ public_path('images/cabecerav6.png') }}" alt="cabecera.png">
     </header>
 </div>
