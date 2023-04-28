@@ -90,23 +90,23 @@
 
                     <div class="row row-cols-2">
                         <div class="col">
-                            <div class="form-floating">
-                                <textarea
+                            <div class="form-floating mb-3">
+                                <input
+                                    type="text"
                                     class="form-control
-                                    @error('goals') is-invalid @enderror"
-                                    placeholder="Obejtivos y Contenidos"
-                                    id="goals"
-                                    name="goals">
-                                </textarea>
+                                    @error('course') is-invalid @enderror"
+                                    id="course"
+                                    placeholder="Curso alumno"
+                                    name="course">
+                                
+                                <label for="course">CURSO DEL ALUMNO</label>
 
-                                <label for="goals">OBJETIVOS Y CONTENIDOS</label>
-
-                                @if($errors->get('goals'))
+                                @if($errors->get('course'))
                                     <div class="text-danger mb-3 mt-0">
-                                        {{ $errors->get('goals')[0] }}
+                                        {{ $errors->get('course')[0] }}
                                     </div>
                                 @endif
-                            </div>                           
+                            </div>                              
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
@@ -130,7 +130,7 @@
                         </div>
                     </div>
 
-                    <div class="row row-cols-2" style="margin-top: 5px;">
+                    <div class="row row-cols-2">
                         <div class="col">
                             <div class="form-floating mb-3">
                                 <input
@@ -173,25 +173,25 @@
 
                     <div class="row row-cols-1">
                         <div class="col">
-                            <div class="form-floating mb-3">
-                                <input
-                                    type="text"
+                            <div class="form-floating">
+                                <textarea
                                     class="form-control
-                                    @error('course') is-invalid @enderror"
-                                    id="course"
-                                    placeholder="Curso alumno"
-                                    name="course">
-                                
-                                <label for="course">CURSO DEL ALUMNO</label>
+                                    @error('goals') is-invalid @enderror"
+                                    placeholder="Obejtivos y Contenidos"
+                                    id="goals"
+                                    name="goals">
+                                </textarea>
 
-                                @if($errors->get('course'))
+                                <label for="goals">OBJETIVOS Y CONTENIDOS</label>
+
+                                @if($errors->get('goals'))
                                     <div class="text-danger mb-3 mt-0">
-                                        {{ $errors->get('course')[0] }}
+                                        {{ $errors->get('goals')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>                           
                         </div>
-                        <div class="col">
+                        <div class="col mt-5">
                             <div class="form-check">
                                 <input
                                     class="form-check-input
@@ -249,7 +249,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;0,700;1,600&display=swap');
 
     .container {
-        max-width: 50%;
+        max-width: 90%;
     }
 
     h1 {
