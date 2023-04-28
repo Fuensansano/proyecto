@@ -16,10 +16,10 @@ class ExtraescolaractivityRequest extends FormRequest
             'activity_departament' => 'required|string',
             'teachers' => 'required|string',
             'student_groups' => 'required|string',
-            'date' => 'required|date_format:d/m/Y',
-            'departure_time' => 'required|date_format:h:i:s',
-            'arrive_time' => 'required|date_format:h:i',
-            'activity_price' => 'required|regex:/^[0-9]+$/',
+            'date' => 'required|date_format:Y-m-d',
+            'departure_time' => 'required|date_format:H:i',
+            'arrive_time' => 'required|date_format:H:i',
+            'activity_price' => 'required|regex:/^\d+([.,])?\d{0,2}$/',
             'transport' => 'required|string',
             'activity_responsible_teacher' => 'required|string',
         ];
@@ -41,7 +41,7 @@ class ExtraescolaractivityRequest extends FormRequest
             'arrive_time.required' => 'El campo hora de llegada debe ser obligatorio',
             'arrive_time.date_format' => 'El campo hora de llegada debe de ser en formato hh:mm',
             'activity_price.required' => 'El campo precio de la actividad debe ser obligatorio',
-            'activity_price.regex' => 'El campo precio debe de ser numérico',
+            'activity_price.regex' => 'El campo precio debe de ser numérico y positivo',
             'transport.required' => 'El campo transporte debe ser obligatorio',
             'activity_responsible_teacher.required' => 'El campo responsable de la actividad debe ser obligatorio',
 

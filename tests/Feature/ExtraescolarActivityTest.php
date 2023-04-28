@@ -248,7 +248,7 @@ class ExtraescolarActivityTest extends TestCase
             ->post('/extraescolaractivity', [
                 'activity_price' => 'fcghvjbklm'
             ])
-            ->assertSessionHasErrors(['activity_price' => 'El campo precio debe de ser numérico']);
+            ->assertSessionHasErrors(['activity_price' => 'El campo precio debe de ser numérico y positivo']);
     }
 
     /** @test */
