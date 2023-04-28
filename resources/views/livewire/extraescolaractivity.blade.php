@@ -172,8 +172,9 @@
                             <textarea type="time" class="form-control mb-4" id="observations" name="observations"></textarea>
                         </div>
                     </div>
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-primary" type="submit">Enviar</button>
+                    <div class="buttons-container">
+                        <x-button-form-send></x-button-form-send>
+                        <x-button-form-cancel></x-button-form-cancel>
                     </div>
                 </div>
             </div>

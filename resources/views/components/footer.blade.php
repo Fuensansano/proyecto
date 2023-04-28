@@ -24,3 +24,13 @@
         </tr>
     </table>
 </footer>
+
+<style>
+footer {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+    border-top: 1px solid #383232;
+    }
+</style>
