@@ -90,4 +90,112 @@ class AutorizacionFamiliarTest extends TestCase
             ->assertSessionHasErrors('activity')
             ->assertRedirect(route('authFamForm'));
     }
+
+    /** @test */
+    function the_organizer_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'organizer' => null,
+            ])
+            ->assertSessionHasErrors('organizer')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_execution_date_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'execution_date' => null,
+            ])
+            ->assertSessionHasErrors('execution_date')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_departure_time_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'departure_time' => null,
+            ])
+            ->assertSessionHasErrors('departure_time')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_goals_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'goals' => null,
+            ])
+            ->assertSessionHasErrors('goals')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_deadline_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'deadline' => null,
+            ])
+            ->assertSessionHasErrors('deadline')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_parents_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'parents' => null,
+            ])
+            ->assertSessionHasErrors('parents')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_student_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'student' => null,
+            ])
+            ->assertSessionHasErrors('student')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_course_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'course' => null,
+            ])
+            ->assertSessionHasErrors('course')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_authorization_is_required() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from('/autorizacionFamiliar')
+            ->post(route('generarPDF'), [
+                'authorization' => null,
+            ])
+            ->assertSessionHasErrors('authorization')
+            ->assertRedirect(route('authFamForm'));
+    }
 }
