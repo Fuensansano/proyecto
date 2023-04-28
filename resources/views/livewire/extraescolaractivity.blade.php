@@ -95,7 +95,7 @@
                             <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date"></input>
                             @if($errors->get('teachers'))
                                 <div class="text-danger mb-3 mt-0">
-                                    {{ $errors->get('teachers')[0] }}
+                                    {{ $errors->get('date')[0] }}
                                 </div>
                             @endif
                         </div>
