@@ -171,7 +171,26 @@
                         </div>
                     </div>
 
-                    <div class="row row-cols-1">
+                    <div class="row row-cols-2">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input
+                                    type="text"
+                                    class="form-control
+                                    @error('dni') is-invalid @enderror"
+                                    id="dni"
+                                    placeholder="DNI"
+                                    name="dni">
+                                
+                                <label for="dni">DNI PADRE/MADRE/TUTOR</label>
+
+                                @if($errors->get('dni'))
+                                    <div class="text-danger mb-3 mt-0">
+                                        {{ $errors->get('dni')[0] }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
                         <div class="col">
                             <div class="form-floating">
                                 <textarea
@@ -191,6 +210,9 @@
                                 @endif
                             </div>                           
                         </div>
+                    </div>
+
+                    <div class="row row-cols-1">
                         <div class="col mt-5">
                             <div class="form-check">
                                 <input

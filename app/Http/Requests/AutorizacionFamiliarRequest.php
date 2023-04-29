@@ -19,6 +19,7 @@ class AutorizacionFamiliarRequest extends FormRequest
             'student' => 'required|string',
             'course' => 'required|string',
             'authorization' => 'required',
+            'dni' => 'required|regex:/^[0-9]{8,8}[A-Za-z]$/',
         ];
     }
 
@@ -38,6 +39,8 @@ class AutorizacionFamiliarRequest extends FormRequest
             'student.required' => 'El nombre del alumno es obligatorio',
             'course.required' => 'El curso del alumno es obligatorio',
             'authorization.required' => 'La autorización es obligatoria',
+            'dni.required' => 'El DNI del padre/madre/tutor es obligatorio',
+            'dni.regex' => 'El DNI debe tener un formato válido',
         ];
     }
 }

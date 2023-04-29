@@ -17,6 +17,10 @@ class AutorizacionFamiliar extends Component
     }
 
     public function generatePDF(AutorizacionFamiliarRequest $request) {
+        date_default_timezone_set('Europe/Madrid');
+        
+        $fecha_actual = getdate();
+
         $data = [
             'activity' => $request->activity,
             'organizer' => $request->organizer,
@@ -27,7 +31,11 @@ class AutorizacionFamiliar extends Component
             'parents' => $request->parents,
             'student' => $request->student,
             'course' => $request->course,
-            'authorization' => $request->authorization
+            'authorization' => $request->authorization,
+            'dni' => $request->dni,
+            'day' => $fecha_actual['mday'],
+            'month' => $fecha_actual['mon'],
+            'year' => $fecha_actual['year'],
         ];
 
         $options = new Options();

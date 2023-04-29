@@ -1,54 +1,109 @@
 <x-header />
 
-<p>{{ $data['activity'] }}</p>
-<p>{{ $data['organizer'] }}</p>
-<p>{{ $data['execution_date'] }}</p>
-<p>{{ $data['departure_time'] }}</p>
-<p>{{ $data['goals'] }}</p>
-<p>{{ $data['deadline'] }}</p>
-<p>{{ $data['parents'] }}</p>
-<p>{{ $data['student'] }}</p>
-<p>{{ $data['course'] }}</p>
-<p>{{ $data['authorization'] }}</p>
+<table style="margin-top: 15%">
+    <tbody>
+        <tr>
+            <h1>AUTORIZACIÓN FAMILIAR</h1>
+        </tr>
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;">
+                <b>ACTIVIDAD PROGRAMADA: </b>
+                <span>{{ $data['activity'] }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;">
+                <b>ORGANIZADA POR: </b>
+                <span>{{ $data['organizer'] }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;">
+                <b>FECHA DE REALIZACIÓN: </b>
+                <span>{{ $data['execution_date'] }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;">
+                <b>HORA DE SALIDA: </b>
+                <span>{{ $data['departure_time'] }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-bottom: 1px solid #ddd;">
+                <b>OBJETIVOS Y CONTENIDOS: </b>
+                <span>{{ $data['goals'] }}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <p style="font-size: 16px; text-align: justify">
+        <b>
+            Para tener constancia de que ustedes han recibido esta información, 
+            les ruego la devuelvan firmada al Centro, para que sus hijos la entreguen al profesor 
+            encargado antes del
+        </b>{{ $data['deadline'] }}.
+    </p>
+</div>
+
+<div>
+    <p style="font-size: 16px; text-align: justify">
+        D./Dª <b>{{ $data['parents'] }}</b> como padre, 
+        madre o tutor del alumno/a <b>{{ $data['student'] }}</b> 
+        del curso <b>{{ $data['course'] }}</b>, me considero informado/a de la actividad programada 
+        y comunico que mi hijo/a:
+    </p>
+</div>
+
+<div>
+    <div style="display: flex;">
+        <input style="margin-bottom: -5px" type="checkbox" id="auth" {{ $data['authorization'] == 'auth' ? 'checked' : ''}}>
+        <label for="auth">
+            Tiene mi autorización para participar en la actividad programada 
+            y autorizo a la toma y difusión de imágenes de este día en la página web 
+            y/o RRSS del centro.
+        </label>
+    </div>
+    
+    <div style="margin-top: 10px">
+        <input style="margin-bottom: -5px" type="checkbox" id="notAuth" {{ $data['authorization'] == 'notAuth' ? 'checked' : ''}}>
+        <label for="notAuth">
+            No va a participar en la actividad programada.
+        </label>
+    </div>
+</div>
+
+<div style="margin-top: 30px">
+    Murcia, a <b>{{ $data['day'] }}</b> del <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
+</div>
+
+<div style="margin-top: 30px;">
+    Firma del padre, madre o tutor
+</div>
+
+<div style="margin-top: 50px">
+    Firmado por:_____________________________________________con DNI: <b>{{ $data['dni'] }}</b>
+</div>
 
 <x-footer />
 
 <style>
-    header {
-        margin: 0
-        position: fixed;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
-
-    footer {
-        position: fixed;
-        left: 0px;
-        bottom: -50px;
-        right: 0px;
-        height: 40px;
-        border-top: 1px solid #383232;
-    }
-
-    footer .page:after {
-        content: counter(page);
-    }
-
-    footer table {
+    h1 {
+        text-align: center;
         width: 100%;
     }
 
-    footer td {
-        text-align: center;
-        font-size: 10px;
+    table {
+        width: 100%
     }
 
-    footer span {
-        color: blue;
+    td {
+        padding: 8px;
     }
 
-    ul li {
-        display: inline;
+    td span {
+        overflow-wrap: break-word;
     }
 </style>
