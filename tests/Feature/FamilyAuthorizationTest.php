@@ -137,12 +137,36 @@ class FamilyAuthorizationTest extends TestCase
     }
 
     /** @test */
+    function the_execution_date_must_have_a_valid_format() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from(route('authFamForm'))
+            ->post(route('generarPDF'), [
+                'execution_date' => 'fecha-inválida',
+            ])
+            ->assertSessionHasErrors('execution_date')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
     function the_departure_time_is_required() {
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
             ->post(route('generarPDF'), [
                 'departure_time' => null,
+            ])
+            ->assertSessionHasErrors('departure_time')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_departure_time_must_have_a_valid_format() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from(route('authFamForm'))
+            ->post(route('generarPDF'), [
+                'departure_time' => 'hora-inválida',
             ])
             ->assertSessionHasErrors('departure_time')
             ->assertRedirect(route('authFamForm'));
@@ -167,6 +191,18 @@ class FamilyAuthorizationTest extends TestCase
         $this->from(route('authFamForm'))
             ->post(route('generarPDF'), [
                 'deadline' => null,
+            ])
+            ->assertSessionHasErrors('deadline')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_deadline_must_have_a_valid_format() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from(route('authFamForm'))
+            ->post(route('generarPDF'), [
+                'deadline' => 'fecha-invalida',
             ])
             ->assertSessionHasErrors('deadline')
             ->assertRedirect(route('authFamForm'));
