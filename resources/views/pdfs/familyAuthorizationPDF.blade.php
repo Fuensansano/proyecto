@@ -76,7 +76,7 @@
 </div>
 
 <div style="margin-top: 30px">
-    Murcia, a <b>{{ $data['day'] }}</b> del <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
+    Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
 </div>
 
 <div style="margin-top: 30px;">
