@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'form1' => 'Faltas de asistencia',
-    'form2' => 'Faltas de asistencia 2',
+    'form1' => 'Actividad extraescolar',
+    'form2' => 'Autorización familiar',
 ];
