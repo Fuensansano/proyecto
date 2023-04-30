@@ -79,7 +79,7 @@
     Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
 </div>
 
-<div style="margin-top: 30px;">
+<div id="texto-firma" style="margin-top: 30px;">
     Firma del padre, madre o tutor
 </div>
 
@@ -105,5 +105,9 @@
 
     td span {
         overflow-wrap: break-word;
+    }
+
+    #texto-firma {
+        text-align: center;
     }
 </style>
