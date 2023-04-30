@@ -16,7 +16,8 @@ class FamilyAuthorization extends Component
         return view('livewire.familyAuthorization');
     }
 
-    public function generatePDF(FamilyAuthorizationRequest $request) {
+    public function generatePDF(FamilyAuthorizationRequest $request)
+    {
         date_default_timezone_set('Europe/Madrid');
         
         $fecha_actual = getdate();
