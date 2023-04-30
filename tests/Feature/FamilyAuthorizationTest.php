@@ -8,6 +8,20 @@ use Tests\TestCase;
 
 class FamilyAuthorizationTest extends TestCase
 {
+    protected $defaultData = [
+        'activity' => 'Excursion a AquaNatura',
+        'organizer' => 'Adrián Marín Chorro',
+        'execution_date' => '2023-06-30',
+        'departure_time' => '08:00',
+        'goals' => 'Pasarlo muy bien',
+        'deadline' => '2023-05-15',
+        'parents' => 'Fuensanta Sansano',
+        'student' => 'Tomás Raigal',
+        'course' => '2º de DAW',
+        'authorization' => 'auth',
+        'dni' => '12345678A',
+    ];
+
     /** @test */
     function the_activity_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
@@ -223,19 +237,9 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
-                'activity' => 'actividad',
-                'organizer' => 'organizador',
-                'execution_date' => '2023-04-30',
-                'departure_time' => '08:00',
-                'goals' => 'Objetivos',
-                'deadline' => '2023-04-30',
-                'parents' => 'Padres',
-                'student' => 'Alumno',
-                'course' => 'Curso',
-                'authorization' => 'auth',
+            ->post(route('generarPDF'), $this->getValidData([
                 'dni' => '111A',
-            ])
+            ]))
             ->assertSessionHasErrors('dni')
             ->assertRedirect(route('authFamForm'));
     }
