@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class AutorizacionFamiliarTest extends TestCase
+class FamilyAuthorizationTest extends TestCase
 {
     /** @test */
     function the_activity_field_exists_in_the_autorizacion_familiar_form_page() {
@@ -77,6 +77,13 @@ class AutorizacionFamiliarTest extends TestCase
             ->assertStatus(200)
             ->assertSee('Tiene mi autorización para participar en la actividad programada y autorizo a la toma y difusión de imágenes de este día en la página web y/o RRSS del centro.')
             ->assertSee('No va a participar en la actividad programada.');
+    }
+
+    /** @test */
+    function the_dni_field_exists_in_the_autorizacion_familiar_form_page() {
+        $this->get(route('authFamForm'))
+            ->assertStatus(200)
+            ->assertSee('DNI PADRE/MADRE/TUTOR');
     }
 
     /** @test */
@@ -206,6 +213,28 @@ class AutorizacionFamiliarTest extends TestCase
         $this->from(route('authFamForm'))
             ->post(route('generarPDF'), [
                 'dni' => null,
+            ])
+            ->assertSessionHasErrors('dni')
+            ->assertRedirect(route('authFamForm'));
+    }
+
+    /** @test */
+    function the_dni_must_have_a_valid_format() {
+        /* $this->withExceptionHandling(); */
+
+        $this->from(route('authFamForm'))
+            ->post(route('generarPDF'), [
+                'activity' => 'actividad',
+                'organizer' => 'organizador',
+                'execution_date' => '2023-04-30',
+                'departure_time' => '08:00',
+                'goals' => 'Objetivos',
+                'deadline' => '2023-04-30',
+                'parents' => 'Padres',
+                'student' => 'Alumno',
+                'course' => 'Curso',
+                'authorization' => 'auth',
+                'dni' => '111A',
             ])
             ->assertSessionHasErrors('dni')
             ->assertRedirect(route('authFamForm'));
