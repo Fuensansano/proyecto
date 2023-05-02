@@ -8,20 +8,6 @@ use Tests\TestCase;
 
 class FamilyAuthorizationTest extends TestCase
 {
-    protected $defaultData = [
-        'activity' => 'Excursion a AquaNatura',
-        'organizer' => 'Adrián Marín Chorro',
-        'execution_date' => '2023-06-30',
-        'departure_time' => '08:00',
-        'goals' => 'Pasarlo muy bien',
-        'deadline' => '2023-05-15',
-        'parents' => 'Fuensanta Sansano',
-        'student' => 'Tomás Raigal',
-        'course' => '2º de DAW',
-        'authorization' => 'auth',
-        'dni' => '12345678A',
-    ];
-
     /** @test */
     function the_activity_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
