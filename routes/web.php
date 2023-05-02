@@ -32,7 +32,7 @@ Route::get('/familyAuthorization', function () {
 Route::post('/extraescolaractivity',[ExtraescolarActivity::class, 'store']);
 
 Route::post('/familyAuthorization', [FamilyAuthorization::class, 'generatePDF'])
-    ->name('generarPDF');
+    ->name('generatePDF');
 
 /* Route::get('/pdf', [PDFController::class, 'generatePDF']);
  */

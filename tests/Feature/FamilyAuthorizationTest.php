@@ -91,7 +91,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'activity' => null,
             ])
             ->assertSessionHasErrors(['activity' => 'La actividad es obligatoria']);
@@ -102,7 +102,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'organizer' => null,
             ])
             ->assertSessionHasErrors(['organizer' => 'El nombre del organizador es obligatorio']);
@@ -113,7 +113,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'execution_date' => null,
             ])
             ->assertSessionHasErrors(['execution_date' => 'La fecha de la actividad es obligatoria']);
@@ -124,7 +124,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'execution_date' => 'fecha-inválida',
             ])
             ->assertSessionHasErrors(['execution_date' => 'La fecha de la actividad debe tener un formato válido']);
@@ -135,7 +135,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'departure_time' => null,
             ])
             ->assertSessionHasErrors(['departure_time' => 'La hora de salida es obligatoria']);
@@ -146,7 +146,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'departure_time' => 'hora-inválida',
             ])
             ->assertSessionHasErrors(['departure_time' => 'La hora debe tener un formato válido']);
@@ -157,7 +157,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'goals' => null,
             ])
             ->assertSessionHasErrors(['goals' => 'Los objetivos son obligatorios']);
@@ -168,7 +168,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'deadline' => null,
             ])
             ->assertSessionHasErrors(['deadline' => 'La fecha de entrega de la hoja es obligatoria']);
@@ -179,7 +179,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'deadline' => 'fecha-invalida',
             ])
             ->assertSessionHasErrors(['deadline' => 'La fecha de entrega de la hoja debe tener un formato válido']);
@@ -190,7 +190,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'parents' => null,
             ])
             ->assertSessionHasErrors(['parents' => 'El nombre del padre/madre/tutor es obligatorio']);
@@ -201,7 +201,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'student' => null,
             ])
             ->assertSessionHasErrors(['student' => 'El nombre del alumno es obligatorio']);
@@ -212,7 +212,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'course' => null,
             ])
             ->assertSessionHasErrors(['course' => 'El curso del alumno es obligatorio']);
@@ -223,7 +223,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'authorization' => null,
             ])
             ->assertSessionHasErrors(['authorization' => 'La autorización es obligatoria']);
@@ -234,7 +234,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'dni' => null,
             ])
             ->assertSessionHasErrors(['dni' => 'El DNI del padre/madre/tutor es obligatorio']);
@@ -245,7 +245,7 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), [
+            ->post(route('generatePDF'), [
                 'dni' => '111A',
             ])
             ->assertSessionHasErrors(['dni' => 'El DNI debe tener un formato válido']);
