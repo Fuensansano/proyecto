@@ -5,7 +5,7 @@
             @csrf
             <div class="card mt-5">
                 <h1 class="text-primary">AUTORIZACIÓN FAMILIAR</h1>
-                <div class="card-body" style="display: flex; flex-direction: column">
+                <div class="card-body" class="flex-column">
                     <div class="row row-cols-2">
                         <div class="col">
                             <div class="form-floating mb-3">
@@ -285,5 +285,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column
     }
 </style>
