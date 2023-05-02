@@ -94,8 +94,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'activity' => null,
             ])
-            ->assertSessionHasErrors('activity')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['activity' => 'La actividad es obligatoria']);
     }
 
     /** @test */
@@ -106,8 +105,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'organizer' => null,
             ])
-            ->assertSessionHasErrors('organizer')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['organizer' => 'El nombre del organizador es obligatorio']);
     }
 
     /** @test */
@@ -118,8 +116,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'execution_date' => null,
             ])
-            ->assertSessionHasErrors('execution_date')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['execution_date' => 'La fecha de la actividad es obligatoria']);
     }
 
     /** @test */
@@ -130,8 +127,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'execution_date' => 'fecha-inválida',
             ])
-            ->assertSessionHasErrors('execution_date')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['execution_date' => 'La fecha de la actividad debe tener un formato válido']);
     }
 
     /** @test */
@@ -142,8 +138,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'departure_time' => null,
             ])
-            ->assertSessionHasErrors('departure_time')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['departure_time' => 'La hora de salida es obligatoria']);
     }
 
     /** @test */
@@ -154,8 +149,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'departure_time' => 'hora-inválida',
             ])
-            ->assertSessionHasErrors('departure_time')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['departure_time' => 'La hora debe tener un formato válido']);
     }
 
     /** @test */
@@ -166,8 +160,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'goals' => null,
             ])
-            ->assertSessionHasErrors('goals')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['goals' => 'Los objetivos son obligatorios']);
     }
 
     /** @test */
@@ -178,8 +171,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'deadline' => null,
             ])
-            ->assertSessionHasErrors('deadline')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['deadline' => 'La fecha de entrega de la hoja es obligatoria']);
     }
 
     /** @test */
@@ -190,7 +182,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'deadline' => 'fecha-invalida',
             ])
-            ->assertSessionHasErrors('deadline');
+            ->assertSessionHasErrors(['deadline' => 'La fecha de entrega de la hoja debe tener un formato válido']);
     }
 
     /** @test */
@@ -201,8 +193,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'parents' => null,
             ])
-            ->assertSessionHasErrors('parents')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['parents' => 'El nombre del padre/madre/tutor es obligatorio']);
     }
 
     /** @test */
@@ -213,8 +204,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'student' => null,
             ])
-            ->assertSessionHasErrors('student')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['student' => 'El nombre del alumno es obligatorio']);
     }
 
     /** @test */
@@ -225,8 +215,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'course' => null,
             ])
-            ->assertSessionHasErrors('course')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['course' => 'El curso del alumno es obligatorio']);
     }
 
     /** @test */
@@ -237,8 +226,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'authorization' => null,
             ])
-            ->assertSessionHasErrors('authorization')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['authorization' => 'La autorización es obligatoria']);
     }
 
     /** @test */
@@ -249,8 +237,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'dni' => null,
             ])
-            ->assertSessionHasErrors('dni')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['dni' => 'El DNI del padre/madre/tutor es obligatorio']);
     }
 
     /** @test */
@@ -261,7 +248,6 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'dni' => '111A',
             ])
-            ->assertSessionHasErrors('dni')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors(['dni' => 'El DNI debe tener un formato válido']);
     }
 }
