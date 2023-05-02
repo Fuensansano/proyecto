@@ -1,4 +1,4 @@
-<button type="button" onclick="reset()" class="button-arounder-cancelar">
+<button type="button" class="button-arounder-cancelar">
     CANCELAR
 </button>
 

@@ -93,6 +93,7 @@
     h1 {
         text-align: center;
         width: 100%;
+        color: dodgerblue;
     }
 
     table {
