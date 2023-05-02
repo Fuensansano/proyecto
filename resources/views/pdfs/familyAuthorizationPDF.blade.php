@@ -83,7 +83,7 @@
     Firma del padre, madre o tutor
 </div>
 
-<div style="margin-top: 60px">
+<div style="margin-top: 60px; margin-bottom: 17rem;">
     Firmado por:_____________________________________________con DNI: <b>{{ $data['dni'] }}</b>
 </div>
 
