@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<div style="margin-top: 30px; ">
+<div style="margin-top: 30px; text-align: right">
     Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
 </div>
 
@@ -83,7 +83,7 @@
     Firma del padre, madre o tutor
 </div>
 
-<div style="margin-top: 60px; margin-bottom: 17rem;">
+<div style="margin-top: 110px; margin-bottom: 220px;">
     Firmado por:_____________________________________________con DNI: <b>{{ $data['dni'] }}</b>
 </div>
 
