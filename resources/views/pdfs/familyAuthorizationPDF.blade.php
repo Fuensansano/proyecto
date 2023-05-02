@@ -1,6 +1,6 @@
 <x-header />
 
-<table style="margin-top: 15%">
+<table>
     <tbody>
         <tr>
             <h1>AUTORIZACIÓN FAMILIAR</h1>
@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<div style="margin-top: 30px">
+<div style="margin-top: 30px; ">
     Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
 </div>
 
@@ -83,7 +83,7 @@
     Firma del padre, madre o tutor
 </div>
 
-<div style="margin-top: 50px">
+<div style="margin-top: 60px">
     Firmado por:_____________________________________________con DNI: <b>{{ $data['dni'] }}</b>
 </div>
 

@@ -33,14 +33,11 @@
 <style>
     #footer {
         position: fixed;
-        bottom: -5%;
-        left: 0;
         border-top: 1px solid black;
         width: 100%;
     }
 
     .footer-li {
-        width: 100%;
         color: blue;
         font-size: 12px;
     }

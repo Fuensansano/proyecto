@@ -1,26 +1,13 @@
 <div class="container-fluid search-container">
     <h1>Encuentre el formulario que desee</h1>
-    <select wire:model="selectedOption" id="selectApp" class="form-select w-100 p-3" aria-label="formulario a buscar">
+    <select class="form-select w-100 p-3" aria-label="formulario a buscar">
         @foreach(config('typeOfForms') as $key => $form)
-
-            <?php
-                $slug = strtolower($form);
-                $slug = str_replace(' ', '-', $slug);
-                $acentos = ['á', 'é', 'í', 'ó', 'ú'];
-                $sinAcentos = ['a', 'e', 'i', 'o', 'u'];
-                $slug = str_replace($acentos, $sinAcentos, $slug);
-            ?>
-
-            <option value="{{ $slug }}">
+            <option>
                 {{ $form }}
             </option>
 
         @endforeach
     </select>
-
-    @if($selectedOption)
-        <button wire:click="goToSelectedOption">Ir al formulario {{ $selectedOption }}</button>
-    @endif
 </div>
 
 <style>

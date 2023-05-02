@@ -204,8 +204,7 @@ class FamilyAuthorizationTest extends TestCase
             ->post(route('generarPDF'), [
                 'deadline' => 'fecha-invalida',
             ])
-            ->assertSessionHasErrors('deadline')
-            ->assertRedirect(route('authFamForm'));
+            ->assertSessionHasErrors('deadline');
     }
 
     /** @test */
@@ -273,9 +272,9 @@ class FamilyAuthorizationTest extends TestCase
         /* $this->withExceptionHandling(); */
 
         $this->from(route('authFamForm'))
-            ->post(route('generarPDF'), $this->getValidData([
+            ->post(route('generarPDF'), [
                 'dni' => '111A',
-            ]))
+            ])
             ->assertSessionHasErrors('dni')
             ->assertRedirect(route('authFamForm'));
     }

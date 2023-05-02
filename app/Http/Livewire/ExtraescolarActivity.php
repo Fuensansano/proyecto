@@ -41,6 +41,6 @@ class ExtraescolarActivity extends Component
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
 
-        return $dompdf->stream('ejemplo.pdf');
+        return $dompdf->stream('ejemplo.pdf', array('Attachment' => 0));
     }
 }
