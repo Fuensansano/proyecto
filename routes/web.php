@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PDFController;
 
-use App\Http\Livewire\{ExtraescolarActivity, FamilyAuthorization};
+use App\Http\Livewire\{ExtraescolarActivity, FamilyAuthorization, ProofMissingTeacher};
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +29,16 @@ Route::get('/familyAuthorization', function () {
     return view('livewire/familyAuthorization');
 })->name('authFamForm');
 
+Route::get('/proofMissingTeacher', function () {
+    return view('livewire/proofMissingTeacher');
+});
+
 Route::post('/extraescolaractivity',[ExtraescolarActivity::class, 'store']);
 
 Route::post('/familyAuthorization', [FamilyAuthorization::class, 'generatePDF'])
     ->name('generatePDF');
+
+Route::post('/proofMissingTeacher', [ProofMissingTeacher::class]);
 
 /* Route::get('/pdf', [PDFController::class, 'generatePDF']);
  */
