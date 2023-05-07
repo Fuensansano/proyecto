@@ -28,6 +28,7 @@
                         </div>
                     @endif
                 </div>
+
                 <div class="input-group">
                     <label for="department">Departamento</label>
                     <input type="text" name="department" id="department" class="@error('department') is-invalid @enderror"/>
@@ -37,6 +38,17 @@
                         </div>
                     @endif
                 </div>
+
+                <div class="input-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" name="dni" id="dni" class="@error('dni') is-invalid @enderror"/>
+                    @if($errors->get('dni'))
+                        <div class="text-danger mb-3 mt-0">
+                            {{ $errors->get('dni')[0] }}
+                        </div>
+                    @endif
+                </div>
+
                 <div class="">
                     <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
                 </div>
@@ -44,13 +56,26 @@
     
             <div class="form-step">
                 <div class="input-group">
-                    <label for="phone">Phone</label>
-                    <input type="text" name="phone" id="phone" />
+                    <label for="missingDay">Día faltado</label>
+                    <input type="date" name="missingDay" id="missingDay" class="@error('missingDay') is-invalid @enderror"/>
+                    @if($errors->get('missingDay'))
+                        <div class="text-danger mb-3 mt-0">
+                            {{ $errors->get('missingDay')[0] }}
+                        </div>
+                    @endif
                 </div>
+
+                <div class="row row-cols-2 mb-4">
+                    <div class="col">
+                        <!-- Mi idea es poner en la mis fila (separado en 2 columnas) los radiobuttons y lo de seleccionar la parte de la jornada, si es necesario -->
+                    </div>
+                </div>
+
                 <div class="input-group">
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" />
                 </div>
+
                 <div class="btns-group">
                     <a href="#" class="btn btn-prev btn-width">Previous</a>
                     <a href="#" class="btn btn-next btn-width">Next</a>
