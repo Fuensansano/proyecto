@@ -151,17 +151,57 @@
 
 					<div class="col margin-radios">
 						<div>
-							<input type="radio" name="option2" value="yes2" id="yes2"/>
+							<input type="radio" name="option2" value="yes2" id="yes2" class="@error('option2') is-invalid @enderror"/>
 							<label for="yes2" class="radio-label">He faltado la jornada completa</label>
+							@if($errors->get('option2'))
+								<div class="text-danger mb-3 mt-0">
+									{{ $errors->get('option2')[0] }}
+								</div>
+							@endif
 						</div>
 						<div>
-							<input type="radio" name="option2" value="no2" id="no2"/>
+							<input type="radio" name="option2" value="no2" id="no2" class="@error('option2') is-invalid @enderror"/>
 							<label for="no2" class="radio-label">No he faltado la jornada completa</label>
+							@if($errors->get('option2'))
+								<div class="text-danger mb-3 mt-0">
+									{{ $errors->get('option2')[0] }}
+								</div>
+							@endif
 						</div>
 					</div>
 
 					<div class="col">
-
+						<div class="row row-cols-2 mb-4">
+							<div class="col">
+								<label for="midJourneyFrom2" class="label @error('midJourneyFrom2') is-invalid @enderror">Desde las </label>
+								<input
+									type="time"
+									name="midJourneyFrom2"
+									id="midJourneyFrom2"
+									class="input"
+								/>
+								@if($errors->get('midJourneyFrom2'))
+									<div class="text-danger mb-3 mt-0">
+										{{ $errors->get('midJourneyFrom2')[0] }}
+									</div>
+								@endif
+							</div>
+		
+							<div class="col">
+								<label for="midJourneyTo2" class="label @error('midJourneyTo2') is-invalid @enderror">a las </label>
+								<input
+									type="time"
+									name="midJourneyTo2"
+									id="midJourneyTo2"
+									class="input"
+								/>
+								@if($errors->get('midJourneyTo2'))
+									<div class="text-danger mb-3 mt-0">
+										{{ $errors->get('midJourneyTo2')[0] }}
+									</div>
+								@endif
+							</div>
+						</div>
 					</div>
 				</div>
 
