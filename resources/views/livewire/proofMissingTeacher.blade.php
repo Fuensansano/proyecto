@@ -20,8 +20,8 @@
             <!-- Steps -->
             <div class="form-step form-step-active">
                 <div class="input-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" name="name" id="name" class="@error('name') is-invalid @enderror"/>
+                    <label for="name" class="label">Nombre</label>
+                    <input type="text" name="name" id="name" class="input @error('name') is-invalid @enderror"/>
                     @if($errors->get('name'))
                         <div class="text-danger mb-3 mt-0">
                             {{ $errors->get('name')[0] }}
@@ -30,8 +30,8 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="department">Departamento</label>
-                    <input type="text" name="department" id="department" class="@error('department') is-invalid @enderror"/>
+                    <label for="department" class="label">Departamento</label>
+                    <input type="text" name="department" id="department" class="input @error('department') is-invalid @enderror"/>
                     @if($errors->get('department'))
                         <div class="text-danger mb-3 mt-0">
                             {{ $errors->get('department')[0] }}
@@ -40,8 +40,8 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="dni">DNI</label>
-                    <input type="text" name="dni" id="dni" class="@error('dni') is-invalid @enderror"/>
+                    <label for="dni" class="label">DNI</label>
+                    <input type="text" name="dni" id="dni" class="input @error('dni') is-invalid @enderror"/>
                     @if($errors->get('dni'))
                         <div class="text-danger mb-3 mt-0">
                             {{ $errors->get('dni')[0] }}
@@ -55,26 +55,86 @@
             </div>
     
             <div class="form-step">
-                <div class="input-group">
-                    <label for="missingDay">Día faltado</label>
-                    <input type="date" name="missingDay" id="missingDay" class="@error('missingDay') is-invalid @enderror"/>
-                    @if($errors->get('missingDay'))
-                        <div class="text-danger mb-3 mt-0">
-                            {{ $errors->get('missingDay')[0] }}
-                        </div>
-                    @endif
-                </div>
+				<div class="row">
+					<div class="col">
+						<div>
+							<label for="missingDay" class="label">Día faltado</label>
+							<input type="date" name="missingDay" id="missingDay" class="input @error('missingDay') is-invalid @enderror"/>
+							@if($errors->get('missingDay'))
+								<div class="text-danger mb-3 mt-0">
+									{{ $errors->get('missingDay')[0] }}
+								</div>
+							@endif
+						</div>
+					</div>
 
-                <div class="row row-cols-2 mb-4">
-                    <div class="col">
-                        <!-- Mi idea es poner en la mis fila (separado en 2 columnas) los radiobuttons y lo de seleccionar la parte de la jornada, si es necesario -->
-                    </div>
-                </div>
+					<div class="col margin-radios">
+						<div>
+							<input type="radio" name="option1" value="yes1" id="yes1"/>
+							<label for="yes" class="radio-label">He faltado la jornada completa</label>
+						</div>
+						<div>
+							<input type="radio" name="option1" value="no1" id="no1"/>
+							<label for="no" class="radio-label">No he faltado la jornada completa</label>
+						</div>
+					</div>
 
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" />
-                </div>
+					<div class="col">
+						<div class="row row-cols-2 mb-4">
+							<div class="col">
+								<div>
+									<label for="mid-journey-from" class="label">Desde las</label>
+									<input
+										type="time"
+										name="mid-journey-from"
+										id="mid-journey-from"
+										class="input"
+									/>
+								</div>
+							</div>
+		
+							<div class="col">
+								<div>
+									<label for="mid-journey-to" class="label">a las</label>
+									<input
+										type="time"
+										name="mid-journey-to"
+										id="mid-journey-to"
+										class="input"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+
+					</div>
+
+					<div class="col">
+
+					</div>
+
+					<div class="col">
+
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+
+					</div>
+
+					<div class="col">
+
+					</div>
+
+					<div class="col">
+
+					</div>
+				</div>
 
                 <div class="btns-group">
                     <a href="#" class="btn btn-prev btn-width">Previous</a>
@@ -84,12 +144,12 @@
     
             <div class="form-step">
                 <div class="input-group">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" name="dob" id="dob" />
+                    <label for="dob" class="label">Date of Birth</label>
+                    <input type="date" name="dob" id="dob" class="input"/>
                 </div>
                 <div class="input-group">
-                    <label for="ID">National ID</label>
-                    <input type="number" name="ID" id="ID" />
+                    <label for="ID" class="label">National ID</label>
+                    <input type="number" name="ID" id="ID" class="input"/>
                 </div>
                 <div class="btns-group">
                     <a href="#" class="btn btn-prev btn-width">Previous</a>
@@ -99,16 +159,16 @@
     
             <div class="form-step">
                 <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" />
+                    <label for="password" class="label">Password</label>
+                    <input type="password" name="password" id="password" class="input"/>
                 </div>
                 <div class="input-group">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" name="confirmPassword" id="confirmPassword" />
+                    <label for="confirmPassword" class="label">Confirm Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" class="input"/>
                 </div>
                 <div class="btns-group">
                     <a href="#" class="btn btn-prev btn-width">Previous</a>
-                    <input type="submit" value="Submit" class="btn btn-submit-width" />
+                    <input type="submit" value="Submit" class="btn btn-submit-width"/>
                 </div>
             </div>
         </form>
@@ -123,29 +183,34 @@
 }
 
 body {
-  font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  place-items: center;
+	font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	place-items: center;
 }
 
 /* Global Stylings */
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 18px;
-}
-
-input {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-}
-
 h1 {
-    font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif;
 }
+
+.label {
+	display: block;
+	margin-bottom: 0.5rem;
+	font-size: 18px;
+}
+
+.input {
+	display: block;
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #ccc;
+	border-radius: 0.25rem;
+}
+
+.radio-label {
+	font-size: 18px;
+}
+
 
 .container {
     max-width: 90%;
@@ -153,128 +218,133 @@ h1 {
 }
 
 .width-50 {
-  width: 50%;
+  	width: 50%;
 }
 
 .ml-auto {
-  margin-left: auto;
+  	margin-left: auto;
 }
 
 .text-center {
-  text-align: center;
+  	text-align: center;
+}
+
+.margin-radios {
+	margin-top: 33px;
+	margin-left: 100px;
 }
 
 /* Progressbar */
 .progressbar {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  counter-reset: step;
-  margin: 2rem 0 4rem;
+  	position: relative;
+  	display: flex;
+  	justify-content: space-between;
+  	counter-reset: step;
+  	margin: 2rem 0 4rem;
 }
 
 .progressbar::before,
 .progress {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 4px;
-  width: 100%;
-  background-color: #dcdcdc;
-  z-index: -1;
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 4px;
+	width: 100%;
+	background-color: #dcdcdc;
+	z-index: -1;
 }
 
 .progress {
-  background-color: var(--primary-color);
-  width: 0%;
-  transition: 0.3s;
+	background-color: var(--primary-color);
+	width: 0%;
+	transition: 0.3s;
 }
 
 .progress-step {
-  width: 2.1875rem;
-  height: 2.1875rem;
-  background-color: #dcdcdc;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	width: 2.1875rem;
+	height: 2.1875rem;
+	background-color: #dcdcdc;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .progress-step::before {
-  counter-increment: step;
-  content: counter(step);
+	counter-increment: step;
+	content: counter(step);
 }
 
 .progress-step::after {
-  content: attr(data-title);
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  font-size: 0.85rem;
-  color: #666;
+	content: attr(data-title);
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	font-size: 0.85rem;
+	color: #666;
 }
 
 .progress-step-active {
-  background-color: var(--primary-color);
-  color: #f3f3f3;
+	background-color: var(--primary-color);
+	color: #f3f3f3;
 }
 
 /* Form */
 .form {
-  max-width: 90%;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  border-radius: 0.35rem;
-  padding: 1.5rem;
+	max-width: 90%;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	border-radius: 0.35rem;
+	padding: 1.5rem;
 }
 
 .form-step {
-  display: none;
-  transform-origin: top;
-  animation: animate 0.5s;
+	display: none;
+	transform-origin: top;
+	animation: animate 0.5s;
 }
 
 .form-step-active {
-  display: block;
+  	display: block;
 }
 
 .input-group {
-  margin: 2rem 0;
+  	margin: 2rem 0;
 }
 
 @keyframes animate {
-  from {
-    transform: scale(1, 0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1, 1);
-    opacity: 1;
-  }
+	from {
+		transform: scale(1, 0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1, 1);
+		opacity: 1;
+	}
 }
 
 /* Button */
 .btns-group {
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
+	/* display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.5rem; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5rem;
 }
 
 .btn {
-  padding: 0.75rem;
-  display: block;
-  text-decoration: none;
-  background-color: var(--primary-color);
-  color: #f3f3f3;
-  text-align: center;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: 0.3s;
-  max-width: 15%;
+	padding: 0.75rem;
+	display: block;
+	text-decoration: none;
+	background-color: var(--primary-color);
+	color: #f3f3f3;
+	text-align: center;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: 0.3s;
+	max-width: 15%;
 }
 
 .btn-width {
@@ -286,56 +356,69 @@ h1 {
 }
 
 .btn:hover {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  	box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
 }
 </style>
 
 <script>
-const prevBtns = document.querySelectorAll(".btn-prev");
-const nextBtns = document.querySelectorAll(".btn-next");
-const progress = document.getElementById("progress");
-const formSteps = document.querySelectorAll(".form-step");
-const progressSteps = document.querySelectorAll(".progress-step");
+	const prevBtns = document.querySelectorAll(".btn-prev");
+	const nextBtns = document.querySelectorAll(".btn-next");
+	const progress = document.getElementById("progress");
+	const formSteps = document.querySelectorAll(".form-step");
+	const progressSteps = document.querySelectorAll(".progress-step");
 
-let formStepsNum = 0;
+	let formStepsNum = 0;
 
-nextBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    formStepsNum++;
-    updateFormSteps();
-    updateProgressbar();
-  });
-});
+	/* const optionYes = document.getElementById('yes'); */
+	const midJourneyFrom = document.getElementById('mid-journey-from');
+	const midJourneyTo = document.getElementById('mid-journey-to');
 
-prevBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    formStepsNum--;
-    updateFormSteps();
-    updateProgressbar();
-  });
-});
+	document.getElementById('yes').addEventListener('click', function(e) {
+		midJourneyFrom.disabled = true;
+		midJourneyTo.disabled = true;
+	});
 
-function updateFormSteps() {
-  formSteps.forEach((formStep) => {
-    formStep.classList.contains("form-step-active") &&
-      formStep.classList.remove("form-step-active");
-  });
+	document.getElementById('no').addEventListener('click', function(e) {
+		midJourneyFrom.disabled = false;
+		midJourneyTo.disabled = false;
+	});	
 
-  formSteps[formStepsNum].classList.add("form-step-active");
-}
+	nextBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			formStepsNum++;
+			updateFormSteps();
+			updateProgressbar();
+		});
+	});
 
-function updateProgressbar() {
-  progressSteps.forEach((progressStep, idx) => {
-    if (idx < formStepsNum + 1) {
-      progressStep.classList.add("progress-step-active");
-    } else {
-      progressStep.classList.remove("progress-step-active");
-    }
-  });
+	prevBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			formStepsNum--;
+			updateFormSteps();
+			updateProgressbar();
+		});
+	});
 
-  const progressActive = document.querySelectorAll(".progress-step-active");
+	function updateFormSteps() {
+		formSteps.forEach((formStep) => {
+			formStep.classList.contains("form-step-active") &&
+			formStep.classList.remove("form-step-active");
+		});
 
-  progress.style.width =
-    ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
-}
+		formSteps[formStepsNum].classList.add("form-step-active");
+	}
+
+	function updateProgressbar() {
+		progressSteps.forEach((progressStep, idx) => {
+			if (idx < formStepsNum + 1) {
+				progressStep.classList.add("progress-step-active");
+			} else {
+				progressStep.classList.remove("progress-step-active");
+			}
+		});
+
+		const progressActive = document.querySelectorAll(".progress-step-active");
+
+		progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+	}
 </script>

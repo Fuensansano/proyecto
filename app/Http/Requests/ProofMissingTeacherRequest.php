@@ -13,7 +13,7 @@ class ProofMissingTeacherRequest extends FormRequest
             'department' => 'required|string', // Se puede añadir regla para que no sea un departamento inventado, que lo coja de un array
             'dni' => 'required|regex:/^[0-9]{8,8}[A-Za-z]$/',
             'missingDay' => 'required|date_format:Y-m-d',
-            'fullDay' => 'required',
+            'option1' => 'required',
         ];
     }
 
@@ -26,7 +26,7 @@ class ProofMissingTeacherRequest extends FormRequest
             'dni.regex' => 'El DNI tiene que tener un formato: XXXXXXXXA',
             'missingDay.required' => 'El día de falta es obligatorio',
             'missingDay.date_format' => 'El día de falta debe tener un formato válido',
-            'fullDay.required' => 'Debes seleccionar si es jornada completa o no'
+            'option1.required' => 'Es obligatorio elegir una opción de las dos',
         ];
     }
 }
