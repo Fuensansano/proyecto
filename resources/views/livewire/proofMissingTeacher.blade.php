@@ -20,7 +20,9 @@
             <!-- Steps -->
             <div class="form-step form-step-active">
                 <div class="input-group">
-                    <label for="name" class="label">Nombre</label>
+                    <label for="name" class="label">Nombre 
+						<span class="text-danger">*</span>
+					</label>
                     <input type="text" name="name" id="name" class="input @error('name') is-invalid @enderror"/>
                     @if($errors->get('name'))
                         <div class="text-danger mb-3 mt-0">
@@ -30,7 +32,9 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="department" class="label">Departamento</label>
+                    <label for="department" class="label">Departamento 
+						<span class="text-danger">*</span>
+					</label>
                     <input type="text" name="department" id="department" class="input @error('department') is-invalid @enderror"/>
                     @if($errors->get('department'))
                         <div class="text-danger mb-3 mt-0">
@@ -40,7 +44,9 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="dni" class="label">DNI</label>
+                    <label for="dni" class="label">DNI 
+						<span class="text-danger">*</span>
+					</label>
                     <input type="text" name="dni" id="dni" class="input @error('dni') is-invalid @enderror"/>
                     @if($errors->get('dni'))
                         <div class="text-danger mb-3 mt-0">
@@ -57,52 +63,76 @@
             <div class="form-step">
 				<div class="row">
 					<div class="col">
-						<div>
-							<label for="missingDay" class="label">Día faltado</label>
-							<input type="date" name="missingDay" id="missingDay" class="input @error('missingDay') is-invalid @enderror"/>
-							@if($errors->get('missingDay'))
-								<div class="text-danger mb-3 mt-0">
-									{{ $errors->get('missingDay')[0] }}
-								</div>
-							@endif
-						</div>
+						<label for="missingDay1" class="label">Día faltado 
+							<span class="text-danger">*</span>
+						</label>
+						<input type="date" name="missingDay1" id="missingDay1" class="input @error('missingDay1') is-invalid @enderror"/>
+						@if($errors->get('missingDay1'))
+							<div class="text-danger mb-3 mt-0">
+								{{ $errors->get('missingDay1')[0] }}
+							</div>
+						@endif
 					</div>
 
 					<div class="col margin-radios">
 						<div>
-							<input type="radio" name="option1" value="yes1" id="yes1"/>
-							<label for="yes" class="radio-label">He faltado la jornada completa</label>
+							<input type="radio" name="option1" value="yes1" id="yes1" class="@error('option1') is-invalid @enderror"/>
+							<label for="yes1" class="radio-label">He faltado la jornada completa 
+								<span class="text-danger">*</span>
+							</label>
+							@if($errors->get('option1'))
+								<div class="text-danger mb-3 mt-0">
+									{{ $errors->get('option1')[0] }}
+								</div>
+							@endif
 						</div>
 						<div>
-							<input type="radio" name="option1" value="no1" id="no1"/>
-							<label for="no" class="radio-label">No he faltado la jornada completa</label>
+							<input type="radio" name="option1" value="no1" id="no1" class="@error('option1') is-invalid @enderror"/>
+							<label for="no1" class="radio-label">No he faltado la jornada completa 
+								<span class="text-danger">*</span>
+							</label>
+							@if($errors->get('option1'))
+								<div class="text-danger mb-3 mt-0">
+									{{ $errors->get('option1')[0] }}
+								</div>
+							@endif
 						</div>
 					</div>
 
 					<div class="col">
 						<div class="row row-cols-2 mb-4">
 							<div class="col">
-								<div>
-									<label for="mid-journey-from" class="label">Desde las</label>
-									<input
-										type="time"
-										name="mid-journey-from"
-										id="mid-journey-from"
-										class="input"
-									/>
-								</div>
+								<label for="midJourneyFrom1" class="label @error('midJourneyFrom1') is-invalid @enderror">Desde las 
+									<span class="text-danger">*</span>
+								</label>
+								<input
+									type="time"
+									name="midJourneyFrom1"
+									id="midJourneyFrom1"
+									class="input"
+								/>
+								@if($errors->get('midJourneyFrom1'))
+									<div class="text-danger mb-3 mt-0">
+										{{ $errors->get('midJourneyFrom1')[0] }}
+									</div>
+								@endif
 							</div>
 		
 							<div class="col">
-								<div>
-									<label for="mid-journey-to" class="label">a las</label>
-									<input
-										type="time"
-										name="mid-journey-to"
-										id="mid-journey-to"
-										class="input"
-									/>
-								</div>
+								<label for="midJourneyTo1" class="label @error('midJourneyTo1') is-invalid @enderror">a las 
+									<span class="text-danger">*</span>
+								</label>
+								<input
+									type="time"
+									name="midJourneyTo1"
+									id="midJourneyTo1"
+									class="input"
+								/>
+								@if($errors->get('midJourneyTo1'))
+									<div class="text-danger mb-3 mt-0">
+										{{ $errors->get('midJourneyTo1')[0] }}
+									</div>
+								@endif
 							</div>
 						</div>
 					</div>
@@ -110,11 +140,24 @@
 
 				<div class="row">
 					<div class="col">
-
+						<label for="missingDay2" class="label">Día faltado</label>
+						<input type="date" name="missingDay2" id="missingDay2" class="input @error('missingDay2') is-invalid @enderror"/>
+						@if($errors->get('missingDay2'))
+							<div class="text-danger mb-3 mt-0">
+								{{ $errors->get('missingDay2')[0] }}
+							</div>
+						@endif
 					</div>
 
-					<div class="col">
-
+					<div class="col margin-radios">
+						<div>
+							<input type="radio" name="option2" value="yes2" id="yes2"/>
+							<label for="yes2" class="radio-label">He faltado la jornada completa</label>
+						</div>
+						<div>
+							<input type="radio" name="option2" value="no2" id="no2"/>
+							<label for="no2" class="radio-label">No he faltado la jornada completa</label>
+						</div>
 					</div>
 
 					<div class="col">
@@ -369,19 +412,18 @@ h1 {
 
 	let formStepsNum = 0;
 
-	/* const optionYes = document.getElementById('yes'); */
-	const midJourneyFrom = document.getElementById('mid-journey-from');
-	const midJourneyTo = document.getElementById('mid-journey-to');
+	const midJourneyFrom1 = document.getElementById('midJourneyFrom1');
+	const midJourneyTo1 = document.getElementById('midJourneyTo1');
 
-	document.getElementById('yes').addEventListener('click', function(e) {
-		midJourneyFrom.disabled = true;
-		midJourneyTo.disabled = true;
+	document.getElementById('yes1').addEventListener('click', (e) => {
+		midJourneyFrom1.disabled = true;
+		midJourneyTo1.disabled = true;
 	});
 
-	document.getElementById('no').addEventListener('click', function(e) {
-		midJourneyFrom.disabled = false;
-		midJourneyTo.disabled = false;
-	});	
+	document.getElementById('no1').addEventListener('click', (e) => {
+		midJourneyFrom1.disabled = false;
+		midJourneyTo1.disabled = false;
+	});
 
 	nextBtns.forEach((btn) => {
 		btn.addEventListener("click", () => {

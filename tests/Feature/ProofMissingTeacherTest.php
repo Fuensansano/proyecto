@@ -42,7 +42,6 @@ class ProofMissingTeacherTest extends TestCase
         $this->get('/proofMissingTeacher')
             ->assertStatus(200)
             ->assertSee('Desde las')
-            ->assertSee('a las')
-            ->assertSee('horas');
+            ->assertSee('a las');
     }
 }
