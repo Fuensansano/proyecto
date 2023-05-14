@@ -88,8 +88,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_activity_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'activity' => null,
@@ -99,8 +97,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_organizer_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'organizer' => null,
@@ -110,8 +106,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_execution_date_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'execution_date' => null,
@@ -121,8 +115,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_execution_date_must_have_a_valid_format() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'execution_date' => 'fecha-inválida',
@@ -132,8 +124,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_departure_time_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'departure_time' => null,
@@ -143,8 +133,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_departure_time_must_have_a_valid_format() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'departure_time' => 'hora-inválida',
@@ -154,8 +142,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_goals_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'goals' => null,
@@ -165,8 +151,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_deadline_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'deadline' => null,
@@ -176,8 +160,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_deadline_must_have_a_valid_format() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'deadline' => 'fecha-invalida',
@@ -187,8 +169,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_parents_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'parents' => null,
@@ -198,8 +178,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_student_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'student' => null,
@@ -209,8 +187,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_course_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'course' => null,
@@ -220,8 +196,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_authorization_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'authorization' => null,
@@ -231,8 +205,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_dni_is_required() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'dni' => null,
@@ -242,8 +214,6 @@ class FamilyAuthorizationTest extends TestCase
 
     /** @test */
     function the_dni_must_have_a_valid_format() {
-        /* $this->withExceptionHandling(); */
-
         $this->from(route('authFamForm'))
             ->post(route('generatePDF'), [
                 'dni' => '111A',
