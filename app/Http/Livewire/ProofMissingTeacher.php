@@ -22,10 +22,16 @@ class ProofMissingTeacher extends Component
             'name' => $request->name,
             'department' => $request->department,
             'dni' => $request->dni,
-            'missingDay1' => $request->missingDay,
-            'option1' => $request->option,
+
+            'missingDay1' => $request->missingDay1,
+            'option1' => $request->option1,
             'midJourneyFrom1' => $request->midJourneyFrom1,
             'midJourneyTo1' => $request->midJourneyTo1,
+
+            /* 'missingDay2' => $request->missingDay2,
+            'option2' => $request->option2,
+            'midJourneyFrom2' => $request->midJourneyFrom2,
+            'midJourneyTo2' => $request->midJourneyTo2, */
         ];
 
         $options = new Options();

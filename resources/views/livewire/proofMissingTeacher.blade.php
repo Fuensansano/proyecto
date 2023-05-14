@@ -207,15 +207,68 @@
 
 				<div class="row">
 					<div class="col">
+						<label for="missingDay3" class="label">Día faltado</label>
+						<input type="date" name="missingDay3" id="missingDay3" class="input @error('missingDay3') is-invalid @enderror"/>
+						@if($errors->get('missingDay3'))
+							<div class="text-danger mb-3 mt-0">
+								{{ $errors->get('missingDay3')[0] }}
+							</div>
+						@endif
+					</div>
 
+					<div class="col margin-radios">
+						<div>
+							<input type="radio" name="option3" value="yes3" id="yes3" class="@error('option3') is-invalid @enderror"/>
+							<label for="yes3" class="radio-label">He faltado la jornada completa</label>
+							@if($errors->get('option3'))
+								<div class="text-danger mb-3 mt-0">
+									{{ $errors->get('option3')[0] }}
+								</div>
+							@endif
+						</div>
+						<div>
+							<input type="radio" name="option3" value="no3" id="no3" class="@error('option3') is-invalid @enderror"/>
+							<label for="no3" class="radio-label">No he faltado la jornada completa</label>
+							@if($errors->get('option3'))
+								<div class="text-danger mb-3 mt-0">
+									{{ $errors->get('option3')[0] }}
+								</div>
+							@endif
+						</div>
 					</div>
 
 					<div class="col">
-
-					</div>
-
-					<div class="col">
-
+						<div class="row row-cols-2 mb-4">
+							<div class="col">
+								<label for="midJourneyFrom3" class="label @error('midJourneyFrom3') is-invalid @enderror">Desde las </label>
+								<input
+									type="time"
+									name="midJourneyFrom3"
+									id="midJourneyFrom3"
+									class="input"
+								/>
+								@if($errors->get('midJourneyFrom3'))
+									<div class="text-danger mb-3 mt-0">
+										{{ $errors->get('midJourneyFrom3')[0] }}
+									</div>
+								@endif
+							</div>
+		
+							<div class="col">
+								<label for="midJourneyTo3" class="label @error('midJourneyTo3') is-invalid @enderror">a las </label>
+								<input
+									type="time"
+									name="midJourneyTo3"
+									id="midJourneyTo3"
+									class="input"
+								/>
+								@if($errors->get('midJourneyTo3'))
+									<div class="text-danger mb-3 mt-0">
+										{{ $errors->get('midJourneyTo3')[0] }}
+									</div>
+								@endif
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -463,6 +516,32 @@ h1 {
 	document.getElementById('no1').addEventListener('click', (e) => {
 		midJourneyFrom1.disabled = false;
 		midJourneyTo1.disabled = false;
+	});
+
+	const midJourneyFrom2 = document.getElementById('midJourneyFrom2');
+	const midJourneyTo2 = document.getElementById('midJourneyTo2');
+
+	document.getElementById('yes2').addEventListener('click', (e) => {
+		midJourneyFrom2.disabled = true;
+		midJourneyTo2.disabled = true;
+	});
+
+	document.getElementById('no2').addEventListener('click', (e) => {
+		midJourneyFrom2.disabled = false;
+		midJourneyTo2.disabled = false;
+	});
+
+	const midJourneyFrom3 = document.getElementById('midJourneyFrom3');
+	const midJourneyTo3 = document.getElementById('midJourneyTo3');
+
+	document.getElementById('yes3').addEventListener('click', (e) => {
+		midJourneyFrom3.disabled = true;
+		midJourneyTo3.disabled = true;
+	});
+
+	document.getElementById('no3').addEventListener('click', (e) => {
+		midJourneyFrom3.disabled = false;
+		midJourneyTo3.disabled = false;
 	});
 
 	nextBtns.forEach((btn) => {

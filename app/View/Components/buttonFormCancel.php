@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class button-form-cancel extends Component
+class buttonFormCancel extends Component
 {
     /**
      * Create a new component instance.
