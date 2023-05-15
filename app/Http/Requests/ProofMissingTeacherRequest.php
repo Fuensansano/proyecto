@@ -16,8 +16,8 @@ class ProofMissingTeacherRequest extends FormRequest
 
             'missingDay1' => 'required|date_format:Y-m-d',
             'option1' => 'required',
-            'midJourneyFrom1' => 'sometimes|requiredIf:option1,no1|date_format:H:i',
-            'midJourneyTo1' => 'sometimes|requiredIf:option1,no1|date_format:H:i',
+            'midJourneyFrom1' => 'excludeIf:midJourneyFrom1_enabled,false|requiredIf:option1,no1|date_format:H:i',
+            'midJourneyTo1' => 'excludeIf:midJourneyTo1_enabled,false|requiredIf:option1,no1|date_format:H:i',
         ];
     }
 

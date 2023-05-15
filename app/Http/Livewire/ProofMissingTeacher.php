@@ -32,13 +32,13 @@ class ProofMissingTeacher extends Component
         $options = new Options();
         $options->set('isRemoteEnabled', true);
 
-        $html = view('pdfs.familyAuthorizationPDF', compact('data'))->render();
+        $html = view('pdfs.proofMissingTeacherPDF', compact('data'))->render();
 
         $dompdf = new Dompdf($options);
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
 
-        return $dompdf->stream('autorizacionFamiliar.pdf', array('Attachment' => 0));
+        return $dompdf->stream('JustifcanteFaltaProfesorado.pdf', array('Attachment' => 0));
     }
 }
