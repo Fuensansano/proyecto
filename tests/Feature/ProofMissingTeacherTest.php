@@ -147,4 +147,19 @@ class ProofMissingTeacherTest extends TestCase
             ])
             ->assertSessionHasErrors(['midJourneyTo1' => 'Ambas horas deben tener un formato válido']);
     }
+
+    // TODO
+    /** @test */
+    /* function the_midJourneyFrom1_and_midJourneyTo1_are_not_required_if_option1_is_yes1() {
+        $this->withoutExceptionHandling();
+        
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'option1' => 'yes1',
+                'midJourneyFrom1' => null,
+                'midJourneyTo1' => null,
+            ])
+            ->assertSee('hola');
+    } */
+
 }
