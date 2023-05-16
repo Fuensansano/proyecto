@@ -4,23 +4,23 @@
     <div class="container">
         <form action="proofMissingTeacher" class="form" method="post">
             @csrf
-            
+
             <h1 class="text-center text-primary">JUSTIFICANTE FALTA PROFESORADO</h1>
-    
+
             <!-- Progress bar -->
             <div class="progressbar">
                 <div class="progress" id="progress"></div>
-    
+
                 <div class="progress-step progress-step-active"></div>
                 <div class="progress-step"></div>
                 <div class="progress-step"></div>
                 <div class="progress-step"></div>
             </div>
-    
+
             <!-- Steps -->
             <div class="form-step form-step-active">
                 <div class="input-group">
-                    <label for="name" class="label">Nombre 
+                    <label for="name" class="label">Nombre
 						<span class="text-danger">*</span>
 					</label>
                     <input type="text" name="name" id="name" class="input @error('name') is-invalid @enderror"/>
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="department" class="label">Departamento 
+                    <label for="department" class="label">Departamento
 						<span class="text-danger">*</span>
 					</label>
                     <input type="text" name="department" id="department" class="input @error('department') is-invalid @enderror"/>
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="dni" class="label">DNI 
+                    <label for="dni" class="label">DNI
 						<span class="text-danger">*</span>
 					</label>
                     <input type="text" name="dni" id="dni" class="input @error('dni') is-invalid @enderror"/>
@@ -59,11 +59,11 @@
                     <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
                 </div>
             </div>
-    
+
             <div class="form-step">
 				<div class="row">
 					<div class="col">
-						<label for="missingDay1" class="label">Día faltado 
+						<label for="missingDay1" class="label">Día faltado
 							<span class="text-danger">*</span>
 						</label>
 						<input type="date" name="missingDay1" id="missingDay1" class="input @error('missingDay1') is-invalid @enderror"/>
@@ -77,7 +77,7 @@
 					<div class="col margin-radios">
 						<div>
 							<input type="radio" name="option1" value="yes1" id="yes1" class="@error('option1') is-invalid @enderror"/>
-							<label for="yes1" class="radio-label">He faltado la jornada completa 
+							<label for="yes1" class="radio-label">He faltado la jornada completa
 								<span class="text-danger">*</span>
 							</label>
 							@if($errors->get('option1'))
@@ -88,7 +88,7 @@
 						</div>
 						<div>
 							<input type="radio" name="option1" value="no1" id="no1" class="@error('option1') is-invalid @enderror"/>
-							<label for="no1" class="radio-label">No he faltado la jornada completa 
+							<label for="no1" class="radio-label">No he faltado la jornada completa
 								<span class="text-danger">*</span>
 							</label>
 							@if($errors->get('option1'))
@@ -102,7 +102,7 @@
 					<div class="col">
 						<div class="row row-cols-2 mb-4">
 							<div class="col">
-								<label for="midJourneyFrom1" class="label @error('midJourneyFrom1') is-invalid @enderror">Desde las 
+								<label for="midJourneyFrom1" class="label @error('midJourneyFrom1') is-invalid @enderror">Desde las
 									<span class="text-danger">*</span>
 								</label>
 								<input
@@ -117,9 +117,9 @@
 									</div>
 								@endif
 							</div>
-		
+
 							<div class="col">
-								<label for="midJourneyTo1" class="label @error('midJourneyTo1') is-invalid @enderror">a las 
+								<label for="midJourneyTo1" class="label @error('midJourneyTo1') is-invalid @enderror">a las
 									<span class="text-danger">*</span>
 								</label>
 								<input
@@ -186,7 +186,7 @@
 									</div>
 								@endif
 							</div>
-		
+
 							<div class="col">
 								<label for="midJourneyTo2" class="label @error('midJourneyTo2') is-invalid @enderror">a las </label>
 								<input
@@ -253,7 +253,7 @@
 									</div>
 								@endif
 							</div>
-		
+
 							<div class="col">
 								<label for="midJourneyTo3" class="label @error('midJourneyTo3') is-invalid @enderror">a las </label>
 								<input
@@ -277,22 +277,60 @@
                     <a href="#" class="btn btn-next btn-width">Next</a>
                 </div>
             </div>
-    
+
             <div class="form-step">
                 <div class="input-group">
-                    <label for="dob" class="label">Date of Birth</label>
-                    <input type="date" name="dob" id="dob" class="input"/>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                            id="permissionsSelect" onchange="showHiddenFields()">
+                        <option value="L1">L1: Licencia por asuntos propios para funcionarios en servicio activo. (2)</option>
+                        <option value="L2" id="L2">L2: Ausencia por enfermedad no superior a tres días. (10)</option>
+                        <option value="L3">L3: Licencia por enfermedad de más de tres días de duración. (1)</option>
+                        <option value="P1">P1: Permiso por traslado de domicilio. (3)</option>
+                        <option value="P2">P2: Permiso por exámenes finales y demás pruebas definitivas de aptitud. (4)</option>
+                        <option value="P3">P3: Permiso para el cumplimiento de deberes inexcusables de carácter público o personal. (6)</option>
+                        <option value="P4">P4: Permiso por adopción o acogimiento de menores de seis años y mayores de seis años discapacitados o minusválidos. (2)</option>
+                        <option value="P5">P5: Permiso por lactancia. (2)</option>
+                        <option value="P6">P6: Permiso por reducción de jornada por guarda legal o atención por discapacidad.</option>
+                        <option value="P7">P7: Permiso retribuido para las funcionarias en estado de gestación.</option>
+                        <option value="P8">P8: Permiso por parto.</option>
+                        <option value="P9">P9: Permiso por paternidad, por el nacimiento, adopción o acogimiento de un hijo. (2)</option>
+                        <option value="P10">P10: Permiso por fallecimiento, enfermedad, accidente grave u operación de un familiar. (2)</option>
+                        <option value="P11">P11: Permiso por exámenes prenatales. (7)</option>
+                        <option value="P12">P12: Permiso sustitutivo de lactancia. (2)</option>
+                        <option value="P13">P13: Permiso de ausencia por nacimiento de hijos prematuros u hospitalizados tras el parto. (5)</option>
+                        <option value="P14" id="P14">P14: Permiso de ausencia del trabajo para la conciliación de la vida familiar y profesional. (8)</option>
+                        <option value="P15">P15: Permiso por reducción horaria por cuidado de familiares. (2)</option>
+                        <option value="P16">P16: Flexibilización horaria para conciliación de la vida familiar. (9)</option>
+                        <option value="P17">P17: Permiso por estudios sobre materias relacionadas con el puesto de trabajo. (2)</option>
+                        <option value="P18">P18: Permiso por razón de violencia de género.</option>
+                        <option value="P19">P19: Permiso por riesgos en el embarazo o lactancia natural vinculado al puesto de trabajo. (1)</option>
+                        <option value="P20">P20: Permiso por matrimonio. (2)</option>
+                    </select>
                 </div>
-                <div class="input-group">
-                    <label for="ID" class="label">National ID</label>
-                    <input type="number" name="ID" id="ID" class="input"/>
+
+
+
+                <div class="col mb-4" id="medicalProof" style="display: none;">
+                    <div>
+                        <input type="radio" name="reason" value="reason1"/>
+                        <label for="reason" class="radio-label">El médico no tiene consulta en otro horario</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="reason" value="reason2"/>
+                        <label for="reason" class="radio-label">La necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha</label>
+                    </div>
+                    <div>
+                        <label class="radio-label">Otro motivo</label>
+                        <input type="text" name="reason" class="input" placeholder="otro motivo"/>
+                    </div>
                 </div>
+
                 <div class="btns-group">
                     <a href="#" class="btn btn-prev btn-width">Previous</a>
                     <a href="#" class="btn btn-next btn-width">Next</a>
                 </div>
             </div>
-    
+
             <div class="form-step">
                 <div class="input-group">
                     <label for="password" class="label">Password</label>
@@ -310,6 +348,20 @@
         </form>
     </div>
 </x-main>
+
+<script>
+    function showHiddenFields() {
+        const permissionsSelect = document.querySelector('#permissionsSelect');
+        const selectedOption = permissionsSelect.options[permissionsSelect.selectedIndex].value;
+        const medicalProof = document.querySelector('#medicalProof');
+
+        if (selectedOption === 'L2' || selectedOption === 'P14') {
+            medicalProof.style.display = "block";
+        } else {
+            medicalProof.style.display = "none";
+        }
+    }
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;0,700;1,600&display=swap');
