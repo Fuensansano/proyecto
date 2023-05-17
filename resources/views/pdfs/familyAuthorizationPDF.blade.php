@@ -83,9 +83,13 @@
     Firma del padre, madre o tutor
 </div>
 
-<div class="firma">
+{{-- <div class="firma">
     Firmado por:_____________________________________________con DNI: <b>{{ $data['dni'] }}</b>
-</div>
+</div> --}}
+
+<x-firma-dni>
+    {{ $data['dni'] }}
+</x-firma-dni>
 
 <x-footer />
 
