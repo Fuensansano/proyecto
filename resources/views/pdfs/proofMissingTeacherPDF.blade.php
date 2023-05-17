@@ -26,6 +26,20 @@
     </tbody>
 </table>
 
+@component('components.data')
+    @slot('fecha')
+        Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
+    @endslot
+
+    @slot('texto')
+        Firma del padre/madre/tutor del alumno
+    @endslot
+
+    @slot('dni')
+        {{ $data['dni'] }}
+    @endslot
+@endcomponent
+
 <x-footer></x-footer>
 
 <style>
@@ -34,4 +48,10 @@
         width: 100%;
         color: dodgerblue;
     }
+
+    .fecha-actual {}
+
+    .texto-firma {}
+
+    .firma {}
 </style>
