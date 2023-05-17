@@ -75,21 +75,19 @@
     </div>
 </div>
 
-<div class="fecha-actual">
-    Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
-</div>
+@component('components.data')
+    @slot('fecha')
+        Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
+    @endslot
 
-<div class="texto-firma">
-    Firma del padre, madre o tutor
-</div>
+    @slot('texto')
+        Firma del padre/madre/tutor del alumno
+    @endslot
 
-{{-- <div class="firma">
-    Firmado por:_____________________________________________con DNI: <b>{{ $data['dni'] }}</b>
-</div> --}}
-
-<x-firma-dni>
-    {{ $data['dni'] }}
-</x-firma-dni>
+    @slot('dni')
+        {{ $data['dni'] }}
+    @endslot
+@endcomponent
 
 <x-footer />
 

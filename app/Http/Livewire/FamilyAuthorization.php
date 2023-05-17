@@ -13,9 +13,7 @@ class FamilyAuthorization extends Component
 {
     public function render()
     {
-        return view('livewire.familyAuthorization', [
-            'slot' => $this->slot
-        ]);
+        return view('livewire.familyAuthorization');
     }
 
     public function generatePDF(FamilyAuthorizationRequest $request)
