@@ -18,12 +18,15 @@ class ProofMissingTeacher extends Component
 
     public function generatePDF(ProofMissingTeacherRequest $request)
     {
+        date_default_timezone_set('Europe/Madrid');
+        
+        $fechaFormateada = date('d-m-Y', strtotime($request->missingDay1));
+
         $data = [
             'name' => $request->name,
             'department' => $request->department,
             'dni' => $request->dni,
-
-            'missingDay1' => $request->missingDay1,
+            'missingDay1' => $fechaFormateada,
             'option1' => $request->option1,
             'midJourneyFrom1' => $request->midJourneyFrom1,
             'midJourneyTo1' => $request->midJourneyTo1,
