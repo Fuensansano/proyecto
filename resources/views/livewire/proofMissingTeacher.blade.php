@@ -151,20 +151,20 @@
 
 					<div class="col margin-radios">
 						<div>
-							<input type="radio" name="option2" value="yes2" id="yes2" class="@error('option2') is-invalid @enderror"/>
-							<label for="yes2" class="radio-label">He faltado la jornada completa</label>
-							@if($errors->get('option2'))
+							<input type="radio" name="journey_option2" value="full_journey_option2" id="full_journey_option2" class="@error('journey_option2') is-invalid @enderror"/>
+							<label for="full_journey_option2" class="radio-label">He faltado la jornada completa</label>
+							@if($errors->get('journey_option2'))
 								<div class="text-danger mb-3 mt-0">
-									{{ $errors->get('option2')[0] }}
+									{{ $errors->get('journey_option2')[0] }}
 								</div>
 							@endif
 						</div>
 						<div>
-							<input type="radio" name="option2" value="no2" id="no2" class="@error('option2') is-invalid @enderror"/>
-							<label for="no2" class="radio-label">No he faltado la jornada completa</label>
-							@if($errors->get('option2'))
+							<input type="radio" name="journey_option2" value="mid_journey_option2" id="mid_journey_option2" class="@error('journey_option2') is-invalid @enderror"/>
+							<label for="mid_journey_option2" class="radio-label">No he faltado la jornada completa</label>
+							@if($errors->get('journey_option2'))
 								<div class="text-danger mb-3 mt-0">
-									{{ $errors->get('option2')[0] }}
+									{{ $errors->get('journey_option2')[0] }}
 								</div>
 							@endif
 						</div>
@@ -218,20 +218,20 @@
 
 					<div class="col margin-radios">
 						<div>
-							<input type="radio" name="option3" value="yes3" id="yes3" class="@error('option3') is-invalid @enderror"/>
-							<label for="yes3" class="radio-label">He faltado la jornada completa</label>
-							@if($errors->get('option3'))
+							<input type="radio" name="journey_option3" value="full_journey_option3" id="full_journey_option3" class="@error('journey_option3') is-invalid @enderror"/>
+							<label for="full_journey_option3" class="radio-label">He faltado la jornada completa</label>
+							@if($errors->get('journey_option3'))
 								<div class="text-danger mb-3 mt-0">
-									{{ $errors->get('option3')[0] }}
+									{{ $errors->get('journey_option3')[0] }}
 								</div>
 							@endif
 						</div>
 						<div>
-							<input type="radio" name="option3" value="no3" id="no3" class="@error('option3') is-invalid @enderror"/>
-							<label for="no3" class="radio-label">No he faltado la jornada completa</label>
-							@if($errors->get('option3'))
+							<input type="radio" name="journey_option3" value="mid_journey_option3" id="mid_journey_option3" class="@error('journey_option3') is-invalid @enderror"/>
+							<label for="mid_journey_option3" class="radio-label">No he faltado la jornada completa</label>
+							@if($errors->get('journey_option3'))
 								<div class="text-danger mb-3 mt-0">
-									{{ $errors->get('option3')[0] }}
+									{{ $errors->get('journey_option3')[0] }}
 								</div>
 							@endif
 						</div>
@@ -573,12 +573,12 @@ h1 {
 	const midJourneyFrom2 = document.getElementById('midJourneyFrom2');
 	const midJourneyTo2 = document.getElementById('midJourneyTo2');
 
-	document.getElementById('yes2').addEventListener('click', (e) => {
+	document.getElementById('full_journey_option2').addEventListener('click', (e) => {
 		midJourneyFrom2.disabled = true;
 		midJourneyTo2.disabled = true;
 	});
 
-	document.getElementById('no2').addEventListener('click', (e) => {
+	document.getElementById('mid_journey_option2').addEventListener('click', (e) => {
 		midJourneyFrom2.disabled = false;
 		midJourneyTo2.disabled = false;
 	});
@@ -586,12 +586,12 @@ h1 {
 	const midJourneyFrom3 = document.getElementById('midJourneyFrom3');
 	const midJourneyTo3 = document.getElementById('midJourneyTo3');
 
-	document.getElementById('yes3').addEventListener('click', (e) => {
+	document.getElementById('full_journey_option3').addEventListener('click', (e) => {
 		midJourneyFrom3.disabled = true;
 		midJourneyTo3.disabled = true;
 	});
 
-	document.getElementById('no3').addEventListener('click', (e) => {
+	document.getElementById('mid_journey_option3').addEventListener('click', (e) => {
 		midJourneyFrom3.disabled = false;
 		midJourneyTo3.disabled = false;
 	});
