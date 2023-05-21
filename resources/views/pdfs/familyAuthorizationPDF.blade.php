@@ -111,18 +111,18 @@
     }
 
     .actual-date {
-        margin-top: 40px;
+        margin-top: 100px;
         text-align: right
     }
 
     .sign-text {
         text-align: center;
-        margin-top: 40px;
+        margin-top: 30px;
     }
 
     .sign {
-        margin-top: 120px;
-        margin-bottom: 190px;
+        margin-top: 150px;
+        margin-bottom: 100px;
     }
 
     .margin-checkbox {
