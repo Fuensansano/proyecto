@@ -160,4 +160,153 @@ class ProofMissingTeacherTest extends TestCase
             ->assertSee('hola');
     } */
 
+    // TODO
+    /** @test */
+    /* function the_missingDay2_is_required() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'missingDay2' => null,
+            ])
+            ->assertSessionHasErrors(['missingDay2' => 'El día de falta es obligatorio si se rellena']);
+    } */
+
+    /** @test */
+    function the_missingDay2_must_have_a_valid_format() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'missingDay2' => 'formato-no-valido',
+            ])
+            ->assertSessionHasErrors(['missingDay2' => 'El día de falta debe tener un formato válido']);
+    }
+
+    /** @test */
+    function the_journey_option2_is_required_if_missingDay2_is_not_null() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'missingDay2' => '01/01/2000',
+                'journey_option2' => null,
+            ])
+            ->assertSessionHasErrors(['journey_option2' => 'Es obligatorio elegir una opción de las dos si se rellena el campo de día faltado']);
+    }
+
+    /** @test */
+    function the_midJourneyFrom2_is_required_if_journey_option2_is_mid_journey_option2() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option2' => 'mid_journey_option2',
+                'midJourneyFrom2' => null,
+            ])
+            ->assertSessionHasErrors(['midJourneyFrom2' => 'Ambas horas son obligatorias si se ha marcado la segunda opción']);
+    }
+
+    /** @test */
+    function the_midJourneyFrom2_must_have_a_valid_format() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option2' => 'mid_journey_option2',
+                'midJourneyFrom2' => 'formato-no-valido',
+            ])
+            ->assertSessionHasErrors(['midJourneyFrom2' => 'Ambas horas deben tener un formato válido']);
+    }
+
+    /** @test */
+    function the_midJourneyTo2_is_required_if_journey_option2_is_mid_journey_option2() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option2' => 'mid_journey_option2',
+                'midJourneyTo2' => null,
+            ])
+            ->assertSessionHasErrors(['midJourneyTo2' => 'Ambas horas son obligatorias si se ha marcado la segunda opción']);
+    }
+
+    /** @test */
+    function the_midJourneyTo2_must_have_a_valid_format() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option2' => 'mid_journey_option2',
+                'midJourneyTo2' => 'formato-no-valido',
+            ])
+            ->assertSessionHasErrors(['midJourneyTo2' => 'Ambas horas deben tener un formato válido']);
+    }
+
+    // TODO
+    /** @test */
+    /* function the_midJourneyFrom2_and_midJourneyTo2_are_not_required_if_journey_option2_is_full_journey_option2() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option2' => 'full_journey_option2',
+                'midJourneyFrom2' => null,
+                'midJourneyTo2' => null,
+            ])
+            ->assertSee('hola');
+    } */
+
+    // TODO
+    /** @test */
+    /* function the_missingDay3_is_required() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'missingDay3' => null,
+            ])
+            ->assertSessionHasErrors(['missingDay3' => 'El día de falta es obligatorio si se rellena']);
+    } */
+
+    /** @test */
+    function the_missingDay3_must_have_a_valid_format() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'missingDay3' => 'formato-no-valido',
+            ])
+            ->assertSessionHasErrors(['missingDay3' => 'El día de falta debe tener un formato válido']);
+    }
+
+    /** @test */
+    function the_journey_option3_is_required_if_missingDay3_is_not_null() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'missingDay3' => '01/01/2000',
+                'journey_option3' => null,
+            ])
+            ->assertSessionHasErrors(['journey_option3' => 'Es obligatorio elegir una opción de las dos si se rellena el campo de día faltado']);
+    }
+
+    /** @test */
+    function the_midJourneyFrom3_is_required_if_journey_option3_is_mid_journey_option3() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option3' => 'mid_journey_option3',
+                'midJourneyFrom3' => null,
+            ])
+            ->assertSessionHasErrors(['midJourneyFrom3' => 'Ambas horas son obligatorias si se ha marcado la segunda opción']);
+    }
+
+    /** @test */
+    function the_midJourneyFrom3_must_have_a_valid_format() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option3' => 'mid_journey_option3',
+                'midJourneyFrom3' => 'formato-no-valido',
+            ])
+            ->assertSessionHasErrors(['midJourneyFrom3' => 'Ambas horas deben tener un formato válido']);
+    }
+
+    /** @test */
+    function the_midJourneyTo3_is_required_if_journey_option3_is_mid_journey_option3() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option3' => 'mid_journey_option3',
+                'midJourneyTo3' => null,
+            ])
+            ->assertSessionHasErrors(['midJourneyTo3' => 'Ambas horas son obligatorias si se ha marcado la segunda opción']);
+    }
+
+    /** @test */
+    function the_midJourneyTo3_must_have_a_valid_format() {
+        $this->from('/proofMissingTeacher')
+            ->post(route('generatePDF2'), [
+                'journey_option3' => 'mid_journey_option3',
+                'midJourneyTo3' => 'formato-no-valido',
+            ])
+            ->assertSessionHasErrors(['midJourneyTo3' => 'Ambas horas deben tener un formato válido']);
+    }
 }
