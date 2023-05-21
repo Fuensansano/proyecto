@@ -19,8 +19,6 @@ class ProofMissingTeacher extends Component
     public function generatePDF(ProofMissingTeacherRequest $request)
     {
         date_default_timezone_set('Europe/Madrid');
-        
-        $fechaFormateada = date('d-m-Y', strtotime($request->missingDay1));
 
         $fecha_actual = getdate();
 
@@ -67,10 +65,22 @@ class ProofMissingTeacher extends Component
             'name' => $request->name,
             'department' => $request->department,
             'dni' => $request->dni,
-            'missingDay1' => $fechaFormateada,
+
+            'missingDay1' => $this->formatearFecha($request->missingDay1),
             'journey_option1' => $request->journey_option1,
             'midJourneyFrom1' => $request->midJourneyFrom1,
             'midJourneyTo1' => $request->midJourneyTo1,
+
+            'missingDay2' => $this->formatearFecha($request->missingDay2),
+            'journey_option2' => $request->journey_option2,
+            'midJourneyFrom2' => $request->midJourneyFrom2,
+            'midJourneyTo2' => $request->midJourneyTo2,
+
+            'missingDay3' => $this->formatearFecha($request->missingDay3),
+            'journey_option3' => $request->journey_option3,
+            'midJourneyFrom3' => $request->midJourneyFrom3,
+            'midJourneyTo3' => $request->midJourneyTo3,
+
             'day' => $fecha_actual['mday'],
             'month' => $fecha_actual['mon'],
             'year' => $fecha_actual['year'],
@@ -87,5 +97,9 @@ class ProofMissingTeacher extends Component
         $dompdf->render();
 
         return $dompdf->stream('JustifcanteFaltaProfesorado.pdf', array('Attachment' => 0));
+    }
+
+    public function formatearFecha($fecha) {
+        return date('d-m-Y', strtotime($fecha));
     }
 }
