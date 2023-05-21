@@ -68,7 +68,7 @@ class ProofMissingTeacher extends Component
             'department' => $request->department,
             'dni' => $request->dni,
             'missingDay1' => $fechaFormateada,
-            'option1' => $request->option1,
+            'journey_option1' => $request->journey_option1,
             'midJourneyFrom1' => $request->midJourneyFrom1,
             'midJourneyTo1' => $request->midJourneyTo1,
             'day' => $fecha_actual['mday'],

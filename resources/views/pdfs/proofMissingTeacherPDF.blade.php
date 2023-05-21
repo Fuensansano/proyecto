@@ -15,7 +15,7 @@
                 <b>JUSTIFICA</b> 
                 que no pudo asistir al Centro de trabajo el día 
                 <b>{{ $data['missingDay1'] }}</b> 
-                @if($data['option1'] == 'yes1')
+                @if($data['journey_option1'] == 'full_journey_option1')
                     faltando la jornada completa.
                 @else
                     faltando desde las {{ $data['midJourneyFrom1']}}

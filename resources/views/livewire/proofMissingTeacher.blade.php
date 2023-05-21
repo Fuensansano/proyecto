@@ -76,24 +76,24 @@
 
 					<div class="col margin-radios">
 						<div>
-							<input type="radio" name="option1" value="yes1" id="yes1" class="@error('option1') is-invalid @enderror"/>
-							<label for="yes1" class="radio-label">He faltado la jornada completa
+							<input type="radio" name="journey_option1" value="full_journey_option1" id="full_journey_option1" class="@error('journey_option1') is-invalid @enderror"/>
+							<label for="full_journey_option1" class="radio-label">He faltado la jornada completa
 								<span class="text-danger">*</span>
 							</label>
-							@if($errors->get('option1'))
+							@if($errors->get('journey_option1'))
 								<div class="text-danger mb-3 mt-0">
-									{{ $errors->get('option1')[0] }}
+									{{ $errors->get('journey_option1')[0] }}
 								</div>
 							@endif
 						</div>
 						<div>
-							<input type="radio" name="option1" value="no1" id="no1" class="@error('option1') is-invalid @enderror"/>
-							<label for="no1" class="radio-label">No he faltado la jornada completa
+							<input type="radio" name="journey_option1" value="mid_journey_option1" id="mid_journey_option1" class="@error('journey_option1') is-invalid @enderror"/>
+							<label for="mid_journey_option1" class="radio-label">No he faltado la jornada completa
 								<span class="text-danger">*</span>
 							</label>
-							@if($errors->get('option1'))
+							@if($errors->get('journey_option1'))
 								<div class="text-danger mb-3 mt-0">
-									{{ $errors->get('option1')[0] }}
+									{{ $errors->get('journey_option1')[0] }}
 								</div>
 							@endif
 						</div>
@@ -560,12 +560,12 @@ h1 {
 	const midJourneyFrom1 = document.getElementById('midJourneyFrom1');
 	const midJourneyTo1 = document.getElementById('midJourneyTo1');
 
-	document.getElementById('yes1').addEventListener('click', (e) => {
+	document.getElementById('full_journey_option1').addEventListener('click', (e) => {
 		midJourneyFrom1.disabled = true;
 		midJourneyTo1.disabled = true;
 	});
 
-	document.getElementById('no1').addEventListener('click', (e) => {
+	document.getElementById('mid_journey_option1').addEventListener('click', (e) => {
 		midJourneyFrom1.disabled = false;
 		midJourneyTo1.disabled = false;
 	});
