@@ -27,11 +27,11 @@
 </table>
 
 @component('components.data')
-    @slot('fecha')
+    @slot('date')
         Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
     @endslot
 
-    @slot('texto')
+    @slot('text')
         Firma del padre/madre/tutor del alumno
     @endslot
 
@@ -49,9 +49,9 @@
         color: dodgerblue;
     }
 
-    .fecha-actual {}
+    .actual-date {}
 
-    .texto-firma {}
+    .sign-text {}
 
-    .firma {}
+    .sign {}
 </style>

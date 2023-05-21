@@ -1,13 +1,13 @@
 <div>
-    <div class="fecha-actual">
-        {{ $fecha }}
+    <div class="actual-date">
+        {{ $date }}
     </div>
     
-    <div class="texto-firma">
-        {{ $texto }}
+    <div class="sign-text">
+        {{ $text }}
     </div>
 
-    <div class="firma">
+    <div class="sign">
         Firmado por:_____________________________________________con DNI: <b>{{ $dni }}</b>
     </div>
 </div>

@@ -76,11 +76,11 @@
 </div>
 
 @component('components.data')
-    @slot('fecha')
+    @slot('date')
         Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
     @endslot
 
-    @slot('texto')
+    @slot('text')
         Firma del padre/madre/tutor del alumno
     @endslot
 
@@ -110,17 +110,17 @@
         overflow-wrap: break-word;
     }
 
-    .fecha-actual {
+    .actual-date {
         margin-top: 40px;
         text-align: right
     }
 
-    .texto-firma {
+    .sign-text {
         text-align: center;
         margin-top: 40px;
     }
 
-    .firma {
+    .sign {
         margin-top: 120px;
         margin-bottom: 190px;
     }
