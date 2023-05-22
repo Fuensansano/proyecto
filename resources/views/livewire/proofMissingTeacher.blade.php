@@ -1,7 +1,119 @@
 <x-main>
     @livewire('navbar')
 
-    <div class="container">
+	<div class="container">
+		<form action="proofMissingTeacher" class="form" method="post">
+			@csrf
+			
+			<div class="card mt-5">
+				<h1 class="text-primary">JUSTIFICANTE FALTA PROFESORADO</h1>
+				
+				<div class="card-body">
+					<div class="row row-cols-3 mb-4">
+						<div class="col">
+							<label for="name">Nombre</label>
+						</div>
+						<div class="col">
+                            <label for="department">Departamento</label>
+                        </div>
+						<div class="col">
+                            <label for="dni">DNI</label>
+                        </div>
+
+						<div class="col">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                   id="name" name="name"/>
+                            @if($errors->get('name'))
+                               <div class="text-danger mb-3 mt-0">
+                                    {{ $errors->get('name')[0] }}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control @error('department') is-invalid @enderror" id="department" name="department"/>
+                            @if($errors->get('department'))
+                                <div class="text-danger mb-3 mt-0">
+                                    {{ $errors->get('department')[0] }}
+                                </div>
+                            @endif
+                        </div>
+						<div class="col">
+                            <input type="text" class="form-control @error('dni') is-invalid @enderror" id="dni" name="dni"/>
+                            @if($errors->get('dni'))
+                                <div class="text-danger mb-3 mt-0">
+                                    {{ $errors->get('dni')[0] }}
+                                </div>
+                            @endif
+                        </div>
+					</div>
+
+					<div class="row row-cols-3 mb-4">
+                        <div class="col">
+                            <label for="missingDay1">Día faltado</label>
+                        
+                            <input type="date" class="form-control @error('missingDay1') is-invalid @enderror" id="missingDay1" name="missingDay1" />
+                            @if($errors->get('missingDay1'))
+                                <div class="text-danger mb-3 mt-0">
+                                    {{ $errors->get('missingDay1')[0] }}
+                                </div>
+                            @endif
+                        </div>
+
+						<div class="col margin-radios">
+							<div>
+								<input type="radio" name="journey_option1" value="full_journey_option1" id="full_journey_option1" class="@error('journey_option1') is-invalid @enderror"/>
+								<label for="full_journey_option1" class="radio-label">He faltado la jornada completa
+									<span class="text-danger">*</span>
+								</label>
+								@if($errors->get('journey_option1'))
+									<div class="text-danger mb-3 mt-0">
+										{{ $errors->get('journey_option1')[0] }}
+									</div>
+								@endif
+							</div>
+							<div>
+								<input type="radio" name="journey_option1" value="mid_journey_option1" id="mid_journey_option1" class="@error('journey_option1') is-invalid @enderror"/>
+								<label for="mid_journey_option1" class="radio-label">No he faltado la jornada completa
+									<span class="text-danger">*</span>
+								</label>
+								@if($errors->get('journey_option1'))
+									<div class="text-danger mb-3 mt-0">
+										{{ $errors->get('journey_option1')[0] }}
+									</div>
+								@endif
+							</div>
+						</div>
+
+						<div class="col">
+							hola
+						</div>
+                    </div>
+				</div>
+			</div>
+		</form>
+	</div>
+</x-main>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;0,700;1,600&display=swap');
+
+	h1 {
+        align-self: center;
+        font-size: 40px;
+        margin-top: 10px;
+        font-family: 'Raleway', sans-serif;
+    }
+
+	.container {
+		max-width: 90%;
+	}
+</style>
+
+<script>
+
+</script>
+
+    {{-- <div class="container">
         <form action="proofMissingTeacher" class="form" method="post">
             @csrf
 
@@ -308,8 +420,6 @@
                     </select>
                 </div>
 
-
-
                 <div class="col mb-4" id="medicalProof" style="display: none;">
                     <div>
                         <input type="radio" name="reason" value="reason1"/>
@@ -362,7 +472,7 @@
         }
     }
 </script>
-
+ 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;0,700;1,600&display=swap');
 
@@ -635,3 +745,4 @@ h1 {
 		progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 	}
 </script>
+--}}
