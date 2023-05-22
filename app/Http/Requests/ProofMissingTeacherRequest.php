@@ -20,12 +20,12 @@ class ProofMissingTeacherRequest extends FormRequest
             'midJourneyTo1' => 'excludeIf:midJourneyTo1_enabled,false|requiredIf:journey_option1,mid_journey_option1|date_format:H:i',
 
             'missingDay2' => 'excludeIf:missingDay2,==,null|required|date_format:Y-m-d',
-            'journey_option2' => 'excludeIf:missingDay2,==,null|required', // Estos excludeIf no van
+            'journey_option2' => 'requiredIf:missingDay2,!=,null',
             'midJourneyFrom2' => 'excludeIf:midJourneyFrom2_enabled,false|requiredIf:journey_option2,mid_journey_option2|date_format:H:i', // Estos excludeIf no van
             'midJourneyTo2' => 'excludeIf:midJourneyTo2_enabled,false|requiredIf:journey_option2,mid_journey_option2|date_format:H:i', // Estos excludeIf no van
 
             'missingDay3' => 'excludeIf:missingDay3,==,null|required|date_format:Y-m-d',
-            'journey_option3' => 'excludeIf:missingDay3,==,null|required', // Estos excludeIf no van
+            'journey_option3' => 'requiredIf:missingDay3,!=,null',
             'midJourneyFrom3' => 'excludeIf:midJourneyFrom3_enabled,false|requiredIf:journey_option3,mid_journey_option3|date_format:H:i', // Estos excludeIf no van
             'midJourneyTo3' => 'excludeIf:midJourneyTo3_enabled,false|requiredIf:journey_option3,mid_journey_option3|date_format:H:i', // Estos excludeIf no van
         ];
@@ -49,7 +49,7 @@ class ProofMissingTeacherRequest extends FormRequest
 
             'missingDay2.required_if' => 'El día de falta es obligatorio si se rellena',
             'missingDay2.date_format' => 'El día de falta debe tener un formato válido',
-            'journey_option2.required' => 'Es obligatorio elegir una opción de las dos si se rellena el campo de día faltado',
+            'journey_option2.required_if' => 'Es obligatorio elegir una opción de las dos si se rellena el campo de día faltado',
             'midJourneyFrom2.required_if' => 'Ambas horas son obligatorias si se ha marcado la segunda opción',
             'midJourneyFrom2.date_format' => 'Ambas horas deben tener un formato válido',
             'midJourneyTo2.required_if' => 'Ambas horas son obligatorias si se ha marcado la segunda opción',
@@ -57,7 +57,7 @@ class ProofMissingTeacherRequest extends FormRequest
 
             'missingDay3.required_if' => 'El día de falta es obligatorio si se rellena',
             'missingDay3.date_format' => 'El día de falta debe tener un formato válido',
-            'journey_option3.required' => 'Es obligatorio elegir una opción de las dos si se rellena el campo de día faltado',
+            'journey_option3.required_if' => 'Es obligatorio elegir una opción de las dos si se rellena el campo de día faltado',
             'midJourneyFrom3.required_if' => 'Ambas horas son obligatorias si se ha marcado la segunda opción',
             'midJourneyFrom3.date_format' => 'Ambas horas deben tener un formato válido',
             'midJourneyTo3.required_if' => 'Ambas horas son obligatorias si se ha marcado la segunda opción',
