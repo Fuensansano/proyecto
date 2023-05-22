@@ -435,6 +435,13 @@
 						</div>
 					</div>
 				</div>
+
+				<hr>
+
+				<div class="buttons-container">
+					<x-button-form-send></x-button-form-send>
+					<x-button-form-cancel></x-button-form-cancel>
+				</div>
 			</div>
 		</form>
 	</div>
@@ -456,7 +463,13 @@
 
 	.radio-label {
 		font-size: 18px;
-	}	
+	}
+
+	.buttons-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
 
 <script>
