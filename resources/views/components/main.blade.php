@@ -14,6 +14,7 @@
     <title> {{ config('app.name') }}</title>
 
     @vite('resources/css/bootstrap.css')
+    @vite('resources/css/app.css')
 
 {{--    <!-- Typeahead JS -->--}}
 {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>--}}

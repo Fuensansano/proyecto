@@ -62,6 +62,7 @@ class ProofMissingTeacherRequest extends FormRequest
             'midJourneyFrom3.date_format' => 'Ambas horas deben tener un formato válido',
             'midJourneyTo3.required_if' => 'Ambas horas son obligatorias si se ha marcado la segunda opción',
             'midJourneyTo3.date_format' => 'Ambas horas deben tener un formato válido',
+
         ];
     }
 }

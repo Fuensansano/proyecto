@@ -4,10 +4,10 @@
 	<div class="container">
 		<form action="proofMissingTeacher" class="form" method="post">
 			@csrf
-			
+
 			<div class="card mt-5">
 				<h1 class="text-primary">JUSTIFICANTE FALTA PROFESORADO</h1>
-				
+
 				<div class="card-body">
 					<div class="row row-cols-3 mb-4">
 						<div class="col">
@@ -95,7 +95,7 @@
 									id="full_journey_option1"
 									class="@error('journey_option1') is-invalid @enderror"
 								/>
-								
+
 								<label for="full_journey_option1" class="radio-label">
 									He faltado la jornada completa<span class="text-danger"> *</span>
 								</label>
@@ -114,7 +114,7 @@
 									id="mid_journey_option1"
 									class="@error('journey_option1') is-invalid @enderror"
 								/>
-								
+
 								<label for="mid_journey_option1" class="radio-label">
 									No he faltado la jornada completa<span class="text-danger"> *</span>
 								</label>
@@ -133,7 +133,7 @@
 										for="midJourneyFrom1"
 										class="@error('midJourneyFrom1') is-invalid @enderror"
 									>
-										Desde las<span class="text-danger"> *</span>
+										Desde <span class="text-danger"> *</span>
 									</label>
 
 									<input
@@ -154,7 +154,7 @@
 										for="midJourneyTo1"
 										class="@error('midJourneyTo1') is-invalid @enderror"
 									>
-										a las<span class="text-danger"> *</span>
+										Hasta <span class="text-danger"> *</span>
 									</label>
 
 									<input
@@ -201,7 +201,7 @@
 									value="full_journey_option2"
 									class="@error('journey_option2') is-invalid @enderror"
 								/>
-								
+
 								<label for="full_journey_option2" class="radio-label">
 									He faltado la jornada completa
 								</label>
@@ -220,7 +220,7 @@
 									value="mid_journey_option2"
 									class="@error('journey_option2') is-invalid @enderror"
 								/>
-								
+
 								<label for="mid_journey_optio2" class="radio-label">
 									No he faltado la jornada completa
 								</label>
@@ -239,7 +239,7 @@
 										for="midJourneyFrom2"
 										class="@error('midJourneyFrom2') is-invalid @enderror"
 									>
-										Desde las
+										Desde
 									</label>
 
 									<input
@@ -260,7 +260,7 @@
 										for="midJourneyTo2"
 										class="@error('midJourneyTo2') is-invalid @enderror"
 									>
-										a las
+										Hasta
 									</label>
 
 									<input
@@ -307,7 +307,7 @@
 									value="full_journey_option3"
 									class="@error('journey_option3') is-invalid @enderror"
 								/>
-								
+
 								<label for="full_journey_option3" class="radio-label">
 									He faltado la jornada completa
 								</label>
@@ -326,7 +326,7 @@
 									value="mid_journey_option3"
 									class="@error('journey_option3') is-invalid @enderror"
 								/>
-								
+
 								<label for="mid_journey_optio3" class="radio-label">
 									No he faltado la jornada completa
 								</label>
@@ -345,7 +345,7 @@
 										for="midJourneyFrom3"
 										class="@error('midJourneyFrom3') is-invalid @enderror"
 									>
-										Desde las
+										Desde
 									</label>
 
 									<input
@@ -366,7 +366,7 @@
 										for="midJourneyTo3"
 										class="@error('midJourneyTo3') is-invalid @enderror"
 									>
-										a las
+										Hasta
 									</label>
 
 									<input
@@ -386,39 +386,43 @@
 					</div>
 
 					<div class="row row-cols-1">
+                        <label for="permissionsSelect">Por el siguiente motivo:</label><br>
 						<div class="input-group">
-							<select 
+							<select
 								class="form-select mb-3"
 								aria-label=".form-select-lg example"
 								id="permissionsSelect"
+                                name="permissionsSelect"
 								onchange="showHiddenFields()"
 							>
-								<option value="L1">L1: Licencia por asuntos propios para funcionarios en servicio activo. (2)</option>
-								<option value="L2" id="L2">L2: Ausencia por enfermedad no superior a tres días. (10)</option>
-								<option value="L3">L3: Licencia por enfermedad de más de tres días de duración. (1)</option>
-								<option value="P1">P1: Permiso por traslado de domicilio. (3)</option>
-								<option value="P2">P2: Permiso por exámenes finales y demás pruebas definitivas de aptitud. (4)</option>
-								<option value="P3">P3: Permiso para el cumplimiento de deberes inexcusables de carácter público o personal. (6)</option>
-								<option value="P4">P4: Permiso por adopción o acogimiento de menores de seis años y mayores de seis años discapacitados o minusválidos. (2)</option>
-								<option value="P5">P5: Permiso por lactancia. (2)</option>
-								<option value="P6">P6: Permiso por reducción de jornada por guarda legal o atención por discapacidad.</option>
-								<option value="P7">P7: Permiso retribuido para las funcionarias en estado de gestación.</option>
-								<option value="P8">P8: Permiso por parto.</option>
-								<option value="P9">P9: Permiso por paternidad, por el nacimiento, adopción o acogimiento de un hijo. (2)</option>
-								<option value="P10">P10: Permiso por fallecimiento, enfermedad, accidente grave u operación de un familiar. (2)</option>
-								<option value="P11">P11: Permiso por exámenes prenatales. (7)</option>
-								<option value="P12">P12: Permiso sustitutivo de lactancia. (2)</option>
-								<option value="P13">P13: Permiso de ausencia por nacimiento de hijos prematuros u hospitalizados tras el parto. (5)</option>
-								<option value="P14" id="P14">P14: Permiso de ausencia del trabajo para la conciliación de la vida familiar y profesional. (8)</option>
-								<option value="P15">P15: Permiso por reducción horaria por cuidado de familiares. (2)</option>
-								<option value="P16">P16: Flexibilización horaria para conciliación de la vida familiar. (9)</option>
-								<option value="P17">P17: Permiso por estudios sobre materias relacionadas con el puesto de trabajo. (2)</option>
-								<option value="P18">P18: Permiso por razón de violencia de género.</option>
-								<option value="P19">P19: Permiso por riesgos en el embarazo o lactancia natural vinculado al puesto de trabajo. (1)</option>
-								<option value="P20">P20: Permiso por matrimonio. (2)</option>
+								<option value="L1: Licencia por asuntos propios para funcionarios en servicio activo. (2)">
+                                    L1: Licencia por asuntos propios para funcionarios en servicio activo. (2)
+                                </option>
+								<option value="L2: Ausencia por enfermedad no superior a tres días. (10)" id="L2">L2: Ausencia por enfermedad no superior a tres días. (10)</option>
+								<option value="L3: Licencia por enfermedad de más de tres días de duración. (1)">L3: Licencia por enfermedad de más de tres días de duración. (1)</option>
+								<option value="P1: Permiso por traslado de domicilio. (3)">P1: Permiso por traslado de domicilio. (3)</option>
+								<option value="P2: Permiso por exámenes finales y demás pruebas definitivas de aptitud. (4)">P2: Permiso por exámenes finales y demás pruebas definitivas de aptitud. (4)</option>
+								<option value="P3: Permiso para el cumplimiento de deberes inexcusables de carácter público o personal. (6)">P3: Permiso para el cumplimiento de deberes inexcusables de carácter público o personal. (6)</option>
+								<option value="P4: Permiso por adopción o acogimiento de menores de seis años y mayores de seis años discapacitados o minusválidos. (2)">P4: Permiso por adopción o acogimiento de menores de seis años y mayores de seis años discapacitados o minusválidos. (2)</option>
+								<option value="P5: Permiso por lactancia. (2)">P5: Permiso por lactancia. (2)</option>
+								<option value="P6: Permiso por reducción de jornada por guarda legal o atención por discapacidad.">P6: Permiso por reducción de jornada por guarda legal o atención por discapacidad.</option>
+								<option value="P7: Permiso retribuido para las funcionarias en estado de gestación.">P7: Permiso retribuido para las funcionarias en estado de gestación.</option>
+								<option value="P8: Permiso por parto">P8: Permiso por parto.</option>
+								<option value="P9: Permiso por paternidad, por el nacimiento, adopción o acogimiento de un hijo. (2)">P9: Permiso por paternidad, por el nacimiento, adopción o acogimiento de un hijo. (2)</option>
+								<option value="P10: Permiso por fallecimiento, enfermedad, accidente grave u operación de un familiar. (2)">P10: Permiso por fallecimiento, enfermedad, accidente grave u operación de un familiar. (2)</option>
+								<option value="P11: Permiso por exámenes prenatales. (7)">P11: Permiso por exámenes prenatales. (7)</option>
+								<option value="P12: Permiso sustitutivo de lactancia. (2)">P12: Permiso sustitutivo de lactancia. (2)</option>
+								<option value="P13: Permiso de ausencia por nacimiento de hijos prematuros u hospitalizados tras el parto. (5)">P13: Permiso de ausencia por nacimiento de hijos prematuros u hospitalizados tras el parto. (5)</option>
+								<option value="P14: Permiso de ausencia del trabajo para la conciliación de la vida familiar y profesional. (8)" id="P14">P14: Permiso de ausencia del trabajo para la conciliación de la vida familiar y profesional. (8)</option>
+								<option value="P15: Permiso por reducción horaria por cuidado de familiares. (2)">P15: Permiso por reducción horaria por cuidado de familiares. (2)</option>
+								<option value="P16: Flexibilización horaria para conciliación de la vida familiar. (9)">P16: Flexibilización horaria para conciliación de la vida familiar. (9)</option>
+								<option value="P17: Permiso por estudios sobre materias relacionadas con el puesto de trabajo. (2)">P17: Permiso por estudios sobre materias relacionadas con el puesto de trabajo. (2)</option>
+								<option value="P18: Permiso por razón de violencia de género.">P18: Permiso por razón de violencia de género.</option>
+								<option value="P19: Permiso por riesgos en el embarazo o lactancia natural vinculado al puesto de trabajo. (1)">P19: Permiso por riesgos en el embarazo o lactancia natural vinculado al puesto de trabajo. (1)</option>
+								<option value="P20: Permiso por matrimonio. (2)">P20: Permiso por matrimonio. (2)</option>
 							</select>
 						</div>
-		
+
 						<div class="col mb-4" id="medicalProof" style="display: none;">
 							<div>
 								<input type="radio" name="reason" value="reason1"/>
@@ -436,6 +440,10 @@
 					</div>
 				</div>
 
+                <div class="d-grid gap-2 col-4 mx-auto">
+                   <x-clauses-index-modal></x-clauses-index-modal>
+                </div>
+
 				<hr>
 
 				<div class="buttons-container">
@@ -447,30 +455,6 @@
 	</div>
 </x-main>
 
-<style>
-	@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;0,700;1,600&display=swap');
-
-	h1 {
-		align-self: center;
-		font-size: 40px;
-		margin-top: 10px;
-		font-family: 'Raleway', sans-serif;
-	}
-
-	.container {
-		max-width: 90%;
-	}
-
-	.radio-label {
-		font-size: 18px;
-	}
-
-	.buttons-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-</style>
 
 <script>
 	const midJourneyFrom1 = document.getElementById('midJourneyFrom1');

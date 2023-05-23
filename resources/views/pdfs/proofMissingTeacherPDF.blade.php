@@ -4,17 +4,17 @@
 
 <table>
     <tbody>
-        <tr>
-            <span>D./Dña.: <b>{{ $data['name'] }}</b></span>
-        </tr>
-        <tr>
-            <span>Profesor/a del departamento: <b>{{ $data['department'] }}</b>, con destino en este Centro Educativo </span>
-        </tr>
-        <tr>
+    <tr>
+        <span>D./Dña.: <b>{{ $data['name'] }}</b></span>
+    </tr>
+    <tr>
+        <span>Profesor/a del departamento: <b>{{ $data['department'] }}</b>, con destino en este Centro Educativo </span>
+    </tr>
+    <tr>
             <span>
-                <b>JUSTIFICA</b> 
-                que no pudo asistir al Centro de trabajo el día 
-                <b>{{ $data['missingDay1'] }}</b> 
+                <b>JUSTIFICA</b>
+                que no pudo asistir al Centro de trabajo el día
+                <b>{{ $data['missingDay1'] }}</b>
                 @if($data['journey_option1'] == 'full_journey_option1')
                     faltando la jornada completa.
                 @else
@@ -22,11 +22,13 @@
                     hasta las {{ $data['midJourneyTo1'] }}.
                 @endif
             </span>
-        </tr>
+
+        <span>Debido al siguiente motivo: {{ $data['permissionsSelect'] }}</span>
+    </tr>
     </tbody>
 </table>
 
-@component('components.data')
+@component('components.signature')
     @slot('date')
         Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
     @endslot
@@ -49,9 +51,12 @@
         color: dodgerblue;
     }
 
-    .actual-date {}
+    .actual-date {
+    }
 
-    .sign-text {}
+    .sign-text {
+    }
 
-    .sign {}
+    .sign {
+    }
 </style>

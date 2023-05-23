@@ -33,6 +33,10 @@ Route::get('/proofMissingTeacher', function () {
     return view('livewire/proofMissingTeacher');
 });
 
+/*Route::get('/clausesIndex', function () {
+    return view('clausesIndex');
+});*/
+
 Route::post('/extraescolaractivity',[ExtraescolarActivity::class, 'store']);
 
 Route::post('/familyAuthorization', [FamilyAuthorization::class, 'generatePDF'])

@@ -175,9 +175,7 @@
 
                     <div class="buttons-container">
                         <button class="btn btn-success btn-lg" type="submit">Descargar PDF</button>
-                        <button class="btn btn-danger btn-lg">
-                            <a id="home" href="/">Volver al inicio</a>
-                        </button>
+                        <a class="btn btn-danger btn-lg" href="/">Volver al inicio</a>
                     </div>
                 </div>
             </div>
@@ -185,34 +183,4 @@
     </div>
 </x-main>
 
-<style>
-    .card-header {
-        height: 80px;
-        border-style: none;
-    }
 
-    .container {
-        max-width: 90%;
-        margin-bottom: 20px;
-    }
-
-    h1 {
-        align-self: center;
-        font-size: 30px;
-        margin-top: 10px;
-    }
-
-    label {
-        font-size: 18px;
-    }
-
-    #home {
-        text-decoration: none;
-        color: white;
-    }
-
-    .buttons-container {
-        text-align: center;
-    }
-
-</style>

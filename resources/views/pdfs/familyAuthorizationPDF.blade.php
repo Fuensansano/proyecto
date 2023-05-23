@@ -1,48 +1,48 @@
-<x-header />
+<x-header/>
 
 <table>
     <tbody>
-        <tr>
-            <h1>AUTORIZACIÓN FAMILIAR</h1>
-        </tr>
-        <tr>
-            <td class="border-bottom">
-                <b>ACTIVIDAD PROGRAMADA: </b>
-                <span>{{ $data['activity'] }}</span>
-            </td>
-        </tr>
-        <tr>
-            <td class="border-bottom">
-                <b>ORGANIZADA POR: </b>
-                <span>{{ $data['organizer'] }}</span>
-            </td>
-        </tr>
-        <tr>
-            <td class="border-bottom">
-                <b>FECHA DE REALIZACIÓN: </b>
-                <span>{{ $data['execution_date'] }}</span>
-            </td>
-        </tr>
-        <tr>
-            <td class="border-bottom">
-                <b>HORA DE SALIDA: </b>
-                <span>{{ $data['departure_time'] }}</span>
-            </td>
-        </tr>
-        <tr>
-            <td class="border-bottom">
-                <b>OBJETIVOS Y CONTENIDOS: </b>
-                <span>{{ $data['goals'] }}</span>
-            </td>
-        </tr>
+    <tr>
+        <h1>AUTORIZACIÓN FAMILIAR</h1>
+    </tr>
+    <tr>
+        <td class="border-bottom">
+            <b>ACTIVIDAD PROGRAMADA: </b>
+            <span>{{ $data['activity'] }}</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="border-bottom">
+            <b>ORGANIZADA POR: </b>
+            <span>{{ $data['organizer'] }}</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="border-bottom">
+            <b>FECHA DE REALIZACIÓN: </b>
+            <span>{{ $data['execution_date'] }}</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="border-bottom">
+            <b>HORA DE SALIDA: </b>
+            <span>{{ $data['departure_time'] }}</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="border-bottom">
+            <b>OBJETIVOS Y CONTENIDOS: </b>
+            <span>{{ $data['goals'] }}</span>
+        </td>
+    </tr>
     </tbody>
 </table>
 
 <div>
     <p class="texto">
         <b>
-            Para tener constancia de que ustedes han recibido esta información, 
-            les ruego la devuelvan firmada al Centro, para que sus hijos la entreguen al profesor 
+            Para tener constancia de que ustedes han recibido esta información,
+            les ruego la devuelvan firmada al Centro, para que sus hijos la entreguen al profesor
             encargado antes del
         </b>{{ $data['deadline'] }}.
     </p>
@@ -50,9 +50,9 @@
 
 <div>
     <p class="texto">
-        D./Dª <b>{{ $data['parents'] }}</b> como padre, 
-        madre o tutor del alumno/a <b>{{ $data['student'] }}</b> 
-        del curso <b>{{ $data['course'] }}</b>, me considero informado/a de la actividad programada 
+        D./Dª <b>{{ $data['parents'] }}</b> como padre,
+        madre o tutor del alumno/a <b>{{ $data['student'] }}</b>
+        del curso <b>{{ $data['course'] }}</b>, me considero informado/a de la actividad programada
         y comunico que mi hijo/a:
     </p>
 </div>
@@ -61,12 +61,12 @@
     <div class="margin-checkbox">
         <input type="checkbox" id="auth" {{ $data['authorization'] == 'auth' ? 'checked' : ''}}>
         <label for="auth">
-            Tiene mi autorización para participar en la actividad programada 
-            y autorizo a la toma y difusión de imágenes de este día en la página web 
+            Tiene mi autorización para participar en la actividad programada
+            y autorizo a la toma y difusión de imágenes de este día en la página web
             y/o RRSS del centro.
         </label>
     </div>
-    
+
     <div class="margin-checkbox">
         <input type="checkbox" id="notAuth" {{ $data['authorization'] == 'notAuth' ? 'checked' : ''}}>
         <label for="notAuth">
@@ -75,7 +75,7 @@
     </div>
 </div>
 
-@component('components.data')
+@component('components.signature')
     @slot('date')
         Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
     @endslot
@@ -89,7 +89,7 @@
     @endslot
 @endcomponent
 
-<x-footer />
+<x-footer/>
 
 <style>
     h1 {

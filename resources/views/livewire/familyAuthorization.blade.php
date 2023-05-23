@@ -18,13 +18,13 @@
                                     name="activity">
 
                                 <label for="activity">ACTIVIDAD PROGRAMADA</label>
-                                
+
                                 @if($errors->get('activity'))
                                     <div class="text-danger mb-3 mt-0">
                                         {{ $errors->get('activity')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
@@ -35,15 +35,15 @@
                                     id="organizer"
                                     placeholder="Organizada Por"
                                     name="organizer">
-                                
+
                                 <label for="organizer">ORGANIZADOR/A</label>
-                                
+
                                 @if($errors->get('organizer'))
                                     <div class="text-danger mb-3 mt-0">
                                         {{ $errors->get('organizer')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>
                         </div>
                     </div>
 
@@ -57,7 +57,7 @@
                                     id="execution_date"
                                     placeholder="Fecha Realización"
                                     name="execution_date">
-                                
+
                                 <label for="execution_date">FECHA REALIZACIÓN</label>
 
                                 @if($errors->get('execution_date'))
@@ -65,7 +65,7 @@
                                         {{ $errors->get('execution_date')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
@@ -84,7 +84,7 @@
                                         {{ $errors->get('departure_time')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>
                         </div>
                     </div>
 
@@ -98,7 +98,7 @@
                                     id="course"
                                     placeholder="Curso alumno"
                                     name="course">
-                                
+
                                 <label for="course">CURSO DEL ALUMNO</label>
 
                                 @if($errors->get('course'))
@@ -106,7 +106,7 @@
                                         {{ $errors->get('course')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
@@ -126,7 +126,7 @@
                                         {{ $errors->get('deadline')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>
                         </div>
                     </div>
 
@@ -140,7 +140,7 @@
                                     id="parents"
                                     placeholder="Padre/Madre/Tutor"
                                     name="parents">
-                                
+
                                 <label for="parents">PADRE/MADRE/TUTOR</label>
 
                                 @if($errors->get('parents'))
@@ -148,7 +148,7 @@
                                         {{ $errors->get('parents')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
@@ -159,7 +159,7 @@
                                     id="student"
                                     placeholder="Alumno"
                                     name="student">
-                                
+
                                 <label for="student">ALUMNO</label>
 
                                 @if($errors->get('student'))
@@ -167,7 +167,7 @@
                                         {{ $errors->get('student')[0] }}
                                     </div>
                                 @endif
-                            </div>                              
+                            </div>
                         </div>
                     </div>
 
@@ -181,7 +181,7 @@
                                     id="dni"
                                     placeholder="DNI"
                                     name="dni">
-                                
+
                                 <label for="dni">DNI PADRE/MADRE/TUTOR</label>
 
                                 @if($errors->get('dni'))
@@ -208,7 +208,7 @@
                                         {{ $errors->get('goals')[0] }}
                                     </div>
                                 @endif
-                            </div>                           
+                            </div>
                         </div>
                     </div>
 
@@ -222,7 +222,7 @@
                                     name="authorization"
                                     id="auth"
                                     value="auth">
-                                
+
                                 <label class="form-check-label" for="auth">
                                     Tiene mi autorización para participar en la actividad programada y autorizo a la toma y difusión de imágenes de este día en la página web y/o RRSS del centro.
                                 </label>
@@ -241,7 +241,7 @@
                                     name="authorization"
                                     id="notAuth"
                                     value="notAuth">
-                                
+
                                 <label class="form-check-label" for="notAuth">
                                     No va a participar en la actividad programada.
                                 </label>
@@ -266,29 +266,3 @@
         </form>
     </div>
 </x-main>
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;0,700;1,600&display=swap');
-
-    .container {
-        max-width: 90%;
-    }
-
-    h1 {
-        align-self: center;
-        font-size: 40px;
-        margin-top: 10px;
-        font-family: 'Raleway', sans-serif;
-    }
-
-    .buttons-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .flex-column {
-        display: flex;
-        flex-direction: column
-    }
-</style>

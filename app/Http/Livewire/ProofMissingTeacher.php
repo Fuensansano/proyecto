@@ -84,6 +84,7 @@ class ProofMissingTeacher extends Component
             'day' => $fecha_actual['mday'],
             'month' => $fecha_actual['mon'],
             'year' => $fecha_actual['year'],
+            'permissionsSelect' => $request->permissionsSelect
         ];
 
         $options = new Options();
