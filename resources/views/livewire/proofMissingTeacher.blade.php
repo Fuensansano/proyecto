@@ -6,7 +6,7 @@
 			@csrf
 
 			<div class="card mt-5">
-				<h1 class="text-primary">JUSTIFICANTE FALTA PROFESORADO</h1>
+				<h1 class="text-primary text-center">JUSTIFICANTE FALTA PROFESORADO</h1>
 
 				<div class="card-body">
 					<div class="row row-cols-3 mb-4">
