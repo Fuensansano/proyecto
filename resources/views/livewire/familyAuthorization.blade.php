@@ -4,7 +4,7 @@
         <form action="{{ route('generatePDF') }}" method="post">
             @csrf
             <div class="card mt-5">
-                <h1 class="text-primary">AUTORIZACIÓN FAMILIAR</h1>
+                <h1 class="text-primary text-center">AUTORIZACIÓN FAMILIAR</h1>
                 <div class="card-body" class="flex-column">
                     <div class="row row-cols-2">
                         <div class="col">
