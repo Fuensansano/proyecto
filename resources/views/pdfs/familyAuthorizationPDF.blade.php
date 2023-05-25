@@ -141,4 +141,31 @@
     .border-bottom {
         border-bottom: 1px solid #ddd;
     }
+
+    .footer {
+        position: fixed;
+        border-top: 1px solid black;
+        width: 100%;
+    }
+
+    .footer-li {
+        color: blue;
+        font-size: 12px;
+    }
+
+    .footer-ul {
+        text-align: center;
+    }
+
+    .footer-ul li {
+        display: inline;
+    }
+
+    .footer-circles {
+        display: inline-block;
+        height: 6px;
+        width: 6px;
+        background: blue;
+        border-radius: 50%;
+    }
 </style>

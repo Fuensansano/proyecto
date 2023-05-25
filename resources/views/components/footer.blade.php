@@ -1,11 +1,11 @@
-<div id="footer">
+<div class="footer">
     <ul class="footer-ul">
         <li class="footer-li">
             C.I.F.: Q3068165D
         </li>
 
         <li class="footer-li">
-            <div id="circle"></div>
+            <div class="footer-circles"></div>
         </li>
 
         <li class="footer-li">
@@ -13,7 +13,7 @@
         </li>
 
         <li class="footer-li">
-            <div id="circle"></div>
+            <div class="footer-circles"></div>
         </li>
 
         <li class="footer-li">
@@ -21,7 +21,7 @@
         </li>
 
         <li class="footer-li">
-            <div id="circle"></div>
+            <div class="footer-circles"></div>
         </li>
 
         <li class="footer-li">
@@ -31,7 +31,7 @@
 </div>
 
 <style>
-    #footer {
+    .footer {
         position: fixed;
         border-top: 1px solid black;
         width: 100%;
@@ -50,7 +50,7 @@
         display: inline;
     }
 
-    #circle {
+    .footer-circles {
         display: inline-block;
         height: 6px;
         width: 6px;
