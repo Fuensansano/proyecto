@@ -2,19 +2,19 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Requests\ExtraescolaractivityRequest;
+use App\Http\Requests\ExtracurricularActivityRequest;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Livewire\Component;
 
-class ExtraescolarActivity extends Component
+class ExtracurricularActivity extends Component
 {
     public function render()
     {
         return view('livewire.extraescolaractivity');
     }
 
-    public function store(ExtraescolaractivityRequest $request)
+    public function store(ExtracurricularActivityRequest $request)
     {
         $data = [
             "activity_name" => $request->activity_name,
@@ -34,7 +34,7 @@ class ExtraescolarActivity extends Component
         $options = new Options();
         $options->set('isRemoteEnabled', true);
 
-        $html = view('pdfs.extraescolaractivityPDF', compact('data'))->render();
+        $html = view('pdfs.extracurricularActivityPDF', compact('data'))->render();
 
         $dompdf = new Dompdf($options);
         $dompdf->loadHtml($html);

@@ -2,14 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Livewire\{ExtraescolarActivity, FamilyAuthorization, ProofMissingTeacher};
+use App\Http\Livewire\{ExtracurricularActivity, FamilyAuthorization, ProofMissingTeacher};
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/extracurricular-activity', function () {
-    return view('livewire/extraescolaractivity');
+    return view('livewire/extracurricularActivity');
 });
 
 Route::get('/family-authorization', function () {
@@ -24,7 +24,7 @@ Route::get('/proof-missing-teacher', function () {
     return view('clausesIndex');
 });*/
 
-Route::post('/extraescolar-activity',[ExtraescolarActivity::class, 'store']);
+Route::post('/extraescolar-activity',[ExtracurricularActivity::class, 'store']);
 
 Route::post('/family-authorization', [FamilyAuthorization::class, 'generatePDF'])
     ->name('generatePDF');

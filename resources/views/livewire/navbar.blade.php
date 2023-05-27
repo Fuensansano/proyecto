@@ -31,5 +31,4 @@
         </div>
     </div>
 </nav>
-@include('shared._errors')
 
