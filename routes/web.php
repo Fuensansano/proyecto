@@ -24,7 +24,7 @@ Route::get('/proof-missing-teacher', function () {
     return view('clausesIndex');
 });*/
 
-Route::post('/extraescolar-activity',[ExtracurricularActivity::class, 'store']);
+Route::post('/extracurricular-activity',[ExtracurricularActivity::class, 'store']);
 
 Route::post('/family-authorization', [FamilyAuthorization::class, 'generatePDF'])
     ->name('generatePDF');
