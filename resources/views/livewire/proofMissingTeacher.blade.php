@@ -446,9 +446,9 @@
 
 				<hr>
 
-				<div class="buttons-container">
-					<x-button-form-send></x-button-form-send>
-					<x-button-form-cancel></x-button-form-cancel>
+				<div class="text-center">
+					<button class="btn btn-success btn-lg" type="submit">Descargar PDF</button>
+                    <a class="btn btn-danger btn-lg" href="/">Volver al inicio</a>
 				</div>
 			</div>
 		</form>
