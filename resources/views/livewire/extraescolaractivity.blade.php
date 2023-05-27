@@ -1,7 +1,7 @@
 <x-main>
     @livewire('navbar')
     <div class="container">
-        <form action="extraescolaractivity" method="post">
+        <form action="extraescolar-activity" method="post">
         @csrf
             <div class="card mt-5">
                 <h1 class="card-header text-primary bg-white">INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h1>

@@ -21,15 +21,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/extraescolaractivity', function () {
+Route::get('/extraescolar-activity', function () {
     return view('livewire/extraescolaractivity');
 });
 
-Route::get('/familyAuthorization', function () {
+Route::get('/family-authorization', function () {
     return view('livewire/familyAuthorization');
 })->name('authFamForm');
 
-Route::get('/proofMissingTeacher', function () {
+Route::get('/proof-missing-teacher', function () {
     return view('livewire/proofMissingTeacher');
 });
 
@@ -37,12 +37,12 @@ Route::get('/proofMissingTeacher', function () {
     return view('clausesIndex');
 });*/
 
-Route::post('/extraescolaractivity',[ExtraescolarActivity::class, 'store']);
+Route::post('/extraescolar-activity',[ExtraescolarActivity::class, 'store']);
 
-Route::post('/familyAuthorization', [FamilyAuthorization::class, 'generatePDF'])
+Route::post('/family-authorization', [FamilyAuthorization::class, 'generatePDF'])
     ->name('generatePDF');
 
-Route::post('/proofMissingTeacher', [ProofMissingTeacher::class, 'generatePDF'])
+Route::post('/proof-missing-teacher', [ProofMissingTeacher::class, 'generatePDF'])
     ->name('generatePDF2');
 
 /* Route::get('/pdf', [PDFController::class, 'generatePDF']);

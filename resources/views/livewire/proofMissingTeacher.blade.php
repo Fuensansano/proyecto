@@ -2,7 +2,7 @@
 	@livewire('navbar')
 
 	<div class="container">
-		<form action="proofMissingTeacher" class="form" method="post">
+		<form action="proof-missing-teacher" class="form" method="post">
 			@csrf
 
 			<div class="card mt-5">
