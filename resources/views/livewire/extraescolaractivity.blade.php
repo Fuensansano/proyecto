@@ -173,10 +173,7 @@
                         </div>
                     </div>
 
-                    <div class="text-center">
-                        <button class="btn btn-success btn-lg" type="submit">Descargar PDF</button>
-                        <a class="btn btn-danger btn-lg" href="/">Volver al inicio</a>
-                    </div>
+                    <x-form-buttons></x-form-buttons>
                 </div>
             </div>
         </form>
