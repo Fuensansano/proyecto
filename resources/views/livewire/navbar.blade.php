@@ -10,10 +10,7 @@
                         Alumnado
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="./family-authorization">Autorización familiar</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -21,10 +18,9 @@
                         Profesorado
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="./proof-missing-teacher">Justificante falta profesorado</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="./extracurricular-activity">Información actividad extraescolar</a></li>
                     </ul>
                 </li>
             </ul>
