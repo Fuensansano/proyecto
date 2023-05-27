@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/extraescolar-activity', function () {
+Route::get('/extracurricular-activity', function () {
     return view('livewire/extraescolaractivity');
 });
 
