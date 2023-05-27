@@ -12,7 +12,7 @@ class ProofMissingTeacherRequest extends FormRequest
         return [
             'name' => 'required|string',
             'department' => 'required|string', // Se puede añadir regla para que no sea un departamento inventado, que lo coja de un array
-            'dni' => 'required|regex:/^[0-9]{8}[A-Za-z]$/',
+            'dni' => 'required|regex:/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i',
 
             'missingDay1' => 'required|date_format:Y-m-d',
             'journey_option1' => 'required',
