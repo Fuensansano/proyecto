@@ -1,10 +1,8 @@
 <x-main>
 	@livewire('navbar')
-
 	<div class="container">
-		<form action="proof-missing-teacher" class="form" method="post">
+		<form action="proof-missing-teacher" method="post">
 			@csrf
-
 			<div class="card mt-5">
 				<h1 class="text-primary text-center">JUSTIFICANTE FALTA PROFESORADO</h1>
 
@@ -440,18 +438,17 @@
 					</div>
 				</div>
 
-                <div class="d-grid gap-2 col-4 mx-auto">
-                   <x-clauses-index-modal></x-clauses-index-modal>
-                </div>
+				<div class="d-grid gap-2 col-4 mx-auto">
+					<x-clauses-index-modal></x-clauses-index-modal>
+				</div>
 
 				<hr>
 
-				<x-form-buttons></x-form-buttons>
+                <x-form-buttons></x-form-buttons>
 			</div>
 		</form>
 	</div>
 </x-main>
-
 
 <script>
 	const midJourneyFrom1 = document.getElementById('midJourneyFrom1');
