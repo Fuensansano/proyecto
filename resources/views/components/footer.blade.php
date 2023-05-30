@@ -1,7 +1,7 @@
 <div class="footer">
     <ul class="footer-ul">
         <li class="footer-li">
-            C.I.F.: Q3068165D
+            <span>C.I.F.: Q3068165D</span>
         </li>
 
         <li class="footer-li">
@@ -9,7 +9,7 @@
         </li>
 
         <li class="footer-li">
-            <a href="www.iescierva.net">www.iescierva.net</a>
+            <span>www.iescierva.net</span>
         </li>
 
         <li class="footer-li">
@@ -17,7 +17,7 @@
         </li>
 
         <li class="footer-li">
-            <a href="30010978@murciaeduca.es">30010978@murciaeduca.es</a>
+            <span>30010978@murciaeduca.es</span>
         </li>
 
         <li class="footer-li">
@@ -25,7 +25,7 @@
         </li>
 
         <li class="footer-li">
-            Código Centro 30010978
+            <span>Código Centro 30010978</span>
         </li>
     </ul>
 </div>
@@ -36,25 +36,29 @@
         border-top: 1px solid black;
         width: 100%;
     }
-
-    .footer-li {
-        color: blue;
-        font-size: 12px;
-    }
-
+    
     .footer-ul {
         text-align: center;
-    }
-
-    .footer-ul li {
-        display: inline;
     }
 
     .footer-circles {
         display: inline-block;
         height: 6px;
         width: 6px;
-        background: blue;
+        background: black;
         border-radius: 50%;
+    }
+
+    .footer-li span {
+        color: black;
+        font-size: 15px;
+    }
+
+    .footer-li div {
+        background: black;
+    }
+
+    .footer-ul li {
+        display: inline;
     }
 </style>
