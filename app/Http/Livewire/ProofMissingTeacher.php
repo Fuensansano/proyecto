@@ -67,23 +67,24 @@ class ProofMissingTeacher extends Component
             'dni' => $request->dni,
 
             'missingDay1' => $this->formatearFecha($request->missingDay1),
-            'journey_option1' => $request->journey_option1,
-            'midJourneyFrom1' => $request->midJourneyFrom1,
-            'midJourneyTo1' => $request->midJourneyTo1,
+            'journeyType1' => $request->journeyType1,
+            'journeyStartTime1' => $request->journeyStartTime1,
+            'journeyEndTime1' => $request->journeyEndTime1,
 
             'missingDay2' => $this->formatearFecha($request->missingDay2),
-            'journey_option2' => $request->journey_option2,
-            'midJourneyFrom2' => $request->midJourneyFrom2,
-            'midJourneyTo2' => $request->midJourneyTo2,
+            'journeyType2' => $request->journeyType2,
+            'journeyStartTime2' => $request->journeyStartTime2,
+            'journeyEndTime2' => $request->journeyEndTime2,
 
             'missingDay3' => $this->formatearFecha($request->missingDay3),
-            'journey_option3' => $request->journey_option3,
-            'midJourneyFrom3' => $request->midJourneyFrom3,
-            'midJourneyTo3' => $request->midJourneyTo3,
+            'journeyType3' => $request->journeyType3,
+            'journeyStartTime3' => $request->journeyStartTime3,
+            'journeyEndTime3' => $request->journeyEndTime3,
 
             'day' => $fecha_actual['mday'],
             'month' => $fecha_actual['mon'],
             'year' => $fecha_actual['year'],
+            
             'permissionsSelect' => $request->permissionsSelect
         ];
 

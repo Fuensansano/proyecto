@@ -88,18 +88,18 @@
 							<div>
 								<input
 									type="radio"
-									name="journey_option1"
-									value="full_journey_option1"
-									id="full_journey_option1"
-									class="@error('journey_option1') is-invalid @enderror"
+									name="journeyType1"
+									value="fullJourneyOption1"
+									id="fullJourneyOption1"
+									class="@error('journeyType1') is-invalid @enderror"
 								/>
 
-								<label for="full_journey_option1" class="radio-label">
+								<label for="fullJourneyOption1" class="radio-label">
 									He faltado la jornada completa<span class="text-danger"> *</span>
 								</label>
-								@if($errors->get('journey_option1'))
+								@if($errors->get('journeyType1'))
 									<div class="text-danger mb-3 mt-0">
-										{{ $errors->get('journey_option1')[0] }}
+										{{ $errors->get('journeyType1')[0] }}
 									</div>
 								@endif
 							</div>
@@ -107,18 +107,18 @@
 							<div>
 								<input
 									type="radio"
-									name="journey_option1"
-									value="mid_journey_option1"
-									id="mid_journey_option1"
-									class="@error('journey_option1') is-invalid @enderror"
+									name="journeyType1"
+									value="midJourneyOption1"
+									id="midJourneyOption1"
+									class="@error('journeyType1') is-invalid @enderror"
 								/>
 
-								<label for="mid_journey_option1" class="radio-label">
+								<label for="midJourneyOption1" class="radio-label">
 									No he faltado la jornada completa<span class="text-danger"> *</span>
 								</label>
-								@if($errors->get('journey_option1'))
+								@if($errors->get('journeyType1'))
 									<div class="text-danger mb-3 mt-0">
-										{{ $errors->get('journey_option1')[0] }}
+										{{ $errors->get('journeyType1')[0] }}
 									</div>
 								@endif
 							</div>
@@ -128,42 +128,42 @@
 							<div class="row row-cols-2 mb-4">
 								<div class="col">
 									<label
-										for="midJourneyFrom1"
-										class="@error('midJourneyFrom1') is-invalid @enderror"
+										for="journeyStartTime1"
+										class="@error('journeyStartTime1') is-invalid @enderror"
 									>
 										Desde <span class="text-danger"> *</span>
 									</label>
 
 									<input
-										id="midJourneyFrom1"
+										id="journeyStartTime1"
 										type="time"
-										name="midJourneyFrom1"
+										name="journeyStartTime1"
 										class="form-control"
 									/>
-									@if($errors->get('midJourneyFrom1'))
+									@if($errors->get('journeyStartTime1'))
 										<div class="text-danger mb-3 mt-0">
-											{{ $errors->get('midJourneyFrom1')[0] }}
+											{{ $errors->get('journeyStartTime1')[0] }}
 										</div>
 									@endif
 								</div>
 
 								<div class="col">
 									<label
-										for="midJourneyTo1"
-										class="@error('midJourneyTo1') is-invalid @enderror"
+										for="journeyEndTime1"
+										class="@error('journeyEndTime1') is-invalid @enderror"
 									>
 										Hasta <span class="text-danger"> *</span>
 									</label>
 
 									<input
-										id="midJourneyTo1"
+										id="journeyEndTime1"
 										type="time"
-										name="midJourneyTo1"
+										name="journeyEndTime1"
 										class="form-control"
 									/>
-									@if($errors->get('midJourneyTo1'))
+									@if($errors->get('journeyEndTime1'))
 										<div class="text-danger mb-3 mt-0">
-											{{ $errors->get('midJourneyTo1')[0] }}
+											{{ $errors->get('journeyEndTime1')[0] }}
 										</div>
 									@endif
 								</div>
@@ -193,38 +193,38 @@
 						<div class="col mt-3">
 							<div>
 								<input
-									id="full_journey_option2"
+									id="fullJourneyOption2"
 									type="radio"
-									name="journey_option2"
-									value="full_journey_option2"
-									class="@error('journey_option2') is-invalid @enderror"
+									name="journeyType2"
+									value="fullJourneyOption2"
+									class="@error('journeyType2') is-invalid @enderror"
 								/>
 
-								<label for="full_journey_option2" class="radio-label">
+								<label for="fullJourneyOption2" class="radio-label">
 									He faltado la jornada completa
 								</label>
-								@if($errors->get('journey_option2'))
+								@if($errors->get('journeyType2'))
 									<div class="text-danger mb-3 mt-0">
-										{{ $errors->get('journey_option2')[0] }}
+										{{ $errors->get('journeyType2')[0] }}
 									</div>
 								@endif
 							</div>
 
 							<div>
 								<input
-									id="mid_journey_option2"
+									id="midJourneyOption2"
 									type="radio"
-									name="journey_option2"
-									value="mid_journey_option2"
-									class="@error('journey_option2') is-invalid @enderror"
+									name="journeyType2"
+									value="midJourneyOption2"
+									class="@error('journeyType2') is-invalid @enderror"
 								/>
 
 								<label for="mid_journey_optio2" class="radio-label">
 									No he faltado la jornada completa
 								</label>
-								@if($errors->get('journey_option2'))
+								@if($errors->get('journeyType2'))
 									<div class="text-danger mb-3 mt-0">
-										{{ $errors->get('journey_option2')[0] }}
+										{{ $errors->get('journeyType2')[0] }}
 									</div>
 								@endif
 							</div>
@@ -234,42 +234,42 @@
 							<div class="row row-cols-2 mb-4">
 								<div class="col">
 									<label
-										for="midJourneyFrom2"
-										class="@error('midJourneyFrom2') is-invalid @enderror"
+										for="journeyStartTime2"
+										class="@error('journeyStartTime2') is-invalid @enderror"
 									>
 										Desde
 									</label>
 
 									<input
-										id="midJourneyFrom2"
+										id="journeyStartTime2"
 										type="time"
-										name="midJourneyFrom2"
+										name="journeyStartTime2"
 										class="form-control"
 									/>
-									@if($errors->get('midJourneyFrom2'))
+									@if($errors->get('journeyStartTime2'))
 										<div class="text-danger mb-3 mt-0">
-											{{ $errors->get('midJourneyFrom2')[0] }}
+											{{ $errors->get('journeyStartTime2')[0] }}
 										</div>
 									@endif
 								</div>
 
 								<div class="col">
 									<label
-										for="midJourneyTo2"
-										class="@error('midJourneyTo2') is-invalid @enderror"
+										for="journeyEndTime2"
+										class="@error('journeyEndTime2') is-invalid @enderror"
 									>
 										Hasta
 									</label>
 
 									<input
-										id="midJourneyTo2"
+										id="journeyEndTime2"
 										type="time"
-										name="midJourneyTo2"
+										name="journeyEndTime2"
 										class="form-control"
 									/>
-									@if($errors->get('midJourneyTo2'))
+									@if($errors->get('journeyEndTime2'))
 										<div class="text-danger mb-3 mt-0">
-											{{ $errors->get('midJourneyTo2')[0] }}
+											{{ $errors->get('journeyEndTime2')[0] }}
 										</div>
 									@endif
 								</div>
@@ -299,38 +299,38 @@
 						<div class="col mt-3">
 							<div>
 								<input
-									id="full_journey_option3"
+									id="fullJourneyOption3"
 									type="radio"
-									name="journey_option3"
-									value="full_journey_option3"
-									class="@error('journey_option3') is-invalid @enderror"
+									name="journeyType3"
+									value="fullJourneyOption3"
+									class="@error('journeyType3') is-invalid @enderror"
 								/>
 
-								<label for="full_journey_option3" class="radio-label">
+								<label for="fullJourneyOption3" class="radio-label">
 									He faltado la jornada completa
 								</label>
-								@if($errors->get('journey_option3'))
+								@if($errors->get('journeyType3'))
 									<div class="text-danger mb-3 mt-0">
-										{{ $errors->get('journey_option3')[0] }}
+										{{ $errors->get('journeyType3')[0] }}
 									</div>
 								@endif
 							</div>
 
 							<div>
 								<input
-									id="mid_journey_option3"
+									id="midJourneyOption3"
 									type="radio"
-									name="journey_option3"
-									value="mid_journey_option3"
-									class="@error('journey_option3') is-invalid @enderror"
+									name="journeyType3"
+									value="midJourneyOption3"
+									class="@error('journeyType3') is-invalid @enderror"
 								/>
 
 								<label for="mid_journey_optio3" class="radio-label">
 									No he faltado la jornada completa
 								</label>
-								@if($errors->get('journey_option3'))
+								@if($errors->get('journeyType3'))
 									<div class="text-danger mb-3 mt-0">
-										{{ $errors->get('journey_option3')[0] }}
+										{{ $errors->get('journeyType3')[0] }}
 									</div>
 								@endif
 							</div>
@@ -340,42 +340,42 @@
 							<div class="row row-cols-2 mb-4">
 								<div class="col">
 									<label
-										for="midJourneyFrom3"
-										class="@error('midJourneyFrom3') is-invalid @enderror"
+										for="journeyStartTime3"
+										class="@error('journeyStartTime3') is-invalid @enderror"
 									>
 										Desde
 									</label>
 
 									<input
-										id="midJourneyFrom3"
+										id="journeyStartTime3"
 										type="time"
-										name="midJourneyFrom3"
+										name="journeyStartTime3"
 										class="form-control"
 									/>
-									@if($errors->get('midJourneyFrom3'))
+									@if($errors->get('journeyStartTime3'))
 										<div class="text-danger mb-3 mt-0">
-											{{ $errors->get('midJourneyFrom3')[0] }}
+											{{ $errors->get('journeyStartTime3')[0] }}
 										</div>
 									@endif
 								</div>
 
 								<div class="col">
 									<label
-										for="midJourneyTo3"
-										class="@error('midJourneyTo3') is-invalid @enderror"
+										for="journeyEndTime3"
+										class="@error('journeyEndTime3') is-invalid @enderror"
 									>
 										Hasta
 									</label>
 
 									<input
-										id="midJourneyTo3"
+										id="journeyEndTime3"
 										type="time"
-										name="midJourneyTo3"
+										name="journeyEndTime3"
 										class="form-control"
 									/>
-									@if($errors->get('midJourneyTo3'))
+									@if($errors->get('journeyEndTime3'))
 										<div class="text-danger mb-3 mt-0">
-											{{ $errors->get('midJourneyTo3')[0] }}
+											{{ $errors->get('journeyEndTime3')[0] }}
 										</div>
 									@endif
 								</div>
@@ -451,43 +451,43 @@
 </x-main>
 
 <script>
-	const midJourneyFrom1 = document.getElementById('midJourneyFrom1');
-	const midJourneyTo1 = document.getElementById('midJourneyTo1');
+	const journeyStartTime1 = document.getElementById('journeyStartTime1');
+	const journeyEndTime1 = document.getElementById('journeyEndTime1');
 
-	document.getElementById('full_journey_option1').addEventListener('click', (e) => {
-		midJourneyFrom1.disabled = true;
-		midJourneyTo1.disabled = true;
+	document.getElementById('fullJourneyOption1').addEventListener('click', (e) => {
+		journeyStartTime1.disabled = true;
+		journeyEndTime1.disabled = true;
 	});
 
-	document.getElementById('mid_journey_option1').addEventListener('click', (e) => {
-		midJourneyFrom1.disabled = false;
-		midJourneyTo1.disabled = false;
+	document.getElementById('midJourneyOption1').addEventListener('click', (e) => {
+		journeyStartTime1.disabled = false;
+		journeyEndTime1.disabled = false;
 	});
 
-	const midJourneyFrom2 = document.getElementById('midJourneyFrom2');
-	const midJourneyTo2 = document.getElementById('midJourneyTo2');
+	const journeyStartTime2 = document.getElementById('journeyStartTime2');
+	const journeyEndTime2 = document.getElementById('journeyEndTime2');
 
-	document.getElementById('full_journey_option2').addEventListener('click', (e) => {
-		midJourneyFrom2.disabled = true;
-		midJourneyTo2.disabled = true;
+	document.getElementById('fullJourneyOption2').addEventListener('click', (e) => {
+		journeyStartTime2.disabled = true;
+		journeyEndTime2.disabled = true;
 	});
 
-	document.getElementById('mid_journey_option2').addEventListener('click', (e) => {
-		midJourneyFrom2.disabled = false;
-		midJourneyTo2.disabled = false;
+	document.getElementById('midJourneyOption2').addEventListener('click', (e) => {
+		journeyStartTime2.disabled = false;
+		journeyEndTime2.disabled = false;
 	});
 
-	const midJourneyFrom3 = document.getElementById('midJourneyFrom3');
-	const midJourneyTo3 = document.getElementById('midJourneyTo3');
+	const journeyStartTime3 = document.getElementById('journeyStartTime3');
+	const journeyEndTime3 = document.getElementById('journeyEndTime3');
 
-	document.getElementById('full_journey_option3').addEventListener('click', (e) => {
-		midJourneyFrom3.disabled = true;
-		midJourneyTo3.disabled = true;
+	document.getElementById('fullJourneyOption3').addEventListener('click', (e) => {
+		journeyStartTime3.disabled = true;
+		journeyEndTime3.disabled = true;
 	});
 
-	document.getElementById('mid_journey_option3').addEventListener('click', (e) => {
-		midJourneyFrom3.disabled = false;
-		midJourneyTo3.disabled = false;
+	document.getElementById('midJourneyOption3').addEventListener('click', (e) => {
+		journeyStartTime3.disabled = false;
+		journeyEndTime3.disabled = false;
 	});
 
 	function showHiddenFields() {
