@@ -219,7 +219,7 @@
 									class="@error('journeyType2') is-invalid @enderror"
 								/>
 
-								<label for="mid_journey_optio2" class="radio-label">
+								<label for="midJourneyOption2" class="radio-label">
 									No he faltado la jornada completa
 								</label>
 								@if($errors->get('journeyType2'))
@@ -325,7 +325,7 @@
 									class="@error('journeyType3') is-invalid @enderror"
 								/>
 
-								<label for="mid_journey_optio3" class="radio-label">
+								<label for="midJourneyOption3" class="radio-label">
 									No he faltado la jornada completa
 								</label>
 								@if($errors->get('journeyType3'))
