@@ -12,63 +12,63 @@ class FamilyAuthorizationTest extends TestCase
     function the_activity_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('ACTIVIDAD PROGRAMADA');
+            ->assertSee('Actividad programada');
     }
 
     /** @test */
     function the_organizer_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('ORGANIZADOR/A');
+            ->assertSee('Organizador/a');
     }
 
     /** @test */
     function the_execution_date_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('FECHA REALIZACIÓN');
+            ->assertSee('Fecha realización');
     }
 
     /** @test */
     function the_departure_time_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('HORA SALIDA');
+            ->assertSee('Hora salida');
     }
 
     /** @test */
     function the_goals_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('OBJETIVOS Y CONTENIDOS');
+            ->assertSee('Objetivos y Contenidos');
     }
 
     /** @test */
     function the_deadline_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('FECHA ENTREGA');
+            ->assertSee('Fecha entrega');
     }
 
     /** @test */
     function the_parents_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('PADRE/MADRE/TUTOR');
+            ->assertSee('Padre/Madre/Tutor');
     }
 
     /** @test */
     function the_student_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('ALUMNO');
+            ->assertSee('Alumno');
     }
 
     /** @test */
     function the_course_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('CURSO DEL ALUMNO');
+            ->assertSee('Curso del alumno');
     }
 
     /** @test */
@@ -83,7 +83,7 @@ class FamilyAuthorizationTest extends TestCase
     function the_dni_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get(route('authFamForm'))
             ->assertStatus(200)
-            ->assertSee('DNI PADRE/MADRE/TUTOR');
+            ->assertSee('DNI Padre/Madre/Tutor');
     }
 
     /** @test */
