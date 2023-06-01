@@ -8,7 +8,6 @@ class ExtracurricularActivityRequest extends FormRequest
 {
     public function rules()
     {
-
         return [
             'activity_name' => 'required|string',
             'activity_place' => 'required|string',

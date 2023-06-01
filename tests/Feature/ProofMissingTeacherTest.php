@@ -57,7 +57,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_department_is_required() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'department' => null,
             ])
             ->assertSessionHasErrors(['department' => 'El departamento es obligatorio']);
@@ -66,7 +66,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_dni_is_required() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'dni' => null,
             ])
             ->assertSessionHasErrors(['dni' => 'El DNI es obligatorio']);
@@ -75,7 +75,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_dni_must_have_a_valid_format() {
     $this->from('/proof-missing-teacher')
-        ->post(route('generatePDF2'), [
+        ->post('/proof-missing-teacher', [
             'dni' => 'invalid-format',
         ])
         ->assertSessionHasErrors(['dni' => 'El DNI tiene que tener un formato: XXXXXXXXA']);
@@ -84,7 +84,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_first_missing_day_is_required() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'missingDay1' => null,
             ])
             ->assertSessionHasErrors(['missingDay1' => 'El día de falta es obligatorio']);
@@ -93,7 +93,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_first_missing_day_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'missingDay1' => 'invalid-format',
             ])
             ->assertSessionHasErrors(['missingDay1' => 'El día de falta debe tener un formato válido']);
@@ -102,7 +102,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_first_radio_type_of_journey_is_required() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType1' => null,
             ])
             ->assertSessionHasErrors(['journeyType1' => 'Es obligatorio elegir una opción de las dos']);
@@ -111,7 +111,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_first_journey_start_time_is_required_if_the_first_radio_type_of_journey_is_midJourneyOption1() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType1' => 'midJourneyOption1',
                 'journeyStartTime1' => null,
             ])
@@ -121,7 +121,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_first_journey_start_time_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType1' => 'midJourneyOption1',
                 'journeyStartTime1' => 'invalid-format',
             ])
@@ -131,7 +131,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_first_journey_end_time_is_required_if_the_first_radio_type_of_journey_is_midJourneyOption1() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType1' => 'midJourneyOption1',
                 'journeyEndTime1' => null,
             ])
@@ -141,7 +141,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_first_journey_end_time_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType1' => 'midJourneyOption1',
                 'journeyEndTime1' => 'invalid-format',
             ])
@@ -152,7 +152,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_first_journey_start_time_and_the_first_journey_end_time_are_not_required_if_the_first_radio_type_of_journey_is_fullJourneyOption1() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -167,7 +167,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_second_missing_day_is_nullable() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -181,7 +181,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_second_missing_day_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'missingDay2' => 'invalid-format',
             ])
             ->assertSessionHasErrors(['missingDay2' => 'El día de falta debe tener un formato válido']);
@@ -190,7 +190,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_second_radio_type_of_journey_is_nullable() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -205,7 +205,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_second_journey_start_time_is_nullable() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -220,7 +220,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_second_journey_start_time_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType2' => 'midJourneyOption2',
                 'journeyStartTime2' => 'invalid-format',
             ])
@@ -230,7 +230,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_second_journey_end_time_is_nullable() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -245,7 +245,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_second_journey_end_time_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType2' => 'midJourneyOption2',
                 'journeyEndTime2' => 'invalid-format',
             ])
@@ -255,7 +255,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_third_missing_day_is_nullable() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -269,7 +269,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_third_missing_day_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'missingDay3' => 'formato-no-valido',
             ])
             ->assertSessionHasErrors(['missingDay3' => 'El día de falta debe tener un formato válido']);
@@ -278,7 +278,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_third_radio_type_of_journey_is_nullable() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -292,7 +292,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_third_journey_start_time_is_nullable() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -306,7 +306,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_journeyStartTime3_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType3' => 'midJourneyOption3',
                 'journeyStartTime3' => 'formato-no-valido',
             ])
@@ -316,7 +316,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_third_journey_end_time_is_nullable() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'name' => 'Tomas',
                 'department' => 'Informatica',
                 'dni' => '12345678A',
@@ -330,7 +330,7 @@ class ProofMissingTeacherTest extends TestCase
     /** @test */
     /* function the_third_journey_end_time_must_have_a_valid_format() {
         $this->from('/proof-missing-teacher')
-            ->post(route('generatePDF2'), [
+            ->post('/proof-missing-teacher', [
                 'journeyType3' => 'midJourneyOption3',
                 'journeyEndTime3' => 'invalid-format',
             ])

@@ -14,7 +14,7 @@ Route::get('/extracurricular-activity', function () {
 
 Route::get('/family-authorization', function () {
     return view('livewire/familyAuthorization');
-})->name('authFamForm');
+});
 
 Route::get('/proof-missing-teacher', function () {
     return view('livewire/proofMissingTeacher');

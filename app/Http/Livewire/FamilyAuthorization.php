@@ -64,10 +64,10 @@ class FamilyAuthorization extends Component
         $data = [
             'activity' => $request->activity,
             'organizer' => $request->organizer,
-            'execution_date' => $request->execution_date,
+            'execution_date' => $this->dateFormat($request->execution_date),
             'departure_time' => $request->departure_time,
             'goals' => $request->goals,
-            'deadline' => $request->deadline,
+            'deadline' => $this->dateFormat($request->deadline),
             'parents' => $request->parents,
             'student' => $request->student,
             'course' => $request->course,
@@ -89,5 +89,9 @@ class FamilyAuthorization extends Component
         $dompdf->render();
 
         return $dompdf->stream('autorizacionFamiliar.pdf', array('Attachment' => 0));
+    }
+
+    public function dateFormat($date) {
+        return date('d-m-Y', strtotime($date));  
     }
 }

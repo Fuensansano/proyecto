@@ -1,7 +1,7 @@
 <x-main>
     @livewire('navbar')
     <div class="container">
-        <form action="{{ route('generatePDF') }}" method="post">
+        <form action="{{ '/family-authorization' }}" method="post">
             @csrf
             <div class="card mt-5">
                 <h1 class="text-primary text-center">AUTORIZACIÓN FAMILIAR</h1>

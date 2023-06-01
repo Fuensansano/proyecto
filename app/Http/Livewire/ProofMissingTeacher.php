@@ -66,17 +66,17 @@ class ProofMissingTeacher extends Component
             'department' => $request->department,
             'dni' => $request->dni,
 
-            'missingDay1' => $this->formatearFecha($request->missingDay1),
+            'missingDay1' => $this->dateFormat($request->missingDay1),
             'journeyType1' => $request->journeyType1,
             'journeyStartTime1' => $request->journeyStartTime1,
             'journeyEndTime1' => $request->journeyEndTime1,
 
-            'missingDay2' => $this->formatearFecha($request->missingDay2),
+            'missingDay2' => $this->dateFormat($request->missingDay2),
             'journeyType2' => $request->journeyType2,
             'journeyStartTime2' => $request->journeyStartTime2,
             'journeyEndTime2' => $request->journeyEndTime2,
 
-            'missingDay3' => $this->formatearFecha($request->missingDay3),
+            'missingDay3' => $this->dateFormat($request->missingDay3),
             'journeyType3' => $request->journeyType3,
             'journeyStartTime3' => $request->journeyStartTime3,
             'journeyEndTime3' => $request->journeyEndTime3,
@@ -101,7 +101,7 @@ class ProofMissingTeacher extends Component
         return $dompdf->stream('JustifcanteFaltaProfesorado.pdf', array('Attachment' => 0));
     }
 
-    public function formatearFecha($fecha) {
-        return date('d-m-Y', strtotime($fecha));
+    public function dateFormat($date) {
+        return date('d-m-Y', strtotime($date));  
     }
 }
