@@ -102,6 +102,10 @@ class ProofMissingTeacher extends Component
     }
 
     public function dateFormat($date) {
+        if($date == null) {
+            return null;
+        }
+        
         return date('d-m-Y', strtotime($date));  
     }
 }
