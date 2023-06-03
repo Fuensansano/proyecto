@@ -12,15 +12,15 @@ class FamilyAuthorizationTest extends TestCase
     protected array $defaultData = [
         'activity' => 'a random activity',
         'organizer' => 'a random organizer',
-        'execution date' => 'a random execution date',
-        'departure time' => 'a random departure time',
+        'execution_date' => 'a random execution date',
+        'departure_time' => '12:50',
         'goals' => 'a random goals',
-        'deadline' => 'a random deadline',
+        'deadline' => '12:50',
         'parents' => 'a random parents',
         'student' => 'a random student',
         'course' => 'a random course',
         'authorization' => 'a random authorization',
-        'dni' => 'a random dni',
+        'dni' => '12345678A',
     ];
 
     /** @test */
