@@ -85,7 +85,8 @@ class ProofMissingTeacher extends Component
             'month' => $actual_date['mon'],
             'year' => $actual_date['year'],
             
-            'permissionsSelect' => $request->permissionsSelect
+            'permissionsSelect' => $request->permissionsSelect,
+            'reason' => $request->reason,
         ];
 
         $options = new Options();
@@ -98,7 +99,7 @@ class ProofMissingTeacher extends Component
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
 
-        return $dompdf->stream('JustifcanteFaltaProfesorado.pdf', array('Attachment' => 0));
+        return $dompdf->stream('JustificanteFaltaProfesorado.pdf', array('Attachment' => 0));
     }
 
     public function dateFormat($date) {

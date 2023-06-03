@@ -39,7 +39,7 @@
 </table>
 
 <div>
-    <p class="texto">
+    <p class="text">
         <b>
             Para tener constancia de que ustedes han recibido esta información,
             les ruego la devuelvan firmada al Centro, para que sus hijos la entreguen al profesor
@@ -49,7 +49,7 @@
 </div>
 
 <div>
-    <p class="texto">
+    <p class="text">
         D./Dª <b>{{ $data['parents'] }}</b> como padre,
         madre o tutor del alumno/a <b>{{ $data['student'] }}</b>
         del curso <b>{{ $data['course'] }}</b>, me considero informado/a de la actividad programada
@@ -76,12 +76,16 @@
 </div>
 
 @component('components.signature')
-    @slot('date')
-        Murcia, a <b>{{ $data['day'] }}</b> de <b>{{ $data['month'] }}</b> de <b>{{ $data['year']}}</b>
+    @slot('day')
+        {{ $data['day'] }}
     @endslot
 
-    @slot('text')
-        Firma del padre/madre/tutor del alumno
+    @slot('month')
+        {{ $data['month'] }}
+    @endslot
+
+    @slot('year')
+        {{ $data['year'] }}
     @endslot
 
     @slot('dni')
@@ -122,7 +126,7 @@
 
     .sign {
         margin-top: 150px;
-        margin-bottom: 100px;
+        margin-bottom: 150px;
     }
 
     .margin-checkbox {
@@ -133,7 +137,7 @@
         margin-bottom: -5px
     }
 
-    .texto {
+    .text {
         font-size: 16px;
         text-align: justify;
     }
