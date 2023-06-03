@@ -30,7 +30,7 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyEndTime3' => 'nullable|date_format:H:i',
 
             'permissionsSelect' => 'required',
-            'reason' => 'nullable'
+            'reason' => 'nullable|require_if:in:'.implode(',', array_keys(config('specialMedicalReasons'))),
         ];
     }
 
@@ -61,4 +61,5 @@ class ProofMissingTeacherRequest extends FormRequest
             'permissionsSelect.required' => 'Debe seleccionar un motivo'
         ];
     }
+
 }
