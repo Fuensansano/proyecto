@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'L1' => 'L1: Licencia por asuntos propios para funcionarios en sericio activo. (2)',
+    'L2' => 'L2: Ausencia por enfermedad no superior a tres días. (10)',
+    'L3' => 'L3: Licencia por enfermedad de más de tres días de duración. (1)',
+    'P1' => 'P1: Permiso por traslado de domicilio. (3)',
+    'P2' => 'P2: Permiso por exámenes finales y demás pruebas definitivas de aptitud. (4)',
+    'P3' => 'P3: Permiso para el cumplimiento de deberes inexcusables de carácter público o personal. (6)',
+    'P4' => 'P4: Permiso por adopción o acogimiento de menores de seis años y mayores de seis años discapacitados o minusválidos. (2)',
+    'P5' => 'P5: Permiso por lactancia. (2)',
+    'P6' => 'P6: Permiso por reducción de jornada por guarda legal o atención por discapacidad.',
+    'P7' => 'P7: Permiso retribuido para las funcionarias en estado de gestación.',
+    'P8' => 'P8: Permiso por parto',
+    'P9' => 'P9: Permiso por paternidad, por el nacimiento, adopción o acogimiento de un hijo. (2)',
+    'P10' => 'P10: Permiso por fallecimiento, enfermedad, accidente grave u operación de un familiar. (2)',
+    'P11' => 'P11: Permiso por exámenes prenatales. (7)',
+    'P12' => 'P12: Permiso sustitutivo de lactancia. (2)',
+    'P13' => 'P13: Permiso de ausencia por nacimiento de hijos prematuros u hospitalizados tras el parto. (5)',
+    'P14' => 'P14: Permiso de ausencia del trabajo para la conciliación de la vida familiar y profesional. (8)',
+    'P15' => 'P15: Permiso por reducción horaria por cuidado de familiares. (2)',
+    'P16' => 'P16: Flexibilización horaria para conciliación de la vida familiar. (9)',
+    'P17' => 'P17: Permiso por estudios sobre materias relacionadas con el puesto de trabajo. (2)',
+    'P18' => 'P18: Permiso por razón de violencia de género.',
+    'P19' => 'P19: Permiso por riesgos en el embarazo o lactancia natural vinculado al puesto de trabajo. (1)',
+    'P20' => 'P20: Permiso por matrimonio. (2)',
+];

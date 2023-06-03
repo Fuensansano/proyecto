@@ -393,33 +393,19 @@
                                 name="permissionsSelect"
 								onchange="showHiddenFields()"
 							>
-								<option value="L1: Licencia por asuntos propios para funcionarios en servicio activo. (2)">
-                                    L1: Licencia por asuntos propios para funcionarios en servicio activo. (2)
-                                </option>
-								<option value="L2: Ausencia por enfermedad no superior a tres días. (10)" id="L2">L2: Ausencia por enfermedad no superior a tres días. (10)</option>
-								<option value="L3: Licencia por enfermedad de más de tres días de duración. (1)">L3: Licencia por enfermedad de más de tres días de duración. (1)</option>
-								<option value="P1: Permiso por traslado de domicilio. (3)">P1: Permiso por traslado de domicilio. (3)</option>
-								<option value="P2: Permiso por exámenes finales y demás pruebas definitivas de aptitud. (4)">P2: Permiso por exámenes finales y demás pruebas definitivas de aptitud. (4)</option>
-								<option value="P3: Permiso para el cumplimiento de deberes inexcusables de carácter público o personal. (6)">P3: Permiso para el cumplimiento de deberes inexcusables de carácter público o personal. (6)</option>
-								<option value="P4: Permiso por adopción o acogimiento de menores de seis años y mayores de seis años discapacitados o minusválidos. (2)">P4: Permiso por adopción o acogimiento de menores de seis años y mayores de seis años discapacitados o minusválidos. (2)</option>
-								<option value="P5: Permiso por lactancia. (2)">P5: Permiso por lactancia. (2)</option>
-								<option value="P6: Permiso por reducción de jornada por guarda legal o atención por discapacidad.">P6: Permiso por reducción de jornada por guarda legal o atención por discapacidad.</option>
-								<option value="P7: Permiso retribuido para las funcionarias en estado de gestación.">P7: Permiso retribuido para las funcionarias en estado de gestación.</option>
-								<option value="P8: Permiso por parto">P8: Permiso por parto.</option>
-								<option value="P9: Permiso por paternidad, por el nacimiento, adopción o acogimiento de un hijo. (2)">P9: Permiso por paternidad, por el nacimiento, adopción o acogimiento de un hijo. (2)</option>
-								<option value="P10: Permiso por fallecimiento, enfermedad, accidente grave u operación de un familiar. (2)">P10: Permiso por fallecimiento, enfermedad, accidente grave u operación de un familiar. (2)</option>
-								<option value="P11: Permiso por exámenes prenatales. (7)">P11: Permiso por exámenes prenatales. (7)</option>
-								<option value="P12: Permiso sustitutivo de lactancia. (2)">P12: Permiso sustitutivo de lactancia. (2)</option>
-								<option value="P13: Permiso de ausencia por nacimiento de hijos prematuros u hospitalizados tras el parto. (5)">P13: Permiso de ausencia por nacimiento de hijos prematuros u hospitalizados tras el parto. (5)</option>
-								<option value="P14: Permiso de ausencia del trabajo para la conciliación de la vida familiar y profesional. (8)" id="P14">P14: Permiso de ausencia del trabajo para la conciliación de la vida familiar y profesional. (8)</option>
-								<option value="P15: Permiso por reducción horaria por cuidado de familiares. (2)">P15: Permiso por reducción horaria por cuidado de familiares. (2)</option>
-								<option value="P16: Flexibilización horaria para conciliación de la vida familiar. (9)">P16: Flexibilización horaria para conciliación de la vida familiar. (9)</option>
-								<option value="P17: Permiso por estudios sobre materias relacionadas con el puesto de trabajo. (2)">P17: Permiso por estudios sobre materias relacionadas con el puesto de trabajo. (2)</option>
-								<option value="P18: Permiso por razón de violencia de género.">P18: Permiso por razón de violencia de género.</option>
-								<option value="P19: Permiso por riesgos en el embarazo o lactancia natural vinculado al puesto de trabajo. (1)">P19: Permiso por riesgos en el embarazo o lactancia natural vinculado al puesto de trabajo. (1)</option>
-								<option value="P20: Permiso por matrimonio. (2)">P20: Permiso por matrimonio. (2)</option>
+                                @foreach(config('proofMissingTeacherSelectOptions') as $key => $value)
+                                    <option value="{{ $value }}" id="{{ $key }}">
+                                        {{ $value }}
+                                    </option>
+                                @endforeach
+
 							</select>
 						</div>
+                        @if($errors->get('permissionsSelect'))
+                            <div class="text-danger mb-3 mt-0">
+                                {{ $errors->get('permissionsSelect')[0] }}
+                            </div>
+                        @endif
 
 						<div class="col mb-4" id="medicalProof" style="display: none;">
 							<div>
@@ -492,7 +478,7 @@
 
 	function showHiddenFields() {
         const permissionsSelect = document.querySelector('#permissionsSelect');
-        const selectedOption = permissionsSelect.options[permissionsSelect.selectedIndex].value;
+        const selectedOption = permissionsSelect.options[permissionsSelect.selectedIndex].id;
         const medicalProof = document.querySelector('#medicalProof');
 
         if (selectedOption === 'L2' || selectedOption === 'P14') {

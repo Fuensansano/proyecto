@@ -22,4 +22,20 @@ class WelcomeTest extends TestCase
     {
         $this->get('/')->assertSeeLivewire('search');
     }
+
+    /** @test */
+    public function select_options_are_correctly_configured()
+    {
+        $selectOptions = config('typeOfForms');
+
+        $expectedOptions = [
+            '/' => 'Seleccione una opción',
+            '/extracurricular-activity' => 'Actividad extraescolar',
+            './family-authorization' => 'Autorización familiar',
+            './proof-missing-teacher' => 'Justificante de falta del profesorado'
+        ];
+
+        $this->assertEquals($expectedOptions, $selectOptions);
+    }
+    
 }

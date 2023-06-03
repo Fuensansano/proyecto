@@ -28,6 +28,8 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyType3' => 'nullable',
             'journeyStartTime3' => 'nullable|date_format:H:i',
             'journeyEndTime3' => 'nullable|date_format:H:i',
+
+            'permissionsSelect' => 'required'
         ];
     }
 
@@ -54,6 +56,8 @@ class ProofMissingTeacherRequest extends FormRequest
             'missingDay3.date_format' => 'El día de falta debe tener un formato válido',
             'journeyStartTime3.date_format' => 'Ambas horas deben tener un formato válido',
             'journeyEndTime3.date_format' => 'Ambas horas deben tener un formato válido',
+
+            'permissionsSelect.required' => 'Debe seleccionar un motivo'
         ];
     }
 }
