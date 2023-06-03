@@ -29,7 +29,8 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyStartTime3' => 'nullable|date_format:H:i',
             'journeyEndTime3' => 'nullable|date_format:H:i',
 
-            'permissionsSelect' => 'required'
+            'permissionsSelect' => 'required',
+            'reason' => 'nullable'
         ];
     }
 
