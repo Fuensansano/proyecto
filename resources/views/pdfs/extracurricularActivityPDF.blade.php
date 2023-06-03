@@ -59,7 +59,8 @@
     </tbody>
 </table>
 
-<x-footer></x-footer>
+<x-footer/>
+
 <style>
     h2 {
         text-align: center;
@@ -76,20 +77,20 @@
         max-width: 100%;
         margin: 0 auto;
         table-layout: fixed;
+        margin-bottom: 250px;
     }
 
-     .td-form {
-         text-align: left;
-         padding: 8px;
-         width: 40%;
-         height: 20px;
-         border-bottom: 1px solid #ddd;
-         font-size: 20px;
-         overflow-wrap: break-word;
-     }
+    .td-form {
+        text-align: left;
+        padding: 8px;
+        width: 40%;
+        height: 20px;
+        border-bottom: 1px solid #ddd;
+        font-size: 20px;
+        overflow-wrap: break-word;
+    }
 
-     .labels {
-         font-weight: bold;
-     }
-
+    .labels {
+        font-weight: bold;
+    }
 </style>
