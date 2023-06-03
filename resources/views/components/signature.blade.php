@@ -1,13 +1,9 @@
 <div>
     <div class="actual-date">
-        {{ $date }}
-    </div>
-    
-    <div class="sign-text">
-        {{ $text }}
+        Murcia, a <b>{{ $day }}</b> de <b>{{ $month }}</b> de <b>{{ $year }}</b>
     </div>
 
     <div class="sign">
-        Firmado por:_____________________________________________con DNI: <b>{{ $dni }}</b>
+        Firmado por:_____________________________________________ con DNI: <b>{{ $dni }}</b>
     </div>
 </div>
