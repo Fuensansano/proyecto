@@ -26,11 +26,6 @@ Route::get('/proof-missing-teacher', function () {
 
 Route::post('/extracurricular-activity',[ExtracurricularActivity::class, 'store']);
 
-Route::post('/family-authorization', [FamilyAuthorization::class, 'generatePDF'])
-    ->name('generatePDF');
+Route::post('/family-authorization', [FamilyAuthorization::class, 'generatePDF']);
 
-Route::post('/proof-missing-teacher', [ProofMissingTeacher::class, 'generatePDF'])
-    ->name('generatePDF2');
-
-/* Route::get('/pdf', [PDFController::class, 'generatePDF']);
- */
+Route::post('/proof-missing-teacher', [ProofMissingTeacher::class, 'generatePDF']);

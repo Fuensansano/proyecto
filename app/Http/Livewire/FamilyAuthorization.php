@@ -20,44 +20,44 @@ class FamilyAuthorization extends Component
     {
         date_default_timezone_set('Europe/Madrid');
         
-        $fecha_actual = getdate();
+        $actual_date = getdate();
 
-        switch ($fecha_actual['mon']) {
+        switch ($actual_date['mon']) {
             case '1':
-                $fecha_actual['mon'] = 'Enero';
+                $actual_date['mon'] = 'Enero';
                 break;
             case '2':
-                $fecha_actual['mon'] = 'Febrero';
+                $actual_date['mon'] = 'Febrero';
                 break;
             case '3':
-                $fecha_actual['mon'] = 'Marzo';
+                $actual_date['mon'] = 'Marzo';
                 break;
             case '4':
-                $fecha_actual['mon'] = 'Abril';
+                $actual_date['mon'] = 'Abril';
                 break;
             case '5':
-                $fecha_actual['mon'] = 'Mayo';
+                $actual_date['mon'] = 'Mayo';
                 break;
             case '6':
-                $fecha_actual['mon'] = 'Junio';
+                $actual_date['mon'] = 'Junio';
                 break;
             case '7':
-                $fecha_actual['mon'] = 'Julio';
+                $actual_date['mon'] = 'Julio';
                 break;
             case '8':
-                $fecha_actual['mon'] = 'Agosto';
+                $actual_date['mon'] = 'Agosto';
                 break;
             case '9':
-                $fecha_actual['mon'] = 'Septiembre';
+                $actual_date['mon'] = 'Septiembre';
                 break;
             case '10':
-                $fecha_actual['mon'] = 'Octubre';
+                $actual_date['mon'] = 'Octubre';
                 break;
             case '11':
-                $fecha_actual['mon'] = 'Noviembre';
+                $actual_date['mon'] = 'Noviembre';
                 break;
             case '12':
-                $fecha_actual['mon'] = 'Diciembre';
+                $actual_date['mon'] = 'Diciembre';
                 break;
         }
 
@@ -73,9 +73,9 @@ class FamilyAuthorization extends Component
             'course' => $request->course,
             'authorization' => $request->authorization,
             'dni' => $request->dni,
-            'day' => $fecha_actual['mday'],
-            'month' => $fecha_actual['mon'],
-            'year' => $fecha_actual['year'],
+            'day' => $actual_date['mday'],
+            'month' => $actual_date['mon'],
+            'year' => $actual_date['year'],
         ];
 
         $options = new Options();
