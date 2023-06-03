@@ -19,7 +19,7 @@ class FamilyAuthorizationRequest extends FormRequest
             'student' => 'required|string',
             'course' => 'required|string',
             'authorization' => 'required',
-            'dni' => 'required|regex:/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i',
+            'dni' => ['required', 'regex:/([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])/'],
         ];
     }
 
