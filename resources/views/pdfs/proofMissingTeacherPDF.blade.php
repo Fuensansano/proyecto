@@ -17,7 +17,7 @@
 
 <div>
     <p class="text">
-        @if($data['missingDay1'] && !$data['missingDay2'] && !$data['missingDay3']) 
+        @if($data['missingDay1'] && !$data['missingDay2'] && !$data['missingDay3'])
             <b>JUSTIFICA</b> que no pudo asistir al centro de trabajo el dia:
         @else
             <b>JUSTIFICA</b> que no pudo asistir al centro de trabajo los días:
@@ -28,9 +28,9 @@
 <table class="table-form">
     <tbody>
         @if($data['missingDay1'] && !$data['missingDay2'] && !$data['missingDay3'])
-            <tr>    
+            <tr>
                 <td class="td-form">{{ $data['missingDay1'] }}</td>
-                
+
                 @if($data['journeyType1'] == 'fullJourneyOption1')
                     <td class="td-form">
                         Faltando la <b>jornada completa</b>
@@ -44,9 +44,9 @@
 
             </tr>
         @elseif($data['missingDay1'] && $data['missingDay2'] && !$data['missingDay3'])
-            <tr>    
+            <tr>
                 <td class="td-form">{{ $data['missingDay1'] }}</td>
-                
+
                 @if($data['journeyType1'] == 'fullJourneyOption1')
                     <td class="td-form">
                         Faltando la <b>jornada completa</b>
@@ -61,7 +61,7 @@
 
             <tr>
                 <td class="td-form">{{ $data['missingDay2'] }}</td>
-                
+
                 @if($data['journeyType2'] == 'fullJourneyOption2')
                     <td class="td-form">
                         Faltando la <b>jornada completa</b>
@@ -163,6 +163,8 @@
         Por el siguiente motivo: <b>{{ $data['permissionsSelect'] }}</b>
         @if($data['reason'])
             debido a que {{ $data['reason'] }}
+        @elseif($data['anotherReason'])
+            debido a que {{ $data['anotherReason'] }}
         @endif
     </p>
 </div>

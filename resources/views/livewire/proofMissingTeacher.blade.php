@@ -409,17 +409,18 @@
 
 						<div class="col mb-4" id="medicalProof" style="display: none;">
 							<div>
-								<input type="radio" name="reason" value="reason1"/>
-								<label for="reason" class="radio-label">El médico no tiene consulta en otro horario</label>
+								<input type="radio" onchange="hideAnotherReason()" id="doctor" name="reason" value="el médico no tiene consulta en otro horario."/>
+								<label for="doctor" class="radio-label">El médico no tiene consulta en otro horario</label>
 							</div>
 							<div>
-								<input type="radio" name="reason" value="reason2"/>
-								<label for="reason" class="radio-label">La necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha</label>
+								<input type="radio" onchange="hideAnotherReason()" id="schedule" name="reason" value="la necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha."/>
+								<label for="schedule" class="radio-label">La necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha</label>
 							</div>
-							<div>
-								<label class="radio-label mt-2">Otro motivo</label>
-								<input type="text" class="form-control" name="reason"/>
-							</div>
+                            <div>
+                                <input type="radio" onchange="displayAnotherReason()" name="reason" id="another" value="another"/>
+                                <label for="another" class="radio-label">Otro motivo:</label>
+                            </div>
+                            <input type="text" onchange="updateAnotherValue()" style="display: none" id="anotherReason" class="form-control" name="anotherReason" />
 						</div>
 					</div>
 				</div>
@@ -437,6 +438,24 @@
 </x-main>
 
 <script>
+    function displayAnotherReason() {
+        const anotherReason = document.getElementById('anotherReason');
+        anotherReason.style.display = 'block';
+        anotherReason.disabled = false;
+    }
+
+    function hideAnotherReason() {
+        const anotherReason = document.getElementById('anotherReason');
+        anotherReason.style.display = 'none';
+        anotherReason.disabled = false;
+    }
+
+    function updateAnotherValue() {
+        const another = document.getElementById('another');
+        const anotherReason = document.getElementById('anotherReason');
+        another.value = anotherReason.value;
+    }
+
 	const journeyStartTime1 = document.getElementById('journeyStartTime1');
 	const journeyEndTime1 = document.getElementById('journeyEndTime1');
 
@@ -487,4 +506,5 @@
             medicalProof.style.display = "none";
         }
     }
+
 </script>

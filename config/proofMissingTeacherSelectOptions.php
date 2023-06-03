@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'L1' => 'L1: Licencia por asuntos propios para funcionarios en sericio activo. (2)',
+    'L1' => 'L1: Licencia por asuntos propios para funcionarios en servicio activo. (2)',
     'L2' => 'L2: Ausencia por enfermedad no superior a tres días. (10)',
     'L3' => 'L3: Licencia por enfermedad de más de tres días de duración. (1)',
     'P1' => 'P1: Permiso por traslado de domicilio. (3)',

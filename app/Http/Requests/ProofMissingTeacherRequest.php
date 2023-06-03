@@ -7,6 +7,7 @@ use Illuminate\Validation\Rule;
 
 class ProofMissingTeacherRequest extends FormRequest
 {
+
     public function rules()
     {
         return [
@@ -30,7 +31,8 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyEndTime3' => 'nullable|date_format:H:i',
 
             'permissionsSelect' => 'required',
-            'reason' => 'nullable|require_if:in:'.implode(',', array_keys(config('specialMedicalReasons'))),
+            'reason' => 'nullable|requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))),
+            'anotherReason' => 'nullable|requiredIf:reasons:in:'.implode(',', array_keys(config('specialMedicalReasons')))
         ];
     }
 
@@ -58,7 +60,8 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyStartTime3.date_format' => 'Ambas horas deben tener un formato válido',
             'journeyEndTime3.date_format' => 'Ambas horas deben tener un formato válido',
 
-            'permissionsSelect.required' => 'Debe seleccionar un motivo'
+            'permissionsSelect.required' => 'Debe seleccionar un motivo',
+            'anotherReason.required' => 'Este campo es obligatorio'
         ];
     }
 

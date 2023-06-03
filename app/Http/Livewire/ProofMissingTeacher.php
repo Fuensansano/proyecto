@@ -60,7 +60,6 @@ class ProofMissingTeacher extends Component
                 $actual_date['mon'] = 'Diciembre';
                 break;
         }
-
         $data = [
             'name' => $request->name,
             'department' => $request->department,
@@ -84,9 +83,10 @@ class ProofMissingTeacher extends Component
             'day' => $actual_date['mday'],
             'month' => $actual_date['mon'],
             'year' => $actual_date['year'],
-            
+
             'permissionsSelect' => $request->permissionsSelect,
             'reason' => $request->reason,
+            'anotherReason' => $request->anotherReason,
         ];
 
         $options = new Options();
@@ -106,7 +106,7 @@ class ProofMissingTeacher extends Component
         if($date == null) {
             return null;
         }
-        
-        return date('d-m-Y', strtotime($date));  
+
+        return date('d-m-Y', strtotime($date));
     }
 }
