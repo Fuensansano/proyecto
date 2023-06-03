@@ -12,7 +12,7 @@ class ProofMissingTeacherRequest extends FormRequest
         return [
             'name' => 'required|string',
             'department' => 'required|string', // Se puede añadir regla para que no sea un departamento inventado, que lo coja de un array
-            'dni' => 'required|regex:/^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKE]$/i',
+            'dni' => ['required', 'regex:/([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])/'],
 
             'missingDay1' => 'required|date_format:Y-m-d',
             'journeyType1' => 'required',
@@ -39,7 +39,7 @@ class ProofMissingTeacherRequest extends FormRequest
             'name.required' => 'El nombre del profesor es obligatorio',
             'department.required' => 'El departamento es obligatorio',
             'dni.required' => 'El DNI es obligatorio',
-            'dni.regex' => 'El DNI tiene que tener un formato: XXXXXXXXA',
+            'dni.regex' => 'Tiene que tener ser un NIF o NIE válido',
 
             'missingDay1.required' => 'El día de falta es obligatorio',
             'missingDay1.date_format' => 'El día de falta debe tener un formato válido',

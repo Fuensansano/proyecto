@@ -104,7 +104,7 @@ class ProofMissingTeacherTest extends TestCase
             ->post('/proof-missing-teacher', $this->getValidData([
                 'dni' => 'invalid-format',
             ]))
-            ->assertSessionHasErrors(['dni' => 'El DNI tiene que tener un formato: XXXXXXXXA']);
+            ->assertSessionHasErrors(['dni' => 'Tiene que tener ser un NIF o NIE válido']);
     }
 
     /** @test */

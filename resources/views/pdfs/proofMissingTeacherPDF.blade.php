@@ -203,7 +203,7 @@
         width: 40%;
         height: 20px;
         border-bottom: 1px solid #ddd;
-        font-size: 18px;
+        font-size: 20px;
         overflow-wrap: break-word;
     }
 
