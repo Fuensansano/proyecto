@@ -30,6 +30,7 @@
 								type="text"
 								name="name"
 								class="form-control @error('name') is-invalid @enderror"
+								maxlength="50"
 							/>
 							@if($errors->get('name'))
 							<div class="text-danger mb-3 mt-0">
@@ -43,6 +44,7 @@
 								type="text"
 								name="department"
 								class="form-control @error('department') is-invalid @enderror"
+								maxlength="100"
 							/>
 							@if($errors->get('department'))
 								<div class="text-danger mb-3 mt-0">

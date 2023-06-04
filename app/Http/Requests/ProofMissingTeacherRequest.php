@@ -10,8 +10,8 @@ class ProofMissingTeacherRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'department' => 'required|string',
+            'name' => 'required|string|max:50',
+            'department' => 'required|string|max:100',
             'dni' => ['required', 'regex:/([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])/'],
 
             'missingDay1' => 'required|date_format:Y-m-d',
@@ -46,7 +46,9 @@ class ProofMissingTeacherRequest extends FormRequest
     {
         return [
             'name.required' => 'El nombre del profesor es obligatorio',
+            'name.max' => 'El nombre no puede tener más de 50 carácteres',
             'department.required' => 'El departamento es obligatorio',
+            'department.max' => 'El departamento no puede tener más de 100 carácteres',
             'dni.required' => 'El DNI es obligatorio',
             'dni.regex' => 'Tiene que tener ser un NIF o NIE válido',
 
