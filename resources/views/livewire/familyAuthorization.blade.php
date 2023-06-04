@@ -5,61 +5,16 @@
             @csrf
             <div class="card mt-5">
                 <h1 class="text-primary text-center">AUTORIZACIÓN FAMILIAR</h1>
-                
-                {{-- <div class="card-body" class="flex-column">
-                    <div class="row row-cols-1">
-                        <div class="col mt-5">
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input
-                                    @error('auth') is-invalid @enderror"
-                                    type="radio"
-                                    name="authorization"
-                                    id="auth"
-                                    value="auth">
-
-                                <label class="form-check-label" for="auth">
-                                    Tiene mi autorización para participar en la actividad programada y autorizo a la toma y difusión de imágenes de este día en la página web y/o RRSS del centro.
-                                </label>
-
-                                @if($errors->get('auth'))
-                                    <div class="text-danger mb-3 mt-0">
-                                        {{ $errors->get('auth')[0] }}
-                                    </div>
-                                @endif
-                            </div>
-                            <div class="form-check">
-                                <input
-                                    class="form-check-input
-                                    @error('notAuth') is-invalid @enderror"
-                                    type="radio"
-                                    name="authorization"
-                                    id="notAuth"
-                                    value="notAuth">
-
-                                <label class="form-check-label" for="notAuth">
-                                    No va a participar en la actividad programada.
-                                </label>
-
-                                @if($errors->get('notAuth'))
-                                    <div class="text-danger mb-3 mt-0">
-                                        {{ $errors->get('notAuth')[0] }}
-                                    </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
 
                 <div class="card-body">
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
-							<label for="name">
+							<label for="activity">
 								Actividad programada<span class="text-danger"> *</span>
 							</label>
 						</div>
 						<div class="col">
-							<label for="department">
+							<label for="organizer">
 								Organizador/a<span class="text-danger"> *</span>
 							</label>
 						</div>
@@ -70,7 +25,8 @@
                                 class="form-control
                                 @error('activity') is-invalid @enderror"
                                 id="activity"
-                                name="activity">
+                                name="activity"
+                            >
 
                             @if($errors->get('activity'))
                                 <div class="text-danger mb-3 mt-0">
@@ -196,7 +152,9 @@
                                 class="form-control
                                 @error('parents') is-invalid @enderror"
                                 id="parents"
-                                name="parents">
+                                name="parents"
+                                maxlength="50"
+                            >
 
                             @if($errors->get('parents'))
                                 <div class="text-danger mb-3 mt-0">
@@ -210,7 +168,9 @@
                                 class="form-control
                                 @error('student') is-invalid @enderror"
                                 id="student"
-                                name="student">
+                                name="student"
+                                maxlength="50"
+                            >
 
                             @if($errors->get('student'))
                                 <div class="text-danger mb-3 mt-0">

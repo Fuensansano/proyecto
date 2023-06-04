@@ -192,12 +192,30 @@ class FamilyAuthorizationTest extends TestCase
     }
 
     /** @test */
+    function the_parents_name_cannot_be_longer_than_50_characters() {
+        $this->from('/family-authorization')
+            ->post('/family-authorization', $this->getValidData([
+                'parents' => 'Jhonny Depp Ruppert Emma Daniel Angeline Christian Marshall',
+            ]))
+            ->assertSessionHasErrors(['parents' => 'El nombre del padre/madre/tutor no puede tener más de 50 carácteres']);
+    }
+
+    /** @test */
     function the_student_is_required() {
         $this->from('/family-authorization')
             ->post('/family-authorization', $this->getValidData([
                 'student' => null,
             ]))
             ->assertSessionHasErrors(['student' => 'El nombre del alumno es obligatorio']);
+    }
+
+    /** @test */
+    function the_student_name_cannot_be_longer_than_50_characters() {
+        $this->from('/family-authorization')
+            ->post('/family-authorization', $this->getValidData([
+                'student' => 'Jhonny Depp Ruppert Emma Daniel Angeline Christian Marshall',
+            ]))
+            ->assertSessionHasErrors(['student' => 'El nombre del alumno no puede tener más de 50 carácteres']);
     }
 
     /** @test */
