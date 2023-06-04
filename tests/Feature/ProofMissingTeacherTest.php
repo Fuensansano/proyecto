@@ -266,4 +266,14 @@ class ProofMissingTeacherTest extends TestCase
             ]))
             ->assertSessionHasErrors(['journeyEndTime3' => 'Ambas horas deben tener un formato válido']);
     }
+
+    /** @test */
+    function the_another_reason_field_cannot_be_longer_than_100_characters()
+    {
+        $this->from('/proof-missing-teacher')
+            ->post('/proof-missing-teacher', $this->getValidData([
+                'anotherReason' => 'Typing a 100-character long text to test the another reason field and its validation to ensure pdf view',
+            ]))
+            ->assertSessionHasErrors(['anotherReason' => 'El motivo no puede tener más de 100 carácteres']);
+    }
 }
