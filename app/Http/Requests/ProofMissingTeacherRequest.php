@@ -7,19 +7,18 @@ use Illuminate\Validation\Rule;
 
 class ProofMissingTeacherRequest extends FormRequest
 {
-
     public function rules()
     {
         return [
             'name' => 'required|string',
-            'department' => 'required|string', // Se puede añadir regla para que no sea un departamento inventado, que lo coja de un array
+            'department' => 'required|string',
             'dni' => ['required', 'regex:/([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])/'],
 
             'missingDay1' => 'required|date_format:Y-m-d',
             'journeyType1' => 'required',
             'journeyStartTime1' => 'exclude_if:journeyType1,fullJourneyOption1|required|date_format:H:i',
             'journeyEndTime1' => 'exclude_if:journeyType1,fullJourneyOption1|required|date_format:H:i',
-
+            
             'missingDay2' => 'nullable|date_format:Y-m-d',
             'journeyType2' => 'nullable',
             'journeyStartTime2' => 'nullable|date_format:H:i',
@@ -31,8 +30,15 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyEndTime3' => 'nullable|date_format:H:i',
 
             'permissionsSelect' => 'required',
-            'reason' => 'nullable|requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))),
-            'anotherReason' => 'nullable|requiredIf:reasons:in:'.implode(',', array_keys(config('specialMedicalReasons')))
+            /* 'reason' => 'nullable|requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))), */
+            /* 'reason' => ['nullable', Rule::requiredIf('permissionsSelect', Rule::in(implode(',', array_keys(config('specialMedicalReasons')))))], */
+            /* 'reason' => 'nullable|required_if:permissionsSelect:in:'.implode(',', array_keys(config('specialMedicalReasons'))), */
+            /* 'reason' => 'required_if_in_array:permissionsSelect,'.implode(',', array_keys(config('specialMedicalReasons'))).',permissionsSelect', */
+            /* 'reason' => 'sometimes|required', */
+            /* 'reason' => 'requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))), */
+            /* 'anotherReason' => 'nullable|requiredIf:reasons:in:'.implode(',', array_keys(config('specialMedicalReasons'))) */
+            'reason' => 'nullable',
+            'anotherReason' => 'nullable|max:100',
         ];
     }
 
@@ -61,8 +67,8 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyEndTime3.date_format' => 'Ambas horas deben tener un formato válido',
 
             'permissionsSelect.required' => 'Debe seleccionar un motivo',
-            'anotherReason.required' => 'Este campo es obligatorio'
+            /* 'anotherReason.required' => 'Este campo es obligatorio', */
+            'anotherReason.max' => 'El motivo no puede tener más de 100 carácteres'
         ];
     }
-
 }
