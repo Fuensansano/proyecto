@@ -7,6 +7,8 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 use Livewire\Component;
 
+
+
 class ExtracurricularActivity extends Component
 {
     public function render()
@@ -40,6 +42,8 @@ class ExtracurricularActivity extends Component
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
+
+        \Illuminate\Http\Response::header('Content-type', 'application/pdf');
 
         return $dompdf->stream('ejemplo.pdf', array('Attachment' => 0));
     }
