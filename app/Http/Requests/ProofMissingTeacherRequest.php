@@ -32,7 +32,7 @@ class ProofMissingTeacherRequest extends FormRequest
 
             'permissionsSelect' => 'required',
             'reason' => 'nullable|requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))),
-            'anotherReason' => 'nullable|requiredIf:reasons:in:'.implode(',', array_keys(config('specialMedicalReasons')))
+            'anotherReason' => 'required_with:reasons:'.implode(',', array_keys(config('specialMedicalReasons')))
         ];
     }
 

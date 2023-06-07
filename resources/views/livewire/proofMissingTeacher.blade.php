@@ -410,11 +410,11 @@
 						<div class="col mb-4" id="medicalProof" style="display: none;">
 							<div>
 								<input type="radio" onchange="hideAnotherReason()" id="doctor" name="reason" value="el médico no tiene consulta en otro horario."/>
-								<label for="doctor" class="radio-label">El médico no tiene consulta en otro horario</label>
+								<label for="doctor" class="radio-label">El médico no tiene consulta en otro horario.</label>
 							</div>
 							<div>
 								<input type="radio" onchange="hideAnotherReason()" id="schedule" name="reason" value="la necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha."/>
-								<label for="schedule" class="radio-label">La necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha</label>
+								<label for="schedule" class="radio-label">La necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha.</label>
 							</div>
                             <div>
                                 <input type="radio" onchange="displayAnotherReason()" name="reason" id="another" value="another"/>
