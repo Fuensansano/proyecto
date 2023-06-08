@@ -1,4 +1,4 @@
-<x-header></x-header>
+<x-header/>
 
 <h2>JUSTIFICANTE DE FALTA DEL PROFESORADO</h2>
 
@@ -224,7 +224,7 @@
     .text {
         margin-top: 25px;
         font-size: 18px;
-        text-align: justify;
+        overflow-wrap: break-word;
     }
 
     .actual-date {
@@ -234,7 +234,6 @@
 
     .sign {
         margin-top: 150px;
-        margin-bottom: 290px;
         text-align: center;
     }
 </style>

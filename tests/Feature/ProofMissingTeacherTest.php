@@ -78,6 +78,16 @@ class ProofMissingTeacherTest extends TestCase
     }
 
     /** @test */
+    function the_name_cannot_be_longer_than_50_characters()
+    {
+        $this->from('/proof-missing-teacher')
+            ->post('/proof-missing-teacher', $this->getValidData([
+                'name' => 'Jhonny Depp Ruppert Emma Daniel Angeline Christian Marshall',
+            ]))
+            ->assertSessionHasErrors(['name' => 'El nombre no puede tener más de 50 carácteres']);
+    }
+
+    /** @test */
     function the_department_is_required()
     {
         $this->from('/proof-missing-teacher')
@@ -85,6 +95,16 @@ class ProofMissingTeacherTest extends TestCase
                 'department' => null,
             ]))
             ->assertSessionHasErrors(['department' => 'El departamento es obligatorio']);
+    }
+
+    /** @test */
+    function the_department_cannot_be_longer_than_100_characters()
+    {
+        $this->from('/proof-missing-teacher')
+            ->post('/proof-missing-teacher', $this->getValidData([
+                'department' => 'Typing a 100-character long text to test the another reason field and its validation to ensure pdf view',
+            ]))
+            ->assertSessionHasErrors(['department' => 'El departamento no puede tener más de 100 carácteres']);
     }
 
     /** @test */
@@ -265,5 +285,15 @@ class ProofMissingTeacherTest extends TestCase
                 'journeyEndTime3' => 'invalid-format',
             ]))
             ->assertSessionHasErrors(['journeyEndTime3' => 'Ambas horas deben tener un formato válido']);
+    }
+
+    /** @test */
+    function the_another_reason_field_cannot_be_longer_than_100_characters()
+    {
+        $this->from('/proof-missing-teacher')
+            ->post('/proof-missing-teacher', $this->getValidData([
+                'anotherReason' => 'Typing a 100-character long text to test the another reason field and its validation to ensure pdf view',
+            ]))
+            ->assertSessionHasErrors(['anotherReason' => 'El motivo no puede tener más de 100 carácteres']);
     }
 }

@@ -30,6 +30,7 @@
 								type="text"
 								name="name"
 								class="form-control @error('name') is-invalid @enderror"
+								maxlength="50"
 							/>
 							@if($errors->get('name'))
 							<div class="text-danger mb-3 mt-0">
@@ -43,6 +44,7 @@
 								type="text"
 								name="department"
 								class="form-control @error('department') is-invalid @enderror"
+								maxlength="100"
 							/>
 							@if($errors->get('department'))
 								<div class="text-danger mb-3 mt-0">
@@ -406,6 +408,11 @@
                                 {{ $errors->get('permissionsSelect')[0] }}
                             </div>
                         @endif
+						@if($errors->get('anotherReason'))
+                            <div class="text-danger mb-3 mt-0">
+                                {{ $errors->get('anotherReason')[0] }}
+                            </div>
+                        @endif
 
 						<div class="col mb-4" id="medicalProof" style="display: none;">
 							<div>
@@ -420,7 +427,7 @@
                                 <input type="radio" onchange="displayAnotherReason()" name="reason" id="another" value="another"/>
                                 <label for="another" class="radio-label">Otro motivo:</label>
                             </div>
-                            <input type="text" onchange="updateAnotherValue()" style="display: none" id="anotherReason" class="form-control" name="anotherReason" />
+                            <input type="text" onchange="updateAnotherValue()" style="display: none" id="anotherReason" class="form-control" name="anotherReason" maxlength="100" placeholder="Máximo 100 carácteres"/>
 						</div>
 					</div>
 				</div>
