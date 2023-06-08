@@ -11,8 +11,8 @@ class ProofMissingTeacherRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'department' => 'required|string', // Se puede añadir regla para que no sea un departamento inventado, que lo coja de un array
+            'name' => 'required|string|max:50',
+            'department' => 'required|string|max:100',
             'dni' => ['required', 'regex:/([a-z]|[A-Z]|[0-9])[0-9]{7}([a-z]|[A-Z]|[0-9])/'],
 
             'missingDay1' => 'required|date_format:Y-m-d',
@@ -31,8 +31,8 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyEndTime3' => 'nullable|date_format:H:i',
 
             'permissionsSelect' => 'required',
-            'reason' => 'nullable|requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))),
-            'anotherReason' => 'required_with:reasons:'.implode(',', array_keys(config('specialMedicalReasons')))
+            'reason' => 'nullable|requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))) .'|max:100',
+            'anotherReason' => 'required_with:reasons:'.implode(',', array_keys(config('specialMedicalReasons'))) .'|max:100'
         ];
     }
 
@@ -40,7 +40,9 @@ class ProofMissingTeacherRequest extends FormRequest
     {
         return [
             'name.required' => 'El nombre del profesor es obligatorio',
+            'name.max' => 'El nombre no puede tener más de 50 carácteres',
             'department.required' => 'El departamento es obligatorio',
+            'department.max' =>  'El departamento no puede tener más de 100 carácteres',
             'dni.required' => 'El DNI es obligatorio',
             'dni.regex' => 'Tiene que tener ser un NIF o NIE válido',
 
@@ -61,7 +63,8 @@ class ProofMissingTeacherRequest extends FormRequest
             'journeyEndTime3.date_format' => 'Ambas horas deben tener un formato válido',
 
             'permissionsSelect.required' => 'Debe seleccionar un motivo',
-            'anotherReason.required' => 'Este campo es obligatorio'
+            'anotherReason.required' => 'Este campo es obligatorio',
+            'anotherReason.max' => 'El motivo no puede tener más de 100 carácteres'
         ];
     }
 
