@@ -24,5 +24,22 @@ jobs:
           cp .env.ci .env
           php artisan key:generate
 
+      - name: Prepare PHP environment
+        run: |
+          php artisan livewire:publish
+          php artisan optimize:clear
+          php artisan view:clear
+          php artisan route:clear
+          php artisan config:clear
+          php artisan view:cache
+          php artisan route:cache
+          php artisan storage:link
+          php artisan up
+
+      - name: Prepare JS environment
+        run: |
+          npm install
+          npm run build
+
       - name: Run tests
         run: php artisan test
