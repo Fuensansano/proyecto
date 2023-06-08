@@ -53,4 +53,6 @@ jobs:
       - name: Deploy
         uses: jbrooksuk/laravel-forge-action@v1.0.2
         with:
-          trigger_url: ${{ secrets.TRIGGER_URL }}
+          api_key: ${{ secrets.API_KEY }}
+          server_id: ${{ secrets.SERVER_ID }}
+          site_id: ${{ secrets.SITE_ID }}
