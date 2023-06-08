@@ -177,7 +177,16 @@ class ExtracurricularActivityTest extends TestCase
             ]))
             ->assertSessionHasErrors(['activity_departament' => 'El departamento al que pertenece la actividad debe ser obligatorio']);
     }
-
+    
+    /** @test */
+    public function given_the_activity_departament_field_cannot_be_longer_than_100_characters()
+    {
+        $this->from('/extracurricular-activity')
+            ->post('/extracurricular-activity',  $this->getValidData([
+                'activity_departament' => 'Typing a 100-character long text to test the another reason field and its validation to ensure pdf view'
+            ]))
+            ->assertSessionHasErrors(['activity_departament' => 'El departamento no puede tener más de 100 carácteres']);
+    }
     /** @test */
     public function given_the_teachers_field_is_empty_then_show_its_error()
     {
