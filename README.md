@@ -1,3 +1,5 @@
+[![Run tests](https://github.com/Fuensansano/proyecto/actions/workflows/ci.yml/badge.svg)](https://github.com/Fuensansano/proyecto/actions/workflows/ci.yml)
+[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2Fb5f98a8c-b595-4fab-b47a-835f219ba81b%3Fdate%3D1%26commit%3D1&style=plastic)](https://forge.laravel.com/servers/690000/sites/2005919)
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
