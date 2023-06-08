@@ -12,7 +12,7 @@ class ExtracurricularActivityRequest extends FormRequest
             'activity_name' => 'required|string',
             'activity_place' => 'required|string',
             'activity_module' => 'required|string',
-            'activity_departament' => 'required|string',
+            'activity_departament' => 'required|string|max:100',
             'teachers' => 'required|string',
             'student_groups' => 'required|string',
             'date' => 'required|date_format:Y-m-d',
@@ -20,7 +20,7 @@ class ExtracurricularActivityRequest extends FormRequest
             'arrive_time' => 'required|date_format:H:i',
             'activity_price' => 'required|regex:/^\d+([.,])?\d{0,2}$/',
             'transport' => 'required|string',
-            'activity_responsible_teacher' => 'required|string',
+            'activity_responsible_teacher' => 'required|string|max:50',
         ];
     }
 
@@ -31,6 +31,7 @@ class ExtracurricularActivityRequest extends FormRequest
             'activity_place.required' => 'El lugar de la actividad debe ser obligatorio',
             'activity_module.required' => 'El modulo al que pertenece la actividad debe ser obligatorio',
             'activity_departament.required' => 'El departamento al que pertenece la actividad debe ser obligatorio',
+            'activity_departament.max' => 'El departamento no puede tener más de 100 carácteres',
             'teachers.required' => 'El campo profesores que van a asistir a la actividad debe ser obligatorio',
             'student_groups.required' => 'El campo grupo de estudiantes debe ser obligatorio',
             'date.required' => 'El campo fecha de la actividad debe ser obligatorio',
@@ -43,7 +44,7 @@ class ExtracurricularActivityRequest extends FormRequest
             'activity_price.regex' => 'El campo precio debe de ser numérico y positivo',
             'transport.required' => 'El campo transporte debe ser obligatorio',
             'activity_responsible_teacher.required' => 'El campo responsable de la actividad debe ser obligatorio',
-
+            'activity_responsible_teacher.max' => 'El nombre del profesor no puede tener más de 50 carácteres'
         ];
     }
 }

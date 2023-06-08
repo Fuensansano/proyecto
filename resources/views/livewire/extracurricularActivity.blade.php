@@ -9,10 +9,14 @@
                     {{-- primera fila --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
-                            <label for="activity_name">Denominación de la actividad</label>
+                            <label for="activity_name">
+                                Denominación de la actividad<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
-                            <label for="activity_place">Lugar de la actividad</label>
+                            <label for="activity_place">
+                                Lugar de la actividad<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
                             <input type="text" class="form-control @error('activity_name')  is-invalid @enderror"
@@ -35,10 +39,14 @@
                     {{-- segunda fila --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
-                            <label for="activity_module">Asignatura/modulo</label>
+                            <label for="activity_module">
+                                Asignatura/modulo<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
-                            <label for="activity_departament">Departamento</label>
+                            <label for="activity_departament">
+                                Departamento<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
                             <input type="text" class="form-control @error('activity_module')  is-invalid @enderror" id="activity_module" name="activity_module"/>
@@ -49,7 +57,7 @@
                             @endif
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control @error('activity_departament')  is-invalid @enderror" id="activity_departament" name="activity_departament" />
+                            <input type="text" class="form-control @error('activity_departament')  is-invalid @enderror" id="activity_departament" name="activity_departament" max="100"/>
                             @if($errors->get('activity_departament'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_departament')[0] }}
@@ -60,10 +68,14 @@
                     {{-- tercera fila --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
-                            <label for="teachers">Profesores acompañantes</label>
+                            <label for="teachers">
+                                Profesores acompañantes<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
-                            <label for="student_groups">Grupos de alumnos que realizarán la actividad</label>
+                            <label for="student_groups">
+                                Grupos de alumnos que realizarán la actividad<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
                             <textarea type="text" class="form-control @error('teachers') is-invalid @enderror" id="teachers" name="teachers"></textarea>
@@ -86,10 +98,14 @@
                     {{-- cuarta fila --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
-                            <label for="date">Fecha</label>
+                            <label for="date">
+                                Fecha<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
-                            <label for="departure_time">Hora de salida</label>
+                            <label for="departure_time">
+                                Hora de salida<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
                             <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date"></input>
@@ -113,10 +129,14 @@
                     {{-- quinta fila --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
-                            <label for="arrive_time">Hora prevista de llegada</label>
+                            <label for="arrive_time">
+                                Hora prevista de llegada<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
-                            <label for="activity_price">Precio de la actividad</label>
+                            <label for="activity_price">
+                                Precio de la actividad<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
                             <input type="time" class="form-control @error('arrive_time') is-invalid @enderror" id="arrive_time" name="arrive_time"></input>
@@ -139,10 +159,14 @@
                     {{-- sexta fila --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
-                            <label for="transport">Medio de transporte</label>
+                            <label for="transport">
+                                Medio de transporte<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
-                            <label for="activity_responsible_teacher">Profesor responsable</label>
+                            <label for="activity_responsible_teacher">
+                                Profesor responsable<span class="text-danger"> *</span>
+                            </label>
                         </div>
 
                         <div class="col">
@@ -154,7 +178,7 @@
                             @endif
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control @error('activity_responsible_teacher') is-invalid @enderror" id="activity_responsible_teacher" name="activity_responsible_teacher" />
+                            <input type="text" class="form-control @error('activity_responsible_teacher') is-invalid @enderror" id="activity_responsible_teacher" name="activity_responsible_teacher" maxlength="50"/>
                             @if($errors->get('activity_responsible_teacher'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_responsible_teacher')[0] }}
@@ -166,7 +190,9 @@
                     {{-- séptima fila --}}
                     <div class="row row-cols-1 mb-4">
                         <div class="col">
-                            <label for="observations">Observaciones</label>
+                            <label for="observations">
+                                Observaciones<span class="text-danger"> *</span>
+                            </label>
                         </div>
                         <div class="col">
                             <textarea type="time" class="form-control mb-4" id="observations" name="observations"></textarea>

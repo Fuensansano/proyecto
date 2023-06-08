@@ -77,7 +77,6 @@
         max-width: 100%;
         margin: 0 auto;
         table-layout: fixed;
-        margin-bottom: 250px;
     }
 
     .td-form {
