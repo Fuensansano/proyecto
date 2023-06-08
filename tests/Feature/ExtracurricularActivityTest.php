@@ -287,4 +287,14 @@ class ExtracurricularActivityTest extends TestCase
             ]))
             ->assertSessionHasErrors(['activity_responsible_teacher' => 'El campo responsable de la actividad debe ser obligatorio']);
     }
+
+    /** @test */
+    public function given_activity_responsible_teacher_field_cannot_be_longer_than_50_characters()
+    {
+        $this->from('/extracurricular-activity')
+            ->post('/extracurricular-activity',  $this->getValidData([
+                'activity_responsible_teacher' => 'Jhonny Depp Ruppert Emma Daniel Angeline Christian Marshall'
+            ]))
+            ->assertSessionHasErrors(['activity_responsible_teacher' => 'El nombre del profesor no puede tener más de 50 carácteres']);
+    }
 }

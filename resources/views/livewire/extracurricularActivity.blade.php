@@ -178,7 +178,7 @@
                             @endif
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control @error('activity_responsible_teacher') is-invalid @enderror" id="activity_responsible_teacher" name="activity_responsible_teacher" />
+                            <input type="text" class="form-control @error('activity_responsible_teacher') is-invalid @enderror" id="activity_responsible_teacher" name="activity_responsible_teacher" maxlength="50"/>
                             @if($errors->get('activity_responsible_teacher'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_responsible_teacher')[0] }}

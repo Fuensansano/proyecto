@@ -20,7 +20,7 @@ class ExtracurricularActivityRequest extends FormRequest
             'arrive_time' => 'required|date_format:H:i',
             'activity_price' => 'required|regex:/^\d+([.,])?\d{0,2}$/',
             'transport' => 'required|string',
-            'activity_responsible_teacher' => 'required|string',
+            'activity_responsible_teacher' => 'required|string|max:50',
         ];
     }
 
@@ -43,7 +43,7 @@ class ExtracurricularActivityRequest extends FormRequest
             'activity_price.regex' => 'El campo precio debe de ser numérico y positivo',
             'transport.required' => 'El campo transporte debe ser obligatorio',
             'activity_responsible_teacher.required' => 'El campo responsable de la actividad debe ser obligatorio',
-
+            'activity_responsible_teacher.max' => 'El nombre del profesor no puede tener más de 50 carácteres'
         ];
     }
 }
