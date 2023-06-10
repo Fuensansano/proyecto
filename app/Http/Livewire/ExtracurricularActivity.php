@@ -32,12 +32,15 @@ class ExtracurricularActivity extends Component
             "observations" => $request->observations
             ];
 
+        $path = realpath(base_path('public'));
+
         $options = new Options();
         $options->set('isRemoteEnabled', true);
 
         $html = view('pdfs.extracurricularActivityPDF', compact('data'))->render();
 
         $dompdf = new Dompdf($options);
+        $dompdf->setBasePath($path);
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
