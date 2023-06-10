@@ -1,3 +1,4 @@
 <div>
-    <img src="images/cabecerav6.png" alt="cabecera.png">
+    <img src="{{ public_path('images/cabecerav6.png') }}" alt="cabecera.png">
+    {{  public_path('images/cabecerav6.png') }}
 </div>

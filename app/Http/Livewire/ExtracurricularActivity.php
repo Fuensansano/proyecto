@@ -33,7 +33,7 @@ class ExtracurricularActivity extends Component
             ];
 
         $path = realpath(base_path('public'));
-
+        dd($path);
         $options = new Options();
         $options->set('isRemoteEnabled', true);
 
