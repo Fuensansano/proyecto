@@ -6,8 +6,8 @@
             <div class="card mt-5">
                 <h1 class="card-header text-primary bg-white">INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h1>
                 <div class="card-body">
-                    {{-- primera fila --}}
                     <div class="row row-cols-2 mb-4">
+                        {{-- first row --}}
                         <div class="col">
                             <label for="activity_name">
                                 Denominación de la actividad<span class="text-danger"> *</span>
@@ -36,7 +36,7 @@
                             @endif
                         </div>
                     </div>
-                    {{-- segunda fila --}}
+                    {{-- second row --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="activity_module">

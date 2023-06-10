@@ -31,6 +31,7 @@ class ExtracurricularActivity extends Component
             "activity_responsible_teacher" => $request->activity_responsible_teacher,
             "observations" => $request->observations
             ];
+
         $options = new Options();
         $options->set('isRemoteEnabled', true);
 
@@ -41,6 +42,6 @@ class ExtracurricularActivity extends Component
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
 
-        return $dompdf->stream('extracurricularActivity.pdf');
+        return $dompdf->stream('informacion actividad extraescolar.pdf');
     }
 }

@@ -29,14 +29,4 @@ class NavbarTest extends TestCase
     {
         $this->get('/')->assertSee('Profesorado');
     }
-
-    /** @test */
-/*
-    public function when_click_on_ies_logo_it_redirects_to_ies_web()
-    {
-        $this->get('/')
-                ->click('ies-ingeniero-de-la-cierva-logo.webp')
-                ->assertRedirect('https://iescierva.net');
-    }
-*/
 }
