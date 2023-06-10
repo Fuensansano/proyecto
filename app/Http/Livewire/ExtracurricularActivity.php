@@ -16,7 +16,13 @@ class ExtracurricularActivity extends Component
 
     public function store(ExtracurricularActivityRequest $request)
     {
+        $headerPath = storage_path('app/public/images/cabecerav6.png');
+        $typeOfHeader = pathinfo($headerPath, PATHINFO_EXTENSION);
+        $imageContent = file_get_contents($headerPath);
+        $base64HeaderImage = 'data:image/' . $typeOfHeader . ';base64,' . base64_encode($imageContent);
+
         $data = [
+            'header' => $base64HeaderImage,
             "activity_name" => $request->activity_name,
             "activity_place" => $request->activity_place,
             "activity_module" => $request->activity_module,
