@@ -115,8 +115,8 @@
                     </td>
                 @else
                     <td class="td-form">
-                        De <b>{{ $data['journeyStartTime1'] }} @if($data['journeyStartTime1'] < 12) am</b> @else pm</b> @endif
-                        a <b>{{ $data['journeyEndTime1'] }} @if($data['journeyEndTime1'] < 12) am</b> @else pm</b> @endif
+                        De <b>{{ $data['journeyStartTime1'] }}
+                        a <b>{{ $data['journeyEndTime1'] }}
                     </td>
                 @endif
             </tr>
@@ -132,8 +132,8 @@
                     </td>
                 @else
                     <td class="td-form">
-                        De <b>{{ $data['journeyStartTime2'] }} @if($data['journeyStartTime2'] < 12) am</b> @else pm</b> @endif
-                        a <b>{{ $data['journeyEndTime2'] }} @if($data['journeyEndTime2'] < 12) am</b> @else pm</b> @endif
+                        De <b>{{ $data['journeyStartTime2'] }}
+                        a <b>{{ $data['journeyEndTime2'] }}
                     </td>
                 @endif
             </tr>
@@ -149,8 +149,8 @@
                     </td>
                 @else
                     <td class="td-form">
-                        De <b>{{ $data['journeyStartTime2'] }} @if($data['journeyStartTime2'] < 12) am</b> @else pm</b> @endif
-                        a <b>{{ $data['journeyEndTime2'] }} @if($data['journeyEndTime2'] < 12) am</b> @else pm</b> @endif
+                        De <b>{{ $data['journeyStartTime2'] }}
+                        a <b>{{ $data['journeyEndTime2'] }}
                     </td>
                 @endif
             </tr>
