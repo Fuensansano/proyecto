@@ -2,24 +2,23 @@
 
 namespace App\Http\Livewire;
 
+use App\Traits\PDF;
 use Livewire\Component;
-
 use App\Http\Requests\FamilyAuthorizationRequest;
-
-use Dompdf\Dompdf;
-use Dompdf\Options;
 
 class FamilyAuthorization extends Component
 {
+    use PDF;
+
     public function render()
     {
         return view('livewire.familyAuthorization');
     }
 
-    public function generatePDF(FamilyAuthorizationRequest $request)
+    public function store(FamilyAuthorizationRequest $request)
     {
         date_default_timezone_set('Europe/Madrid');
-        
+
         $actual_date = getdate();
 
         switch ($actual_date['mon']) {
@@ -78,20 +77,10 @@ class FamilyAuthorization extends Component
             'year' => $actual_date['year'],
         ];
 
-        $options = new Options();
-        $options->set('isRemoteEnabled', true);
-
-        $html = view('pdfs.familyAuthorizationPDF', compact('data'))->render();
-
-        $dompdf = new Dompdf($options);
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'portrait');
-        $dompdf->render();
-
-        return $dompdf->stream('autorizacionFamiliar.pdf', array('Attachment' => 0));
+        return $this->generatePDF('pdfs.familyAuthorizationPDF', 'autorizacion familiar.pdf', $data);
     }
 
     public function dateFormat($date) {
-        return date('d-m-Y', strtotime($date));  
+        return date('d-m-Y', strtotime($date));
     }
 }

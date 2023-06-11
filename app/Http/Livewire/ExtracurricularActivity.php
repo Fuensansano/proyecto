@@ -4,8 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Http\Requests\ExtracurricularActivityRequest;
 use App\Traits\PDF;
-use Dompdf\Dompdf;
-use Dompdf\Options;
 use Livewire\Component;
 
 class ExtracurricularActivity extends Component

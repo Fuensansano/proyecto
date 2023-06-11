@@ -3,20 +3,19 @@
 namespace App\Http\Livewire;
 
 use App\Http\Requests\ProofMissingTeacherRequest;
-
+use App\Traits\PDF;
 use Livewire\Component;
-
-use Dompdf\Dompdf;
-use Dompdf\Options;
 
 class ProofMissingTeacher extends Component
 {
+    use PDF;
+
     public function render()
     {
         return view('livewire.proofMissingTeacher');
     }
 
-    public function generatePDF(ProofMissingTeacherRequest $request)
+    public function store(ProofMissingTeacherRequest $request)
     {
         date_default_timezone_set('Europe/Madrid');
 
@@ -89,17 +88,7 @@ class ProofMissingTeacher extends Component
             'anotherReason' => $request->anotherReason,
         ];
 
-        $options = new Options();
-        $options->set('isRemoteEnabled', true);
-
-        $html = view('pdfs.proofMissingTeacherPDF', compact('data'))->render();
-
-        $dompdf = new Dompdf($options);
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'portrait');
-        $dompdf->render();
-
-        return $dompdf->stream('JustificanteFaltaProfesorado.pdf', array('Attachment' => 0));
+        return $this->generatePDF('pdfs.proofMissingTeacherPDF', 'justificante falta profesorado.pdf', $data);
     }
 
     public function dateFormat($date) {
