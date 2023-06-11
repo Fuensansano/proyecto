@@ -149,8 +149,8 @@
                     </td>
                 @else
                     <td class="td-form">
-                        De <b>{{ $data['journeyStartTime2'] }}
-                        a <b>{{ $data['journeyEndTime2'] }}
+                        De <b>{{ $data['journeyStartTime3'] }}
+                        a <b>{{ $data['journeyEndTime3'] }}
                     </td>
                 @endif
             </tr>
