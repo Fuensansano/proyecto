@@ -227,13 +227,7 @@
         overflow-wrap: break-word;
     }
 
-    .actual-date {
-        margin-top: 80px;
-        text-align: right;
-    }
-
     .sign {
-        margin-top: 150px;
-        text-align: center;
+        margin-top: 380px;
     }
 </style>

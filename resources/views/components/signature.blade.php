@@ -7,3 +7,14 @@
         Firmado por:_____________________________________________ con DNI: <b>{{ $dni }}</b>
     </div>
 </div>
+
+<style>
+    .actual-date {
+        text-align: right
+    }
+
+    .sign {
+        margin-top: 250px;
+        text-align: center;
+    }
+</style>
