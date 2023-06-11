@@ -3,12 +3,15 @@
 namespace App\Http\Livewire;
 
 use App\Http\Requests\ExtracurricularActivityRequest;
+use App\Traits\PDF;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Livewire\Component;
 
 class ExtracurricularActivity extends Component
 {
+    use PDF;
+
     public function render()
     {
         return view('livewire.extraescolaractivity');
@@ -16,13 +19,7 @@ class ExtracurricularActivity extends Component
 
     public function store(ExtracurricularActivityRequest $request)
     {
-        $headerPath = public_path('/images/cabecerav6.png');
-        $typeOfHeader = pathinfo($headerPath, PATHINFO_EXTENSION);
-        $imageContent = file_get_contents($headerPath);
-        $base64HeaderImage = 'data:image/' . $typeOfHeader . ';base64,' . base64_encode($imageContent);
-
         $data = [
-            'header' => $base64HeaderImage,
             "activity_name" => $request->activity_name,
             "activity_place" => $request->activity_place,
             "activity_module" => $request->activity_module,
@@ -38,17 +35,6 @@ class ExtracurricularActivity extends Component
             "observations" => $request->observations
             ];
 
-        $options = new Options();
-        $options->set('isRemoteEnabled', true);
-        $options->set('isHtml5ParserEnabled', true);
-
-        $html = view('pdfs.extracurricularActivityPDF', compact('data'))->render();
-
-        $dompdf = new Dompdf($options);
-        $dompdf->loadHtml($html);
-        $dompdf->setPaper('A4', 'portrait');
-        $dompdf->render();
-
-        return $dompdf->stream('informacion actividad extraescolar.pdf');
+        return $this->generatePDF('pdfs.extracurricularActivityPDF', 'informacion actividad extraescolar.pdf', $data);
     }
 }

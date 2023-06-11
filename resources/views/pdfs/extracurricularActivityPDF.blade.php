@@ -1,6 +1,4 @@
-<div>
-    <img src="{{ $data['header'] }}" alt="cabecera.png">
-</div>
+<x-header :data="$data"></x-header>
 
 <h2>INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h2>
 
