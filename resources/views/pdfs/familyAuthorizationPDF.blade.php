@@ -1,36 +1,36 @@
 <x-header :data="$data"/>
 
-<table>
+<table class="table-form">
     <tbody>
     <tr>
-        <h1>AUTORIZACIÓN FAMILIAR</h1>
+        <h1 class="title-form">AUTORIZACIÓN FAMILIAR</h1>
     </tr>
     <tr>
-        <td class="border-bottom">
+        <td class="border-bottom td-form">
             <b>ACTIVIDAD PROGRAMADA: </b>
             <span>{{ $data['activity'] }}</span>
         </td>
     </tr>
     <tr>
-        <td class="border-bottom">
+        <td class="border-bottom td-form">
             <b>ORGANIZADA POR: </b>
             <span>{{ $data['organizer'] }}</span>
         </td>
     </tr>
     <tr>
-        <td class="border-bottom">
+        <td class="border-bottom td-form">
             <b>FECHA DE REALIZACIÓN: </b>
             <span>{{ $data['execution_date'] }}</span>
         </td>
     </tr>
     <tr>
-        <td class="border-bottom">
+        <td class="border-bottom td-form">
             <b>HORA DE SALIDA: </b>
             <span>{{ $data['departure_time'] }}</span>
         </td>
     </tr>
     <tr>
-        <td class="border-bottom">
+        <td class="border-bottom td-form">
             <b>OBJETIVOS Y CONTENIDOS: </b>
             <span>{{ $data['goals'] }}</span>
         </td>
@@ -67,7 +67,7 @@
         </label>
     </div>
 
-    <div class="margin-checkbox">
+    <div class="margin-checkbox margin-date">
         <input type="checkbox" id="notAuth" {{ $data['authorization'] == 'notAuth' ? 'checked' : ''}}>
         <label for="notAuth">
             No va a participar en la actividad programada.
@@ -96,37 +96,27 @@
 <x-footer/>
 
 <style>
-    h1 {
+    .title-form {
         text-align: center;
         width: 100%;
         color: dodgerblue;
     }
 
-    table {
-        width: 100%
+    .table-form {
+        width: 100%;
+        table-layout: fixed;
     }
 
-    td {
+    .td-form {
         padding: 8px;
     }
 
-    td span {
+    .td-form span {
         overflow-wrap: break-word;
     }
 
-    .actual-date {
-        margin-top: 100px;
-        text-align: right
-    }
-
-    .sign-text {
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .sign {
-        margin-top: 150px;
-        margin-bottom: 150px;
+    .margin-date {
+        margin-bottom: 80px;
     }
 
     .margin-checkbox {
@@ -146,30 +136,7 @@
         border-bottom: 1px solid #ddd;
     }
 
-    .footer {
-        position: fixed;
-        border-top: 1px solid black;
-        width: 100%;
-    }
-
-    .footer-li {
-        color: blue;
-        font-size: 12px;
-    }
-
-    .footer-ul {
-        text-align: center;
-    }
-
-    .footer-ul li {
-        display: inline;
-    }
-
-    .footer-circles {
-        display: inline-block;
-        height: 6px;
-        width: 6px;
-        background: blue;
-        border-radius: 50%;
+    .sign {
+        margin-top: 200px;
     }
 </style>
