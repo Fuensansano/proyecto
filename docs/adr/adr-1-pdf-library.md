@@ -1,7 +1,7 @@
 # Use of DomPDF for Generating PDF Documents in Laravel Project
 
 * Status: Done
-* Deciders: Fuensanta Sansano Montoya and Tomás López Raigal
+* Deciders: Fuensanta Sansano Montoya and Tomás Raigal López
 * Date: 2023-04-01
 
 ## Context and Problem Statement

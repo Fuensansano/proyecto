@@ -1,7 +1,7 @@
 # Separation of Printed View and Form View, and Avoidance of Bootstrap
 
 * Status: Done
-* Deciders: Fuensanta Sansano Montoya and Tomás López Raigal
+* Deciders: Fuensanta Sansano Montoya and Tomás Raigal López
 * Date: 2023-04-10
 
 ## Context and Problem Statement

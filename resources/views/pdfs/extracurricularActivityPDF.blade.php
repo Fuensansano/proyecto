@@ -1,6 +1,6 @@
 <x-header :data="$data"></x-header>
 
-<h2>INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h2>
+<h2 class="title-form">INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h2>
 
 <table class="table-form">
     <tbody>
@@ -62,7 +62,7 @@
 <x-footer/>
 
 <style>
-    h2 {
+    .title-form {
         text-align: center;
         font-size: 30px;
         margin-top: 30px;
