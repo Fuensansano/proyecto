@@ -120,6 +120,15 @@ class FamilyAuthorizationTest extends TestCase
     }
 
     /** @test */
+    function the_organizer_name_cannot_be_longer_than_100_characters() {
+        $this->from('/family-authorization')
+            ->post('/family-authorization', $this->getValidData([
+                'organizer' => 'Jhonny Depp Ruppert Emma Daniel Angeline Christian Marshall Robert Redford Harrison Ford Lucke Saray Emily',
+            ]))
+            ->assertSessionHasErrors(['organizer' => 'El nombre del organizador no puede tener más de 100 carácteres']);
+    }
+
+    /** @test */
     function the_execution_date_is_required() {
         $this->from('/family-authorization')
             ->post('/family-authorization', $this->getValidData([
@@ -162,6 +171,15 @@ class FamilyAuthorizationTest extends TestCase
                 'goals' => null,
             ]))
             ->assertSessionHasErrors(['goals' => 'Los objetivos son obligatorios']);
+    }
+
+    /** @test */
+    function the_goals_cannot_be_longer_than_250_characters() {
+        $this->from('/family-authorization')
+            ->post('/family-authorization', $this->getValidData([
+                'goals' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters. It is a long established fact that ...',
+            ]))
+            ->assertSessionHasErrors(['goals' => 'Los objetivos y contenidos no pueden tener más de 250 carácteres']);
     }
 
     /** @test */

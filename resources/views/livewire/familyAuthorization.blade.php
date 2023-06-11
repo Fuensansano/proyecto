@@ -40,7 +40,8 @@
                                 class="form-control
                                 @error('organizer') is-invalid @enderror"
                                 id="organizer"
-                                name="organizer">
+                                name="organizer"
+                                maxlength="100">
 
                             @if($errors->get('organizer'))
                                 <div class="text-danger mb-3 mt-0">
@@ -211,7 +212,8 @@
                                 class="form-control
                                 @error('goals') is-invalid @enderror"
                                 id="goals"
-                                name="goals">
+                                name="goals"
+                                maxlength="250">
                             </textarea>
 
                             @if($errors->get('goals'))
