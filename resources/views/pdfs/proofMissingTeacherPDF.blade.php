@@ -37,8 +37,8 @@
                     </td>
                 @else
                     <td class="td-form">
-                        De <b>{{ $data['journeyStartTime1'] }} @if($data['journeyStartTime1'] < 12) am</b> @else pm</b> @endif
-                        a <b>{{ $data['journeyEndTime1'] }} @if($data['journeyEndTime1'] < 12) am</b> @else pm</b> @endif
+                        De <b>{{ $data['journeyStartTime1'] }}
+                        a <b>{{ $data['journeyEndTime1'] }}
                     </td>
                 @endif
 
