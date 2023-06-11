@@ -4,7 +4,7 @@
         <form action="extracurricular-activity" method="post">
         @csrf
             <div class="card mt-5">
-                <h1 class="card-header text-primary bg-white">INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h1>
+                <h1 class="card-header text-primary text-center bg-white">INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h1>
                 <div class="card-body">
                     <div class="row row-cols-2 mb-4">
                         {{-- first row --}}
@@ -65,7 +65,7 @@
                             @endif
                         </div>
                     </div>
-                    {{-- tercera fila --}}
+                    {{-- third row --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="teachers">
@@ -95,7 +95,7 @@
                         </div>
                     </div>
 
-                    {{-- cuarta fila --}}
+                    {{-- fourth row --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="date">
@@ -126,7 +126,7 @@
 
                     </div>
 
-                    {{-- quinta fila --}}
+                    {{-- fifth row --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="arrive_time">
@@ -156,7 +156,7 @@
                         </div>
                     </div>
 
-                    {{-- sexta fila --}}
+                    {{-- sixth row --}}
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="transport">
@@ -187,7 +187,7 @@
                         </div>
                     </div>
 
-                    {{-- séptima fila --}}
+                    {{-- seventh row --}}
                     <div class="row row-cols-1 mb-4">
                         <div class="col">
                             <label for="observations">
