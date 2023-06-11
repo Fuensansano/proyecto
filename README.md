@@ -1,68 +1,99 @@
 [![Run tests](https://github.com/Fuensansano/proyecto/actions/workflows/ci.yml/badge.svg)](https://github.com/Fuensansano/proyecto/actions/workflows/ci.yml)
 [![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2Fb5f98a8c-b595-4fab-b47a-835f219ba81b%3Fdate%3D1%26commit%3D1&style=plastic)](https://forge.laravel.com/servers/690000/sites/2005919)
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional</a>.
 
-## About Laravel
+# IES Ingeniero PDF generator
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![PDF generator diagram](./docs/img/IES_CIERVA_PDF_GENERATOR_Diagram.jpeg)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Documentation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Tools we use
 
-## Learning Laravel
+We use [Laravel Sail](https://laravel.com/docs/10.x/sail) to our local development
+```bash
+./vendor/bin/sail
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+To start docker with the logs
+```bash
+./vendor/bin/sail up
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+To start docker with logs on the background
+```bash
+./vendor/bin/sail up -d
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+To stop docker container
+```bash
+./vendor/bin/sail stop
+```
 
-## Laravel Sponsors
+To install the local dependencies
+```bash
+./vendor/bin/sail composer install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+To update the local dependencies
+```bash
+./vendor/bin/sail composer update
+```
 
-### Premium Partners
+Other artisan commands use with Sail
+```bash
+./vendor/bin/sail artisan livewire:publish
+./vendor/bin/sail artisan optimize:clear
+./vendor/bin/sail artisan view:clear
+./vendor/bin/sail artisan route:clear
+./vendor/bin/sail artisan config:clear
+./vendor/bin/sail artisan view:cache
+./vendor/bin/sail artisan route:cache
+./vendor/bin/sail artisan storage:link
+./vendor/bin/sail artisan up
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+To run npm and install all the dependencies
+```bash
+./vendor/bin/sail npm install
+```
 
-## Contributing
+To run npm on our development environment
+```bash
+./vendor/bin/sail npm run dev
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+To build the project to push into production into our local environment
+```bash
+./vendor/bin/sail npm run build
+```
 
-## Code of Conduct
+Deployment script at [Forge](https://forge.laravel.com/)
+```bash
+composer install
+php artisan livewire:publish
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+php artisan optimize:clear
+php artisan view:clear
+php artisan route:clear
+php artisan config:clear
+php artisan view:cache
+php artisan route:cache
+php artisan storage:link
+php artisan up
 
-## Security Vulnerabilities
+npm install
+npm run build
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### ADRs
+- [What are ADRs](https://adr.github.io/)
+- [Examples of ADRs](https://github.com/joelparkerhenderson/architecture-decision-record)
 
-## License
+#### Our ADRs
+- [What PDF library to use](./docs/adr/adr-1-pdf-library.md)
+- [Why pdf views can not be the same as the forms](./docs/adr/adr-2-split-printed-views.md)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## PDF Library
+- [Dompdf](https://github.com/dompdf/dompdf)
