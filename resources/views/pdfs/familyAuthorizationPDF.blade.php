@@ -1,4 +1,4 @@
-<x-header/>
+<x-header :data="$data"/>
 
 <table>
     <tbody>

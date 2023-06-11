@@ -1,4 +1,4 @@
-<x-header/>
+<x-header :data="$data"/>
 
 <h2>JUSTIFICANTE DE FALTA DEL PROFESORADO</h2>
 
