@@ -1,4 +1,14 @@
-<x-header></x-header>
+<div>
+    @if (isset($data['header']))
+        <img src="{{ $data['header'] }}" alt="cabecera.png">
+        {{ 'DATA: ' . $data['header'] }}
+    @else
+        {{ $data }}
+        <img src="{{ storage_path('app/public/images/cabecerav6.png') }}" alt="cabecera.png">
+        {{ 'LOCAL: ' . storage_path('app/public/images/cabecerav6.png') }}
+    @endif
+</div>
+
 
 <h2>INFORMACIÓN SOBRE ACTIVIDAD EXTRAESCOLAR</h2>
 
