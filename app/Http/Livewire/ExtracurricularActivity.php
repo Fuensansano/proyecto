@@ -40,6 +40,7 @@ class ExtracurricularActivity extends Component
 
         $options = new Options();
         $options->set('isRemoteEnabled', true);
+        $options->set('isHtml5ParserEnabled', true);
 
         $html = view('pdfs.extracurricularActivityPDF', compact('data'))->render();
 
