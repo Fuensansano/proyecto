@@ -21,44 +21,22 @@ class FamilyAuthorization extends Component
 
         $actual_date = getdate();
 
-        switch ($actual_date['mon']) {
-            case '1':
-                $actual_date['mon'] = 'Enero';
-                break;
-            case '2':
-                $actual_date['mon'] = 'Febrero';
-                break;
-            case '3':
-                $actual_date['mon'] = 'Marzo';
-                break;
-            case '4':
-                $actual_date['mon'] = 'Abril';
-                break;
-            case '5':
-                $actual_date['mon'] = 'Mayo';
-                break;
-            case '6':
-                $actual_date['mon'] = 'Junio';
-                break;
-            case '7':
-                $actual_date['mon'] = 'Julio';
-                break;
-            case '8':
-                $actual_date['mon'] = 'Agosto';
-                break;
-            case '9':
-                $actual_date['mon'] = 'Septiembre';
-                break;
-            case '10':
-                $actual_date['mon'] = 'Octubre';
-                break;
-            case '11':
-                $actual_date['mon'] = 'Noviembre';
-                break;
-            case '12':
-                $actual_date['mon'] = 'Diciembre';
-                break;
-        }
+        $month = [
+            1 => 'Enero',
+            2 => 'Febrero',
+            3 => 'Marzo',
+            4 => 'Abril',
+            5 => 'Mayo',
+            6 => 'Junio',
+            7 => 'Julio',
+            8 => 'Agosto',
+            9 => 'Septiembre',
+            10 => 'Octubre',
+            11 => 'Noviembre',
+            12 => 'Diciembre'
+        ];
+
+        $actual_date['mon'] = $month[$actual_date['mon']];
 
         $data = [
             'activity' => $request->activity,
