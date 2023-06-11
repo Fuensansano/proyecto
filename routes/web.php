@@ -8,17 +8,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/extracurricular-activity', function () {
-//    return view('livewire/extracurricularActivity');
-//});
+Route::get('/extracurricular-activity', static function () {
+    return view('livewire/extracurricularActivity');
+});
 
-Route::get('/extracurricular-activity', [ExtracurricularActivity::class, 'render']);
-
-Route::get('/family-authorization', function () {
+Route::get('/family-authorization', static function () {
     return view('livewire/familyAuthorization');
 });
 
-Route::get('/proof-missing-teacher', function () {
+Route::get('/proof-missing-teacher', static function () {
     return view('livewire/proofMissingTeacher');
 });
 
