@@ -42,7 +42,7 @@
     </tr>
     <tr>
         <td class="labels td-form">Precio de la actividad</td>
-        <td class="td-form">{{ $data['activity_price'] }}</td>
+        <td class="td-form">{{ $data['activity_price'] }}&euro;</td>
     </tr>
     <tr>
         <td class="labels td-form">Medio de transporte</td>
