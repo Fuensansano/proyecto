@@ -191,7 +191,7 @@
                     <div class="row row-cols-1 mb-4">
                         <div class="col">
                             <label for="observations">
-                                Observaciones<span class="text-danger"> *</span>
+                                Observaciones
                             </label>
                         </div>
                         <div class="col">
