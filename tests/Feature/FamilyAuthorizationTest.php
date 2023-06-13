@@ -69,14 +69,14 @@ class FamilyAuthorizationTest extends TestCase
     function the_parents_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get('/family-authorization')
             ->assertStatus(200)
-            ->assertSee('Padre/Madre/Tutor');
+            ->assertSee('Nombre y apellidos del Padre/Madre/Tutor');
     }
 
     /** @test */
     function the_student_field_exists_in_the_autorizacion_familiar_form_page() {
         $this->get('/family-authorization')
             ->assertStatus(200)
-            ->assertSee('Alumno');
+            ->assertSee('Nombre y apellidos del alumno');
     }
 
     /** @test */

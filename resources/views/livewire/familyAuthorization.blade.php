@@ -138,12 +138,12 @@
                     <div class="row row-cols-2 mb-4">
                         <div class="col">
                             <label for="parents">
-                                Padre/Madre/Tutor<span class="text-danger"> *</span>
+                                Nombre y apellidos del Padre/Madre/Tutor<span class="text-danger"> *</span>
                             </label>
                         </div>
                         <div class="col">
                             <label for="">
-                                Alumno<span class="text-danger"> *</span>
+                                Nombre y apellidos del alumno<span class="text-danger"> *</span>
                             </label>
                         </div>
 
