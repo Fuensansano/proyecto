@@ -20,7 +20,7 @@
                         </div>
                         <div class="col">
                             <input type="text" class="form-control @error('activity_name')  is-invalid @enderror"
-                                   id="activity_name" name="activity_name"/>
+                                   id="activity_name" name="activity_name" value="{{ old('activity_name') }}" />
                             @if($errors->get('activity_name'))
                                <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_name')[0] }}
@@ -28,7 +28,7 @@
                             @endif
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control @error('activity_place')  is-invalid @enderror" id="activity_place" name="activity_place"/>
+                            <input type="text" class="form-control @error('activity_place') is-invalid @enderror" value="{{ old('activity_place') }}" id="activity_place" name="activity_place"/>
                             @if($errors->get('activity_place'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_place')[0] }}
@@ -49,7 +49,7 @@
                             </label>
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control @error('activity_module')  is-invalid @enderror" id="activity_module" name="activity_module"/>
+                            <input type="text" class="form-control @error('activity_module') is-invalid @enderror" value="{{ old('activity_module') }}" id="activity_module" name="activity_module"/>
                             @if($errors->get('activity_module'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_module')[0] }}
@@ -57,7 +57,7 @@
                             @endif
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control @error('activity_departament')  is-invalid @enderror" id="activity_departament" name="activity_departament" max="100"/>
+                            <input type="text" class="form-control @error('activity_departament') is-invalid @enderror" value="{{ old('activity_departament') }}" id="activity_departament" name="activity_departament" max="100"/>
                             @if($errors->get('activity_departament'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_departament')[0] }}
@@ -78,7 +78,7 @@
                             </label>
                         </div>
                         <div class="col">
-                            <textarea type="text" class="form-control @error('teachers') is-invalid @enderror" id="teachers" name="teachers"></textarea>
+                            <textarea type="text" class="form-control @error('teachers') is-invalid @enderror" id="teachers" name="teachers">{{ old('teachers') }}</textarea>
                             @if($errors->get('teachers'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('teachers')[0] }}
@@ -86,7 +86,7 @@
                             @endif
                         </div>
                         <div class="col">
-                            <textarea type="text" class="form-control @error('student_groups') is-invalid @enderror" id="student_groups" name="student_groups"></textarea>
+                            <textarea type="text" class="form-control @error('student_groups') is-invalid @enderror" id="student_groups" name="student_groups"> {{ old('student_groups') }}</textarea>
                             @if($errors->get('student_groups'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('student_groups')[0] }}
@@ -108,15 +108,15 @@
                             </label>
                         </div>
                         <div class="col">
-                            <input type="date" class="form-control @error('date') is-invalid @enderror" id="date" name="date"></input>
-                            @if($errors->get('teachers'))
+                            <input type="date" class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}" id="date" name="date"></input>
+                            @if($errors->get('date'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('date')[0] }}
                                 </div>
                             @endif
                         </div>
                         <div class="col">
-                            <input type="time" class="form-control @error('departure_time') is-invalid @enderror" id="departure_time" name="departure_time"></input>
+                            <input type="time" class="form-control @error('departure_time') is-invalid @enderror" value="{{ old('departure_time') }}" id="departure_time" name="departure_time"></input>
                             @if($errors->get('departure_time'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('departure_time')[0] }}
@@ -139,7 +139,7 @@
                             </label>
                         </div>
                         <div class="col">
-                            <input type="time" class="form-control @error('arrive_time') is-invalid @enderror" id="arrive_time" name="arrive_time"></input>
+                            <input type="time" class="form-control @error('arrive_time') is-invalid @enderror" value="{{ old('arrive_time') }}" id="arrive_time" name="arrive_time"></input>
                             @if($errors->get('arrive_time'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('arrive_time')[0] }}
@@ -147,7 +147,7 @@
                             @endif
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control @error('activity_price') is-invalid @enderror" id="activity_price" name="activity_price"></input>
+                            <input type="text" class="form-control @error('activity_price') is-invalid @enderror" value="{{ old('activity_price') }}" id="activity_price" name="activity_price"></input>
                             @if($errors->get('activity_price'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_price')[0] }}
@@ -170,7 +170,7 @@
                         </div>
 
                         <div class="col">
-                            <input type="text" class="form-control @error('transport') is-invalid @enderror" id="transport" name="transport"></input>
+                            <input type="text" class="form-control @error('transport') is-invalid @enderror" value="{{ old('transport') }}" id="transport" name="transport"></input>
                             @if($errors->get('transport'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('transport')[0] }}
@@ -178,7 +178,7 @@
                             @endif
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control @error('activity_responsible_teacher') is-invalid @enderror" id="activity_responsible_teacher" name="activity_responsible_teacher" maxlength="50"/>
+                            <input type="text" class="form-control @error('activity_responsible_teacher') is-invalid @enderror" value="{{ old('activity_responsible_teacher') }}" id="activity_responsible_teacher" name="activity_responsible_teacher" maxlength="50"/>
                             @if($errors->get('activity_responsible_teacher'))
                                 <div class="text-danger mb-3 mt-0">
                                     {{ $errors->get('activity_responsible_teacher')[0] }}
@@ -195,7 +195,7 @@
                             </label>
                         </div>
                         <div class="col">
-                            <textarea type="time" class="form-control mb-4" id="observations" name="observations"></textarea>
+                            <textarea type="time" class="form-control mb-4" id="observations" name="observations"> {{ old('observations') }} </textarea>
                         </div>
                     </div>
 
