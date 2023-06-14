@@ -31,6 +31,7 @@
 								name="name"
 								class="form-control @error('name') is-invalid @enderror"
 								maxlength="50"
+								value="{{ old('name') }}"
 							/>
 							@if($errors->get('name'))
 							<div class="text-danger mb-3 mt-0">
@@ -45,6 +46,7 @@
 								name="department"
 								class="form-control @error('department') is-invalid @enderror"
 								maxlength="100"
+								value="{{ old('department') }}"
 							/>
 							@if($errors->get('department'))
 								<div class="text-danger mb-3 mt-0">
@@ -58,6 +60,7 @@
 								type="text"
 								name="dni"
 								class="form-control @error('dni') is-invalid @enderror"
+								value="{{ old('dni') }}"
 							/>
 							@if($errors->get('dni'))
 								<div class="text-danger mb-3 mt-0">
@@ -78,6 +81,7 @@
 								type="date"
 								name="missingDay1"
 								class="form-control @error('missingDay1') is-invalid @enderror"
+								value="{{ old('missingDay1') }}"
 							/>
 							@if($errors->get('missingDay1'))
 								<div class="text-danger mb-3 mt-0">
@@ -94,6 +98,7 @@
 									value="fullJourneyOption1"
 									id="fullJourneyOption1"
 									class="@error('journeyType1') is-invalid @enderror"
+									{{ old('journeyType1') == 'fullJourneyOption1' ? 'checked' : '' }}
 								/>
 
 								<label for="fullJourneyOption1" class="radio-label">
@@ -113,6 +118,7 @@
 									value="midJourneyOption1"
 									id="midJourneyOption1"
 									class="@error('journeyType1') is-invalid @enderror"
+									{{ old('journeyType1') == 'midJourneyOption1' ? 'checked' : '' }}
 								/>
 
 								<label for="midJourneyOption1" class="radio-label">
@@ -141,6 +147,7 @@
 										type="time"
 										name="journeyStartTime1"
 										class="form-control"
+										value="{{ old('journeyStartTime1') }}"
 									/>
 									@if($errors->get('journeyStartTime1'))
 										<div class="text-danger mb-3 mt-0">
@@ -162,6 +169,7 @@
 										type="time"
 										name="journeyEndTime1"
 										class="form-control"
+										value="{{ old('journeyEndTime1') }}"
 									/>
 									@if($errors->get('journeyEndTime1'))
 										<div class="text-danger mb-3 mt-0">
@@ -184,6 +192,7 @@
 								type="date"
 								name="missingDay2"
 								class="form-control @error('missingDay2') is-invalid @enderror"
+								value="{{ old('missingDay2') }}"
 							/>
 							@if($errors->get('missingDay2'))
 								<div class="text-danger mb-3 mt-0">
@@ -200,6 +209,7 @@
 									name="journeyType2"
 									value="fullJourneyOption2"
 									class="@error('journeyType2') is-invalid @enderror"
+									{{ old('journeType2') == 'fullJourneyOption2' ? 'checked' : '' }}
 								/>
 
 								<label for="fullJourneyOption2" class="radio-label">
@@ -219,6 +229,7 @@
 									name="journeyType2"
 									value="midJourneyOption2"
 									class="@error('journeyType2') is-invalid @enderror"
+									{{ old('journeyType2') == 'midJourneyOption2' ? 'checked' : '' }}
 								/>
 
 								<label for="midJourneyOption2" class="radio-label">
@@ -247,6 +258,7 @@
 										type="time"
 										name="journeyStartTime2"
 										class="form-control"
+										value="{{ old('journeyStartTime2') }}"
 									/>
 									@if($errors->get('journeyStartTime2'))
 										<div class="text-danger mb-3 mt-0">
@@ -268,6 +280,7 @@
 										type="time"
 										name="journeyEndTime2"
 										class="form-control"
+										value="{{ old('journeyEndTime2') }}"
 									/>
 									@if($errors->get('journeyEndTime2'))
 										<div class="text-danger mb-3 mt-0">
@@ -290,6 +303,7 @@
 								type="date"
 								name="missingDay3"
 								class="form-control @error('missingDay3') is-invalid @enderror"
+								value="{{ old('missingDay3') }}"
 							/>
 							@if($errors->get('missingDay3'))
 								<div class="text-danger mb-3 mt-0">
@@ -306,6 +320,7 @@
 									name="journeyType3"
 									value="fullJourneyOption3"
 									class="@error('journeyType3') is-invalid @enderror"
+									{{ old('journeType3') == 'fullJourneyOption3' ? 'checked' : '' }}
 								/>
 
 								<label for="fullJourneyOption3" class="radio-label">
@@ -325,6 +340,7 @@
 									name="journeyType3"
 									value="midJourneyOption3"
 									class="@error('journeyType3') is-invalid @enderror"
+									{{ old('journeType3') == 'midJourneyOption3' ? 'checked' : '' }}
 								/>
 
 								<label for="midJourneyOption3" class="radio-label">
@@ -353,6 +369,7 @@
 										type="time"
 										name="journeyStartTime3"
 										class="form-control"
+										value="{{ old('journeyStartTime3') }}"
 									/>
 									@if($errors->get('journeyStartTime3'))
 										<div class="text-danger mb-3 mt-0">
@@ -374,6 +391,7 @@
 										type="time"
 										name="journeyEndTime3"
 										class="form-control"
+										value="{{ old('journeyEndTime3') }}"
 									/>
 									@if($errors->get('journeyEndTime3'))
 										<div class="text-danger mb-3 mt-0">
@@ -396,11 +414,10 @@
 								onchange="showHiddenFields()"
 							>
                                 @foreach(config('proofMissingTeacherSelectOptions') as $key => $value)
-                                    <option value="{{ $value }}" id="{{ $key }}">
+                                    <option value="{{ $value }}" id="{{ $key }}" {{ old('permissionsSelect') == $value ? 'selected' : '' }}>
                                         {{ $value }}
                                     </option>
                                 @endforeach
-
 							</select>
 						</div>
                         @if($errors->get('permissionsSelect'))
@@ -416,18 +433,49 @@
 
 						<div class="col mb-4" id="medicalProof" style="display: none;">
 							<div>
-								<input type="radio" onchange="hideAnotherReason()" id="doctor" name="reason" value="el médico no tiene consulta en otro horario."/>
+								<input
+									type="radio"
+									onchange="hideAnotherReason()"
+									id="doctor"
+									name="reason"
+									value="el médico no tiene consulta en otro horario."
+									{{ old('reason') == 'el médico no tiene consulta en otro horario.' ? 'checked' : '' }}
+								/>
 								<label for="doctor" class="radio-label">El médico no tiene consulta en otro horario.</label>
 							</div>
 							<div>
-								<input type="radio" onchange="hideAnotherReason()" id="schedule" name="reason" value="la necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha."/>
+								<input
+									type="radio"
+									onchange="hideAnotherReason()"
+									id="schedule"
+									name="reason"
+									value="la necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha."
+									{{ old('reason') == 'la necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha.' ? 'checked' : '' }}
+								/>
 								<label for="schedule" class="radio-label">La necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha.</label>
 							</div>
                             <div>
-                                <input type="radio" onchange="displayAnotherReason()" name="reason" id="another" value="another"/>
+                                <input
+									id="another"
+									type="radio"
+									onchange="displayAnotherReason()"
+									name="reason"
+									value="another"
+									{{ old('reason') == 'another' ? 'checked' : '' }}
+								/>
                                 <label for="another" class="radio-label">Otro motivo:</label>
                             </div>
-                            <input type="text" onchange="updateAnotherValue()" style="display: none" id="anotherReason" class="form-control" name="anotherReason" maxlength="100" placeholder="Máximo 100 carácteres"/>
+                            <input
+								id="anotherReason"
+								type="text"
+								onchange="updateAnotherValue()"
+								style="display: none"
+								class="form-control"
+								name="anotherReason"
+								maxlength="100"
+								placeholder="Máximo 100 carácteres"
+								{{ old('anotherReason') }}
+							/>
 						</div>
 					</div>
 				</div>
