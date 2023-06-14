@@ -22,13 +22,13 @@ class ProofMissingTeacherRequest extends FormRequest
 
             'missingDay2' => 'nullable|date_format:Y-m-d',
             'journeyType2' => 'nullable',
-            'journeyStartTime2' => 'exclude_if:missingDay2,null|required|date_format:H:i',
-            'journeyEndTime2' => 'exclude_if:missingDay2,null|required|date_format:H:i',
+            'journeyStartTime2' => 'required_if:journeyType2,date|date_format:H:i',
+            'journeyEndTime2' => 'required_if:journeyType2,date|date_format:H:i',
 
             'missingDay3' => 'nullable|date_format:Y-m-d',
             'journeyType3' => 'nullable',
-            'journeyStartTime3' => 'exclude_if:missingDay3,null|required|date_format:H:i',
-            'journeyEndTime3' => 'exclude_if:missingDay3,null|required|date_format:H:i',
+            'journeyStartTime3' => 'required_if:journeyType3,date|date_format:H:i',
+            'journeyEndTime3' => 'required_if:journeyType3,date|date_format:H:i',
 
             'permissionsSelect' => 'required',
             'reason' => 'nullable|requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))) .'|max:100',
