@@ -26,6 +26,7 @@
                                 @error('activity') is-invalid @enderror"
                                 id="activity"
                                 name="activity"
+                                value="{{ old('activity') }}"
                             >
 
                             @if($errors->get('activity'))
@@ -41,7 +42,8 @@
                                 @error('organizer') is-invalid @enderror"
                                 id="organizer"
                                 name="organizer"
-                                maxlength="100">
+                                maxlength="100"
+                                value="{{ old('organizer') }}">
 
                             @if($errors->get('organizer'))
                                 <div class="text-danger mb-3 mt-0">
@@ -69,7 +71,9 @@
                                 class="form-control
                                 @error('execution_date') is-invalid @enderror"
                                 id="execution_date"
-                                name="execution_date">
+                                name="execution_date"
+                                value="{{ old('execution_date') }}"
+                            >
 
                             @if($errors->get('execution_date'))
                                 <div class="text-danger mb-3 mt-0">
@@ -83,7 +87,8 @@
                                 class="form-control
                                 @error('departure_time') is-invalid @enderror"
                                 id="departure_time"
-                                name="departure_time">
+                                name="departure_time"
+                                value="{{ old('departure_time') }}">
 
                             @if($errors->get('departure_time'))
                                 <div class="text-danger mb-3 mt-0">
@@ -111,7 +116,8 @@
                                 class="form-control
                                 @error('course') is-invalid @enderror"
                                 id="course"
-                                name="course">
+                                name="course"
+                                value="{{ old('course') }}">
 
                             @if($errors->get('course'))
                                 <div class="text-danger mb-3 mt-0">
@@ -125,7 +131,8 @@
                                 class="form-control
                                 @error('deadline') is-invalid @enderror"
                                 id="deadline"
-                                name="deadline">
+                                name="deadline"
+                                value="{{ old('deadline') }}">
 
                             @if($errors->get('deadline'))
                                 <div class="text-danger mb-3 mt-0">
@@ -155,6 +162,7 @@
                                 id="parents"
                                 name="parents"
                                 maxlength="50"
+                                value="{{ old('parents') }}"
                             >
 
                             @if($errors->get('parents'))
@@ -171,6 +179,7 @@
                                 id="student"
                                 name="student"
                                 maxlength="50"
+                                value="{{ old('student') }}"
                             >
 
                             @if($errors->get('student'))
@@ -199,7 +208,8 @@
                                 class="form-control
                                 @error('dni') is-invalid @enderror"
                                 id="dni"
-                                name="dni">
+                                name="dni"
+                                value="{{ old('dni') }}">
 
                             @if($errors->get('dni'))
                                 <div class="text-danger mb-3 mt-0">
@@ -213,7 +223,7 @@
                                 @error('goals') is-invalid @enderror"
                                 id="goals"
                                 name="goals"
-                                maxlength="250">
+                                maxlength="250"> {{ old('goals') }}
                             </textarea>
 
                             @if($errors->get('goals'))
