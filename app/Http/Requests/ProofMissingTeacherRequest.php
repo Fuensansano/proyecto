@@ -22,13 +22,13 @@ class ProofMissingTeacherRequest extends FormRequest
 
             'missingDay2' => 'nullable|date_format:Y-m-d',
             'journeyType2' => 'nullable',
-            'journeyStartTime2' => 'nullable|date_format:H:i',
-            'journeyEndTime2' => 'nullable|date_format:H:i',
+            'journeyStartTime2' => 'exclude_if:missingDay2,null|required|date_format:H:i',
+            'journeyEndTime2' => 'exclude_if:missingDay2,null|required|date_format:H:i',
 
             'missingDay3' => 'nullable|date_format:Y-m-d',
             'journeyType3' => 'nullable',
-            'journeyStartTime3' => 'nullable|date_format:H:i',
-            'journeyEndTime3' => 'nullable|date_format:H:i',
+            'journeyStartTime3' => 'exclude_if:missingDay3,null|required|date_format:H:i',
+            'journeyEndTime3' => 'exclude_if:missingDay3,null|required|date_format:H:i',
 
             'permissionsSelect' => 'required',
             'reason' => 'nullable|requiredIf:in:'.implode(',', array_keys(config('specialMedicalReasons'))) .'|max:100',
@@ -56,11 +56,15 @@ class ProofMissingTeacherRequest extends FormRequest
 
             'missingDay2.date_format' => 'El día de falta debe tener un formato válido',
             'journeyStartTime2.date_format' => 'Ambas horas deben tener un formato válido',
+            'journeyStartTime2.required' => 'Ambas horas son obligatorias si se ha rellenado la fecha',
             'journeyEndTime2.date_format' => 'Ambas horas deben tener un formato válido',
+            'journeyEndTime2.required' => 'Ambas horas son obligatorias si se ha rellenado la fecha',
 
             'missingDay3.date_format' => 'El día de falta debe tener un formato válido',
             'journeyStartTime3.date_format' => 'Ambas horas deben tener un formato válido',
+            'journeyStartTime3.required' => 'Ambas horas son obligatorias si se ha rellenado la fecha',
             'journeyEndTime3.date_format' => 'Ambas horas deben tener un formato válido',
+            'journeyEndTime3.required' => 'Ambas horas son obligatorias si se ha rellenado la fecha',
 
             'permissionsSelect.required' => 'Debe seleccionar un motivo',
             'anotherReason.required' => 'Este campo es obligatorio',
