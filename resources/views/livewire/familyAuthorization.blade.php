@@ -243,7 +243,9 @@
                                     type="radio"
                                     name="authorization"
                                     id="auth"
-                                    value="auth">
+                                    value="auth"
+                                    {{ old('authorization') == 'auth' ? 'checked' : '' }}  
+                                >
 
                                 <label class="form-check-label" for="auth">
                                     Tiene mi autorización para participar en la actividad programada y autorizo a la toma y difusión de imágenes de este día en la página web y/o RRSS del centro.<span class="text-danger"> *</span>
@@ -262,7 +264,10 @@
                                     type="radio"
                                     name="authorization"
                                     id="notAuth"
-                                    value="notAuth">
+                                    value="notAuth"
+                                    {{ old('authorization') == 'notAuth' ? 'checked' : '' }}
+                                >
+                                    
 
                                 <label class="form-check-label" for="notAuth">
                                     No va a participar en la actividad programada.<span class="text-danger"> *</span>
