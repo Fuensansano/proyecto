@@ -193,6 +193,7 @@
 								name="missingDay2"
 								class="form-control @error('missingDay2') is-invalid @enderror"
 								value="{{ old('missingDay2') }}"
+								onchange="showHours2()"
 							/>
 							@if($errors->get('missingDay2'))
 								<div class="text-danger mb-3 mt-0">
@@ -304,6 +305,7 @@
 								name="missingDay3"
 								class="form-control @error('missingDay3') is-invalid @enderror"
 								value="{{ old('missingDay3') }}"
+								onchange="showHours3()"
 							/>
 							@if($errors->get('missingDay3'))
 								<div class="text-danger mb-3 mt-0">
@@ -507,6 +509,67 @@
         another.value = anotherReason.value;
     }
 
+	window.addEventListener('load', (e) => {
+		const midJourneyOption2 = document.getElementById('midJourneyOption2');
+		const fullJourneyOption2 = document.getElementById('fullJourneyOption2');
+		const midJourneyOption3 = document.getElementById('midJourneyOption3');
+		const fullJourneyOption3 = document.getElementById('fullJourneyOption3');
+		const journeyStartTime2 = document.getElementById('journeyStartTime2');
+		const journeyEndTime2 = document.getElementById('journeyEndTime2');
+		const journeyStartTime3 = document.getElementById('journeyStartTime3');
+		const journeyEndTime3 = document.getElementById('journeyEndTime3');
+
+		midJourneyOption2.disabled = true;
+		fullJourneyOption2.disabled = true;
+		journeyStartTime2.disabled = true;
+		journeyEndTime2.disabled = true;
+
+		midJourneyOption3.disabled = true;
+		fullJourneyOption3.disabled = true;
+		journeyStartTime3.disabled = true;
+		journeyEndTime3.disabled = true;
+	});
+
+	function showHours2() {
+		const missingDay2 = document.getElementById('missingDay2');
+		const midJourneyOption2 = document.getElementById('midJourneyOption2');
+		const fullJourneyOption2 = document.getElementById('fullJourneyOption2');
+		const journeyStartTime2 = document.getElementById('journeyStartTime2');
+		const journeyEndTime2 = document.getElementById('journeyEndTime2');
+		
+		if(missingDay2.value == '') {
+			midJourneyOption2.disabled = true;
+			fullJourneyOption2.disabled = true;
+			journeyStartTime2.disabled = true;
+			journeyEndTime2.disabled = true;
+		} else {
+			midJourneyOption2.disabled = false;
+			fullJourneyOption2.disabled = false;
+			journeyStartTime2.disabled = false;
+			journeyEndTime2.disabled = false;
+		}
+	}
+
+	function showHours3() {
+		const missingDay3 = document.getElementById('missingDay3');
+		const midJourneyOption3 = document.getElementById('midJourneyOption3');
+		const fullJourneyOption3 = document.getElementById('fullJourneyOption3');
+		const journeyStartTime3 = document.getElementById('journeyStartTime3');
+		const journeyEndTime3 = document.getElementById('journeyEndTime3');
+		
+		if(missingDay3.value == '') {
+			midJourneyOption3.disabled = true;
+			fullJourneyOption3.disabled = true;
+			journeyStartTime3.disabled = true;
+			journeyEndTime3.disabled = true;
+		} else {
+			midJourneyOption3.disabled = false;
+			fullJourneyOption3.disabled = false;
+			journeyStartTime3.disabled = false;
+			journeyEndTime3.disabled = false;
+		}
+	}
+
 	const journeyStartTime1 = document.getElementById('journeyStartTime1');
 	const journeyEndTime1 = document.getElementById('journeyEndTime1');
 
@@ -519,10 +582,10 @@
 		journeyStartTime1.disabled = false;
 		journeyEndTime1.disabled = false;
 	});
-
+	
 	const journeyStartTime2 = document.getElementById('journeyStartTime2');
 	const journeyEndTime2 = document.getElementById('journeyEndTime2');
-
+	
 	document.getElementById('fullJourneyOption2').addEventListener('click', (e) => {
 		journeyStartTime2.disabled = true;
 		journeyEndTime2.disabled = true;
