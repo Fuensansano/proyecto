@@ -439,7 +439,6 @@
 									id="doctor"
 									name="reason"
 									value="el médico no tiene consulta en otro horario."
-									{{ old('reason') == 'el médico no tiene consulta en otro horario.' ? 'checked' : '' }}
 								/>
 								<label for="doctor" class="radio-label">El médico no tiene consulta en otro horario.</label>
 							</div>
@@ -450,7 +449,6 @@
 									id="schedule"
 									name="reason"
 									value="la necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha."
-									{{ old('reason') == 'la necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha.' ? 'checked' : '' }}
 								/>
 								<label for="schedule" class="radio-label">La necesidad de asistencia ha impedido hacerlo en otro horario o en otra fecha.</label>
 							</div>
@@ -461,7 +459,6 @@
 									onchange="displayAnotherReason()"
 									name="reason"
 									value="another"
-									{{ old('reason') == 'another' ? 'checked' : '' }}
 								/>
                                 <label for="another" class="radio-label">Otro motivo:</label>
                             </div>
@@ -474,7 +471,6 @@
 								name="anotherReason"
 								maxlength="100"
 								placeholder="Máximo 100 carácteres"
-								{{ old('anotherReason') }}
 							/>
 						</div>
 					</div>
