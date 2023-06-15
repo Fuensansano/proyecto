@@ -192,7 +192,6 @@
 								type="date"
 								name="missingDay2"
 								class="form-control @error('missingDay2') is-invalid @enderror"
-								value="{{ old('missingDay2') }}"
 								onchange="showHours2()"
 							/>
 							@if($errors->get('missingDay2'))
@@ -210,7 +209,6 @@
 									name="journeyType2"
 									value="fullJourneyOption2"
 									class="@error('journeyType2') is-invalid @enderror"
-									{{ old('journeType2') == 'fullJourneyOption2' ? 'checked' : '' }}
 								/>
 
 								<label for="fullJourneyOption2" class="radio-label">
@@ -230,7 +228,6 @@
 									name="journeyType2"
 									value="midJourneyOption2"
 									class="@error('journeyType2') is-invalid @enderror"
-									{{ old('journeyType2') == 'midJourneyOption2' ? 'checked' : '' }}
 								/>
 
 								<label for="midJourneyOption2" class="radio-label">
@@ -259,7 +256,6 @@
 										type="time"
 										name="journeyStartTime2"
 										class="form-control"
-										value="{{ old('journeyStartTime2') }}"
 									/>
 									@if($errors->get('journeyStartTime2'))
 										<div class="text-danger mb-3 mt-0">
@@ -281,7 +277,6 @@
 										type="time"
 										name="journeyEndTime2"
 										class="form-control"
-										value="{{ old('journeyEndTime2') }}"
 									/>
 									@if($errors->get('journeyEndTime2'))
 										<div class="text-danger mb-3 mt-0">
@@ -322,7 +317,6 @@
 									name="journeyType3"
 									value="fullJourneyOption3"
 									class="@error('journeyType3') is-invalid @enderror"
-									{{ old('journeType3') == 'fullJourneyOption3' ? 'checked' : '' }}
 								/>
 
 								<label for="fullJourneyOption3" class="radio-label">
@@ -342,7 +336,6 @@
 									name="journeyType3"
 									value="midJourneyOption3"
 									class="@error('journeyType3') is-invalid @enderror"
-									{{ old('journeType3') == 'midJourneyOption3' ? 'checked' : '' }}
 								/>
 
 								<label for="midJourneyOption3" class="radio-label">
@@ -371,7 +364,6 @@
 										type="time"
 										name="journeyStartTime3"
 										class="form-control"
-										value="{{ old('journeyStartTime3') }}"
 									/>
 									@if($errors->get('journeyStartTime3'))
 										<div class="text-danger mb-3 mt-0">
@@ -393,7 +385,6 @@
 										type="time"
 										name="journeyEndTime3"
 										class="form-control"
-										value="{{ old('journeyEndTime3') }}"
 									/>
 									@if($errors->get('journeyEndTime3'))
 										<div class="text-danger mb-3 mt-0">
