@@ -299,7 +299,6 @@
 								type="date"
 								name="missingDay3"
 								class="form-control @error('missingDay3') is-invalid @enderror"
-								value="{{ old('missingDay3') }}"
 								onchange="showHours3()"
 							/>
 							@if($errors->get('missingDay3'))
