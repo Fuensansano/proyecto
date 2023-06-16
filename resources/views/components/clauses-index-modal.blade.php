@@ -38,7 +38,7 @@
 </div>
 
 <style>
-    li {
+    ol > li {
         margin-bottom: 1rem;
         font-size: 16px;
     }
